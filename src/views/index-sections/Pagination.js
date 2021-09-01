@@ -212,9 +212,6 @@ function PaginationSection() {
               <Badge color="neutral">Neutral</Badge>
             </Col>
           </Row>
-          <br></br>
-          <div className="space"></div>
-          <h4>Notifications</h4>
         </Container>
       </div>
     </>

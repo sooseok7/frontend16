@@ -14,7 +14,6 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 import BasicElements from "./index-sections/BasicElements.js";
 import Pagination from "./index-sections/Pagination.js";
 import Carousel from "./index-sections/Carousel.js";
-import SignUp from "./index-sections/SignUp.js";
 
 function Index() {
   React.useEffect(() => {
@@ -37,7 +36,6 @@ function Index() {
           <BasicElements />
           <Pagination />
           <Carousel />
-          <SignUp />
         </div>
         <DarkFooter />
       </div>
