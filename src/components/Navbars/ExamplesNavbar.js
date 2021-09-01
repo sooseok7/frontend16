@@ -13,7 +13,7 @@ import {
   NavLink,
   Nav,
   Container,
-  UncontrolledTooltip,
+  //UncontrolledTooltip,
 } from "reactstrap";
 
 function ExamplesNavbar() {
@@ -51,53 +51,15 @@ function ExamplesNavbar() {
       ) : null}
       <Navbar className={"fixed-top " + navbarColor} color="info" expand="lg">
         <Container>
-          <UncontrolledDropdown className="button-dropdown">
-            <DropdownToggle
-              caret
-              data-toggle="dropdown"
-              href="#pablo"
-              id="navbarDropdown"
-              tag="a"
-              onClick={(e) => e.preventDefault()}
-            >
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-              <span className="button-bar"></span>
-            </DropdownToggle>
-            <DropdownMenu aria-labelledby="navbarDropdown">
-              <DropdownItem header tag="a">
-                Dropdown header
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Action
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Another action
-              </DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Something else here
-              </DropdownItem>
-              <DropdownItem divider></DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                Separated link
-              </DropdownItem>
-              <DropdownItem divider></DropdownItem>
-              <DropdownItem href="#pablo" onClick={(e) => e.preventDefault()}>
-                One more separated link
-              </DropdownItem>
-            </DropdownMenu>
-          </UncontrolledDropdown>
-          <div className="navbar-translate">
+        <div className="navbar-translate">
             <NavbarBrand
-              href="https://demos.creative-tim.com/now-ui-kit-react/index?ref=nukr-examples-navbar"
-              target="_blank"
+              href="http://localhost:3000/index"
+              // target="_blank" 새창
               id="navbar-brand"
             >
-              Now Ui Kit
+              Travel16
             </NavbarBrand>
-            <UncontrolledTooltip target="#navbar-brand">
-              Designed by Invision. Coded by Creative Tim
-            </UncontrolledTooltip>
+
             <button
               className="navbar-toggler navbar-toggler"
               onClick={() => {
@@ -117,56 +79,65 @@ function ExamplesNavbar() {
             isOpen={collapseOpen}
             navbar
           >
-            <Nav navbar>
+             <Nav navbar>
               <NavItem>
-                <NavLink to="/index" tag={Link}>
-                  Back to Kit
+              <NavLink
+              href="http://localhost:3000/landing-page"
+            >
+             <p>여행성향테스트</p>
+            </NavLink>
+              </NavItem>
+
+              <NavItem>
+              <NavLink
+              href="http://localhost:3000/profile-page"
+            >
+             <p>여행지 추천</p>
+              </NavLink>
+              </NavItem>
+
+              <NavItem>
+              <NavLink
+              href="http://localhost:3000/landing-page"
+            >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
+                  <p>달력</p>
                 </NavLink>
               </NavItem>
+
               <NavItem>
-                <NavLink href="https://github.com/creativetimofficial/now-ui-kit-react/issues?ref=creativetim">
-                  Have an issue?
+              <NavLink
+              href="http://localhost:3000/landing-page"
+            >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
+                  <p>게시판</p>
                 </NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
-                  target="_blank"
-                  id="twitter-tooltip"
+
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  href="#pablo"
+                  nav
+                  onClick={(e) => e.preventDefault()}
                 >
-                  <i className="fab fa-twitter"></i>
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
-                  target="_blank"
-                  id="facebook-tooltip"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-                <UncontrolledTooltip target="#facebook-tooltip">
-                  Like us on Facebook
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-                  target="_blank"
-                  id="instagram-tooltip"
-                >
-                  <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-                <UncontrolledTooltip target="#instagram-tooltip">
-                  Follow us on Instagram
-                </UncontrolledTooltip>
-              </NavItem>
+                
+                  <p>마이페이지</p>
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem to="/index" tag={Link}>
+                  <p>정보수정</p>
+                  </DropdownItem>
+                  <DropdownItem
+                    href="http://localhost:3000/login-page"
+                    // target="_blank"
+                  >
+                    <p>로그아웃</p>
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+
             </Nav>
           </Collapse>
         </Container>

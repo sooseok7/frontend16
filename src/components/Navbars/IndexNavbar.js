@@ -91,7 +91,7 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/landing-page"
+              href="http://localhost:3000/profile-page"
             >
              <p>여행지 추천</p>
             </NavLink>
@@ -123,20 +123,18 @@ function IndexNavbar() {
                   nav
                   onClick={(e) => e.preventDefault()}
                 >
-                  {/* <i className="now-ui-icons design_app mr-1"></i> */}
+                 
                   <p>마이페이지</p>
                 </DropdownToggle>
                 <DropdownMenu>
                   <DropdownItem to="/index" tag={Link}>
-                    {/* <i className="now-ui-icons business_chart-pie-36 mr-1"></i> */}
-                    정보수정
+                  <p>정보수정</p>
                   </DropdownItem>
                   <DropdownItem
-                    href="http://localhost:3000/index"
+                    href="http://localhost:3000/login-page"
                     // target="_blank"
                   >
-                    {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
-                    로그아웃
+                    <p>로그아웃</p>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
