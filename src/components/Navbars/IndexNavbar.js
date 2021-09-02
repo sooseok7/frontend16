@@ -53,7 +53,7 @@ function IndexNavbar() {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand
-              href="http://localhost:3000/index"
+              href="index"
               // target="_blank" 새창
               id="navbar-brand"
             >
@@ -82,7 +82,8 @@ function IndexNavbar() {
             <Nav navbar>
               <NavItem>
               <NavLink
-              href="landing-page"
+              href="quiz-page"
+              target="_blank"
             >
              <p>여행성향테스트</p>
             </NavLink>
