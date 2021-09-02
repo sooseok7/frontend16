@@ -126,7 +126,7 @@ function ExamplesNavbar() {
                   <p>마이페이지</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem to="/index" tag={Link}>
+                  <DropdownItem to="join-page" tag={Link}>
                   <p>정보수정</p>
                   </DropdownItem>
                   <DropdownItem
