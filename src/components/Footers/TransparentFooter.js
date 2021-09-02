@@ -6,55 +6,43 @@ import { Container } from "reactstrap";
 
 function TransparentFooter() {
   return (
-    <footer className="footer">
-      <Container>
-        <nav>
-          <ul>
-            <li>
+    <>
+      <footer className="footer">
+        <Container>
+          <nav>
+            <ul>
+              <li>
               <a
-                href="https://www.creative-tim.com?ref=nukr-transparent-footer"
+                href="index"
                 target="_blank"
               >
-                Creative Tim
+                개인정보처리방침
               </a>
-            </li>
-            <li>
+              </li>
+              <li>
               <a
-                href="http://presentation.creative-tim.com?ref=nukr-transparent-footer"
+                href="index"
                 target="_blank"
               >
-                About Us
+                이용약관
               </a>
-            </li>
-            <li>
+              </li>
+              <li>
               <a
-                href="http://blog.creative-tim.com?ref=nukr-transparent-footer"
+                href="index"
                 target="_blank"
               >
-                Blog
+                저작권정책
               </a>
-            </li>
-          </ul>
-        </nav>
-        <div className="copyright" id="copyright">
-          © {new Date().getFullYear()}, Designed by{" "}
-          <a
-            href="https://www.invisionapp.com?ref=nukr-transparent-footer"
-            target="_blank"
-          >
-            Invision
-          </a>
-          . Coded by{" "}
-          <a
-            href="https://www.creative-tim.com?ref=nukr-transparent-footer"
-            target="_blank"
-          >
-            Creative Tim
-          </a>
-          .
+              </li>
+            </ul>
+          </nav>
+          <div className="copyright" id="copyright">
+          ©2MonthsAgo
         </div>
-      </Container>
-    </footer>
+        </Container>
+      </footer>
+    </>
   );
 }
 

@@ -12,7 +12,7 @@ function DarkFooter() {
           <ul>
             <li>
               <a
-                href="http://localhost:3000/index"
+                href="index"
                 target="_blank"
               >
                 개인정보처리방침
@@ -20,7 +20,7 @@ function DarkFooter() {
             </li>
             <li>
               <a
-                href="http://localhost:3000/index"
+                href="index"
                 target="_blank"
               >
                 이용약관
@@ -28,7 +28,7 @@ function DarkFooter() {
             </li>
             <li>
               <a
-                href="http://localhost:3000/index"
+                href="index"
                 target="_blank"
               >
                 저작권정책

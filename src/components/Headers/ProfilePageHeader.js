@@ -1,8 +1,8 @@
 import React from "react";
 
 // reactstrap components
-import { Container } from "reactstrap";
 
+import {Container } from "reactstrap";
 // core components
 
 function ProfilePageHeader() {
@@ -23,10 +23,7 @@ function ProfilePageHeader() {
   });
   return (
     <>
-      <div
-        className="page-header clear-filter page-header-small"
-        filter-color="blue"
-      >
+      <div className="page-header">
         <div
           className="page-header-image"
           style={{
@@ -35,27 +32,11 @@ function ProfilePageHeader() {
           }}
           ref={pageHeader}
         ></div>
-        <Container>
-          <div className="photo-container">
-            <img alt="..." src={require("assets/img/ryan.jpg").default}></img>
-          </div>
-          <h3 className="title">Ryan Scheinder</h3>
-          <p className="category">Photographer</p>
-          <div className="content">
-            <div className="social-description">
-              <h2>26</h2>
-              <p>Comments</p>
-            </div>
-            <div className="social-description">
-              <h2>26</h2>
-              <p>Comments</p>
-            </div>
-            <div className="social-description">
-              <h2>48</h2>
-              <p>Bookmarks</p>
-            </div>
-          </div>
-        </Container>
+        <div className="content-center">
+          <Container>
+            <h1 className="title">여행지추천</h1>
+          </Container>
+        </div>
       </div>
     </>
   );
