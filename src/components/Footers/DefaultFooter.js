@@ -14,48 +14,34 @@ function DefaultFooter() {
           <nav>
             <ul>
               <li>
-                <a
-                  href="https://www.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
-                >
-                  Creative Tim
-                </a>
+              <a
+                href="index"
+                target="_blank"
+              >
+                개인정보처리방침
+              </a>
               </li>
               <li>
-                <a
-                  href="http://presentation.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
-                >
-                  About Us
-                </a>
+              <a
+                href="index"
+                target="_blank"
+              >
+                이용약관
+              </a>
               </li>
               <li>
-                <a
-                  href="http://blog.creative-tim.com?ref=nukr-default-footer"
-                  target="_blank"
-                >
-                  Blog
-                </a>
+              <a
+                href="index"
+                target="_blank"
+              >
+                저작권정책
+              </a>
               </li>
             </ul>
           </nav>
           <div className="copyright" id="copyright">
-            © {new Date().getFullYear()}, Designed by{" "}
-            <a
-              href="https://www.invisionapp.com?ref=nukr-default-footer"
-              target="_blank"
-            >
-              Invision
-            </a>
-            . Coded by{" "}
-            <a
-              href="https://www.creative-tim.com?ref=nukr-default-footer"
-              target="_blank"
-            >
-              Creative Tim
-            </a>
-            .
-          </div>
+          ©2MonthsAgo
+        </div>
         </Container>
       </footer>
     </>

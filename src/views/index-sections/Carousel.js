@@ -15,18 +15,23 @@ import {
 const items = [
   {
     src: require("assets/img/bg1.jpg").default,
-    altText: "Nature, United States",
-    caption: "Nature, United States",
+    altText: "Nature",
+    caption: "Nature",
   },
   {
     src: require("assets/img/bg3.jpg").default,
-    altText: "Somewhere Beyond, United States",
-    caption: "Somewhere Beyond, United States",
+    altText: "Sunset",
+    caption: "Sunset",
   },
   {
     src: require("assets/img/bg4.jpg").default,
-    altText: "Yellowstone National Park, United States",
-    caption: "Yellowstone National Park, United States",
+    altText: "Korea River",
+    caption: "Korea River",
+  },
+  {
+    src: require("assets/img/bg5.jpg").default,
+    altText: "Night View",
+    caption: "Night View",
   },
 ];
 

@@ -9,12 +9,6 @@ import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import IndexHeader from "components/Headers/IndexHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
-// sections for this page
-// import Images from "./index-sections/Images.js";
-import BasicElements from "./index-sections/BasicElements.js";
-import Pagination from "./index-sections/Pagination.js";
-import Carousel from "./index-sections/Carousel.js";
-import SignUp from "./index-sections/SignUp.js";
 
 function Index() {
   React.useEffect(() => {
@@ -33,12 +27,6 @@ function Index() {
       <IndexNavbar />
       <div className="wrapper">
         <IndexHeader />
-        <div className="main">
-          <BasicElements />
-          <Pagination />
-          <Carousel />
-          <SignUp />
-        </div>
         <DarkFooter />
       </div>
     </>

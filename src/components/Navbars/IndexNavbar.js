@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 // reactstrap components
 import {
   // Button,
@@ -54,7 +53,7 @@ function IndexNavbar() {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand
-              href="http://localhost:3000/index"
+              href="index"
               // target="_blank" 새창
               id="navbar-brand"
             >
@@ -83,7 +82,8 @@ function IndexNavbar() {
             <Nav navbar>
               <NavItem>
               <NavLink
-              href="http://localhost:3000/landing-page"
+              href="quiz-page"
+              target="_blank"
             >
              <p>여행성향테스트</p>
             </NavLink>
@@ -91,7 +91,7 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/landing-page"
+              href="profile-page"
             >
              <p>여행지 추천</p>
             </NavLink>
@@ -99,7 +99,7 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/landing-page"
+              href="landing-page"
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>달력</p>
@@ -108,7 +108,7 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/landing-page"
+              href="landing-page"
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>게시판</p>
@@ -123,24 +123,31 @@ function IndexNavbar() {
                   nav
                   onClick={(e) => e.preventDefault()}
                 >
-                  {/* <i className="now-ui-icons design_app mr-1"></i> */}
+               
                   <p>마이페이지</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem to="/index" tag={Link}>
-                    {/* <i className="now-ui-icons business_chart-pie-36 mr-1"></i> */}
-                    정보수정
+                  <DropdownItem href="login-page"
+                  >
+                  <p>정보수정</p>
                   </DropdownItem>
                   <DropdownItem
-                    href="http://localhost:3000/index"
+                    href="examples-page"
                     // target="_blank"
                   >
-                    {/* <i className="now-ui-icons design_bullet-list-67 mr-1"></i> */}
-                    로그아웃
+                    <p>로그아웃</p>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              
+                
+              <NavItem>
+              <NavLink
+              href="login-page"
+            >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
+                  <p>로그인</p>
+                </NavLink>
+
               {/* <NavItem>
                 <Button
                   className="nav-link btn-neutral"
@@ -195,7 +202,7 @@ function IndexNavbar() {
                   Follow us on Instagram
                 </UncontrolledTooltip>
               </NavItem> */}
-              
+              </NavItem>
             </Nav>
           </Collapse>
         </Container>
