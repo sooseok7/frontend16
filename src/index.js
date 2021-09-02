@@ -28,6 +28,7 @@ import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 import Index from "views/Index.js";
 import NucleoIcons from "views/NucleoIcons.js";
 import LoginPage from "views/examples/LoginPage.js";
+import JoinPage from "views/examples/JoinPage";
 import SearchPage from "views/examples/SearchPage.js";
 import BoardPage from "views/examples/BoardPage.js";
 import TestPage from "views/examples/TestPage.js";
@@ -67,6 +68,11 @@ ReactDOM.render(
           path="/result-page"
           render={(props) => <ResultPage {...props} />}
         />
+        <Route
+          path="/join-page"
+          render={(props) => <JoinPage {...props} />}
+        />
+        
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
       </Switch>

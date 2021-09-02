@@ -20,17 +20,17 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import TransparentFooter from "components/Footers/TransparentFooter.js";
 
-function LoginPage() {
+function JoinPage() {
   const [firstFocus, setFirstFocus] = React.useState(false);
   const [lastFocus, setLastFocus] = React.useState(false);
   React.useEffect(() => {
-    document.body.classList.add("login-page");
+    document.body.classList.add("join-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("login-page");
+      document.body.classList.remove("join-page");
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
@@ -95,6 +95,42 @@ function LoginPage() {
                         onBlur={() => setLastFocus(false)}
                       ></Input>
                     </InputGroup>
+                    <InputGroup
+                      className={
+                        "no-border input-lg" +
+                        (firstFocus ? " input-group-focus" : "")
+                      }
+                    >
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="now-ui-icons users_circle-08"></i>
+                        </InputGroupText>
+                      </InputGroupAddon>
+                      <Input
+                        placeholder="Last Name..."
+                        type="text"
+                        onFocus={() => setFirstFocus(true)}
+                        onBlur={() => setFirstFocus(false)}
+                      ></Input>
+                    </InputGroup>
+                    <InputGroup
+                      className={
+                        "no-border input-lg" +
+                        (firstFocus ? " input-group-focus" : "")
+                      }
+                    >
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="now-ui-icons text_caps-small"></i>
+                        </InputGroupText>
+                      </InputGroupAddon>
+                      <Input
+                        placeholder="First Name..."
+                        type="text"
+                        onFocus={() => setFirstFocus(true)}
+                        onBlur={() => setFirstFocus(false)}
+                      ></Input>
+                    </InputGroup>
                   </CardBody>
                   <CardFooter className="text-center">
                     <Button
@@ -107,28 +143,6 @@ function LoginPage() {
                     >
                       Get Started
                     </Button>
-                    <div className="pull-left">
-                      <h6>
-                        <a
-                          className="link"
-                          href="join-page"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Create Account
-                        </a>
-                      </h6>
-                    </div>
-                    <div className="pull-right">
-                      <h6>
-                        <a
-                          className="link"
-                          href="findname"
-                          onClick={(e) => e.preventDefault()}
-                        >
-                          Need Help?
-                        </a>
-                      </h6>
-                    </div>
                   </CardFooter>
                 </Form>
               </Card>
@@ -141,4 +155,4 @@ function LoginPage() {
   );
 }
 
-export default LoginPage;
+export default JoinPage;
