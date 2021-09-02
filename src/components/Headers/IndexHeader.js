@@ -41,8 +41,8 @@ function IndexHeader() {
               src={require("assets/img/now-logo.png").default}
             ></img> */}
             
-            <h1 className="h1-seo">여기에 검색 기능 추가.</h1>
-            <h4>Travel16에 오신 것을 환영합니다.</h4><h4>자신의 mbti를 통하여 맞춤형 여행지 추천을 받을 수 있습니다.</h4>
+            <h4>Travel16에 오신 것을 환영합니다.<br></br>
+            자신의 mbti를 통하여 맞춤형 여행지 추천을 받을 수 있습니다.</h4>
           </div>
 
           {/* <h6 className="category category-absolute">

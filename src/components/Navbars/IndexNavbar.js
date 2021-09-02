@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 // reactstrap components
 import {
   // Button,
@@ -83,7 +82,7 @@ function IndexNavbar() {
             <Nav navbar>
               <NavItem>
               <NavLink
-              href="http://localhost:3000/landing-page"
+              href="landing-page"
             >
              <p>여행성향테스트</p>
             </NavLink>
@@ -91,7 +90,7 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/profile-page"
+              href="profile-page"
             >
              <p>여행지 추천</p>
             </NavLink>
@@ -99,7 +98,7 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/landing-page"
+              href="landing-page"
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>달력</p>
@@ -108,7 +107,7 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/landing-page"
+              href="landing-page"
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>게시판</p>
@@ -123,22 +122,31 @@ function IndexNavbar() {
                   nav
                   onClick={(e) => e.preventDefault()}
                 >
-                 
+               
                   <p>마이페이지</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem to="/index" tag={Link}>
+                  <DropdownItem href="login-page"
+                  >
                   <p>정보수정</p>
                   </DropdownItem>
                   <DropdownItem
-                    href="http://localhost:3000/login-page"
+                    href="examples-page"
                     // target="_blank"
                   >
                     <p>로그아웃</p>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
-              
+                
+              <NavItem>
+              <NavLink
+              href="login-page"
+            >
+                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
+                  <p>로그인</p>
+                </NavLink>
+
               {/* <NavItem>
                 <Button
                   className="nav-link btn-neutral"
@@ -193,7 +201,7 @@ function IndexNavbar() {
                   Follow us on Instagram
                 </UncontrolledTooltip>
               </NavItem> */}
-              
+              </NavItem>
             </Nav>
           </Collapse>
         </Container>

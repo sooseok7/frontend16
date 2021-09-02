@@ -15,7 +15,7 @@ function DefaultFooter() {
             <ul>
               <li>
               <a
-                href="http://localhost:3000/index"
+                href="index"
                 target="_blank"
               >
                 개인정보처리방침
@@ -23,7 +23,7 @@ function DefaultFooter() {
               </li>
               <li>
               <a
-                href="http://localhost:3000/index"
+                href="index"
                 target="_blank"
               >
                 이용약관
@@ -31,7 +31,7 @@ function DefaultFooter() {
               </li>
               <li>
               <a
-                href="http://localhost:3000/index"
+                href="index"
                 target="_blank"
               >
                 저작권정책
