@@ -126,7 +126,7 @@ function IndexNavbar() {
                   <p>마이페이지</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem href="login-page"
+                  <DropdownItem href="join-page"
                   >
                   <p>정보수정</p>
                   </DropdownItem>
