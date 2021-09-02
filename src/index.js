@@ -33,7 +33,7 @@ import SearchPage from "views/examples/SearchPage.js";
 import BoardPage from "views/examples/BoardPage.js";
 import TestPage from "views/examples/TestPage.js";
 import ResultPage from "views/examples/ResultPage";
-import Calendar from "views/examples/Calendar";
+import Calendar from "views/examples/DatePage";
 
 ReactDOM.render(
   <BrowserRouter>
