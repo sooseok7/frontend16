@@ -32,6 +32,7 @@ import SearchPage from "views/examples/SearchPage.js";
 import BoardPage from "views/examples/BoardPage.js";
 import TestPage from "views/examples/TestPage.js";
 import ResultPage from "views/examples/ResultPage";
+import Calendar from "views/examples/Calendar";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -41,6 +42,10 @@ ReactDOM.render(
         <Route
           path="/nucleo-icons"
           render={(props) => <NucleoIcons {...props} />}
+        />
+        <Route
+          path="/calendar"
+          render={(props) => <Calendar {...props} />}
         />
         <Route
           path="/search-page"
