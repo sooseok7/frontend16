@@ -28,8 +28,10 @@ import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 import Index from "views/Index.js";
 import NucleoIcons from "views/NucleoIcons.js";
 import LoginPage from "views/examples/LoginPage.js";
-import LandingPage from "views/examples/LandingPage.js";
-import ProfilePage from "views/examples/ProfilePage.js";
+import SearchPage from "views/examples/SearchPage.js";
+import BoardPage from "views/examples/BoardPage.js";
+import TestPage from "views/examples/TestPage.js";
+import ResultPage from "views/examples/ResultPage";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -41,16 +43,24 @@ ReactDOM.render(
           render={(props) => <NucleoIcons {...props} />}
         />
         <Route
-          path="/landing-page"
-          render={(props) => <LandingPage {...props} />}
+          path="/search-page"
+          render={(props) => <SearchPage {...props} />}
         />
         <Route
-          path="/profile-page"
-          render={(props) => <ProfilePage {...props} />}
+          path="/board-page"
+          render={(props) => <BoardPage {...props} />}
         />
         <Route
           path="/login-page"
           render={(props) => <LoginPage {...props} />}
+        />
+        <Route
+          path="/test-page"
+          render={(props) => <TestPage {...props} />}
+        />
+        <Route
+          path="/result-page"
+          render={(props) => <ResultPage {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
