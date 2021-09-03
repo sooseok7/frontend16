@@ -6,7 +6,7 @@ import React from "react";
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-import IndexHeader from "components/Headers/IndexHeader.js";
+import ResultPageHeader from "components/Headers/ResultPageHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 // sections for this page
@@ -30,7 +30,7 @@ function ResultPage() {
     <>
       <IndexNavbar />
       <div className="wrapper">
-        <IndexHeader />
+        <ResultPageHeader />
         {/* <div className="main">
           <BasicElements />
           <Pagination />

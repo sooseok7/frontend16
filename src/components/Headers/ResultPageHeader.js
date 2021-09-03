@@ -1,11 +1,11 @@
 import React from "react";
 
 // reactstrap components
-
 import {Container } from "reactstrap";
+
 // core components
 
-function ProfilePageHeader() {
+function ResultPageHeader() {
   let pageHeader = React.createRef();
 
   React.useEffect(() => {
@@ -28,13 +28,13 @@ function ProfilePageHeader() {
           className="page-header-image"
           style={{
             backgroundImage:
-              "url(" + require("assets/img/bg5.jpg").default + ")",
+              "url(" + require("assets/img/test.jpg").default + ")",
           }}
           ref={pageHeader}
         ></div>
         <div className="content-center">
           <Container>
-            <h1 className="title">여행지추천</h1>
+            <h1 className="title">MBTI별 여행지 추천</h1>
           </Container>
         </div>
       </div>
@@ -42,4 +42,4 @@ function ProfilePageHeader() {
   );
 }
 
-export default ProfilePageHeader;
+export default ResultPageHeader;

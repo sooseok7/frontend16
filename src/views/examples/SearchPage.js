@@ -5,7 +5,7 @@ import React from "react";
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import SearchPageHeader from "components/Headers/SearchPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function SearchPage() {
@@ -24,7 +24,7 @@ function SearchPage() {
     <>
       <ExamplesNavbar />
       <div className="wrapper">
-        <LandingPageHeader />
+        <SearchPageHeader />
          <div className="section section-team text-center">
           
 

@@ -1,11 +1,11 @@
 import React from "react";
 
 // reactstrap components
-import {Container } from "reactstrap";
 
+import {Container } from "reactstrap";
 // core components
 
-function LandingPageHeader() {
+function DatePageHeader() {
   let pageHeader = React.createRef();
 
   React.useEffect(() => {
@@ -28,13 +28,13 @@ function LandingPageHeader() {
           className="page-header-image"
           style={{
             backgroundImage:
-              "url(" + require("assets/img/test.jpg").default + ")",
+              "url(" + require("assets/img/hi.jpg").default + ")",
           }}
           ref={pageHeader}
         ></div>
         <div className="content-center">
           <Container>
-            <h1 className="title">여행성향테스트</h1>
+            <h1 className="title">캘린더</h1>
           </Container>
         </div>
       </div>
@@ -42,4 +42,4 @@ function LandingPageHeader() {
   );
 }
 
-export default LandingPageHeader;
+export default DatePageHeader;
