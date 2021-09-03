@@ -5,7 +5,7 @@ import React from "react";
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import LandingPageHeader from "components/Headers/LandingPageHeader.js";
+import TestPageHeader from "components/Headers/TestPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function TestPage() {
@@ -24,7 +24,7 @@ function TestPage() {
     <>
       <ExamplesNavbar />
       <div className="wrapper">
-        <LandingPageHeader />
+        <TestPageHeader />
          <div className="section section-team text-center">
           
 

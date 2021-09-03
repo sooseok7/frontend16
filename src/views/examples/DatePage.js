@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from 'react-dom';
 
 // reactstrap components
 // import {
@@ -7,25 +6,23 @@ import { render } from 'react-dom';
 
 // core components
 import IndexNavbar from "components/Navbars/IndexNavbar.js";
-
+import DatePageHeader from "components/Headers/DatePageHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
-import { Container } from "reactstrap";
 
 
 
 
 function DatePage() {
-  let pageHeader = React.createRef();
 
 
   React.useEffect(() => {
-    document.body.classList.add("index-page");
+    document.body.classList.add("date-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("index-page");
+      document.body.classList.remove("date-page");
       document.body.classList.remove("sidebar-collapse");
     };
   });
@@ -33,18 +30,8 @@ function DatePage() {
     <>
       <IndexNavbar />
       <div className="wrapper">
-      <div className="page-header clear-filter">
-        <div
-          className="page-header-image"
-          style={{
-            backgroundImage:
-              "url(" + require("assets/img/hi.jpg").default + ")",
-          }}
-          ref={pageHeader}
-        ></div>
-        <Container>
-     
-          {/* <h6 className="category category-absolute">
+        <DatePageHeader />
+                  {/* <h6 className="category category-absolute">
             Designed by{" "}
             <a href="http://invisionapp.com/?ref=creativetim" target="_blank">
               <img
@@ -66,8 +53,6 @@ function DatePage() {
             </a>
             .
           </h6> */}
-        </Container>
-      </div>
         <DarkFooter />
       </div>
     </>
