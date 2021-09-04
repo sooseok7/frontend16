@@ -1,5 +1,6 @@
 import React from "react";
 
+
 // reactstrap components
 // import {
 // } from "reactstrap";
@@ -13,7 +14,6 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 
 
 function DatePage() {
-
 
   React.useEffect(() => {
     document.body.classList.add("date-page");
@@ -52,7 +52,8 @@ function DatePage() {
               ></img>
             </a>
             .
-          </h6> */}
+          </h6> */  }
+
         <DarkFooter />
       </div>
     </>
@@ -60,3 +61,7 @@ function DatePage() {
 }
 
 export default DatePage;
+
+
+
+

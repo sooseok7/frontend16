@@ -1,5 +1,6 @@
 import React from "react";
 import axios from 'axios';
+import Question from '../../Question';
 // reactstrap components
  import {
    Container,
@@ -27,6 +28,19 @@ function BoardPage() {
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
+  const items = Question.map(data=>{
+    return(
+    <div>
+      <ul>
+        <li style={{position:'relative',left:'10vh'}}>
+          <span >{data.question}</span>
+          <span >{data.answer1}</span>
+          <span >{data.answer2}</span>
+        </li>
+      </ul>
+    </div>
+    )
+  })
   return (
     <>
       <ExamplesNavbar />
@@ -69,6 +83,7 @@ function BoardPage() {
                             
                         </tbody>
                     </table>
+                    
                 </div>
                 </div>
         <DefaultFooter />
