@@ -98,7 +98,7 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="calendar"
+              href="calendars"
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>달력</p>
