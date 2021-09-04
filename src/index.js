@@ -34,7 +34,7 @@ import BoardPage from "views/examples/BoardPage.js";
 import TestPage from "views/examples/TestPage.js";
 import ResultPage from "views/examples/ResultPage";
 import Calendar from "views/examples/DatePage";
-
+import TestResultPage from "views/examples/TestResultPage.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -71,8 +71,11 @@ ReactDOM.render(
         <Route
           path="/join-page"
           render={(props) => <JoinPage {...props} />}
+        />     
+        <Route
+        path="/testResult"
+        render={(props) => <TestResultPage {...props} />}
         />
-        
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
       </Switch>
