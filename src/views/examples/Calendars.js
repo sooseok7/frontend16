@@ -31,7 +31,12 @@ let styles = {
 const language = 'KR';
 
 class Calendars extends React.Component {
-  render() {
+  render() {document.body.classList.add("search-page");
+  document.body.classList.add("sidebar-collapse");
+  document.documentElement.classList.remove("nav-open");
+  window.scrollTo(0, 0);
+  document.body.scrollTop = 0;
+  
     return (
       
       <div>
