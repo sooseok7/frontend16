@@ -1,6 +1,13 @@
 import React from "react";
 import axios from 'axios';
-import Question from '../../Question';
+import { makeStyles } from '@material-ui/core/styles';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableContainer from '@material-ui/core/TableContainer';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import Paper from '@material-ui/core/Paper';
 // reactstrap components
  import {
    Container,
@@ -11,12 +18,28 @@ import Question from '../../Question';
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import BoardPageHeader from "components/Headers/BoardPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
-
+function createData(name, calories, fat, carbs, protein) {
+  return { name, calories, fat, carbs, protein };
+}
+const rows = [
+  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
+  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
+  createData('Eclair', 262, 16.0, 24, 6.0),
+  createData('Cupcake', 305, 3.7, 67, 4.3),
+  createData('Gingerbread', 356, 16.0, 49, 3.9),
+];
 function BoardPage() {
   axios.get('http://localhost:8080/api/test')
   .then((Response)=>{console.log(Response.data)})
   .catch((Error)=>{console.log(Error)})
+  const useStyles = makeStyles({
+    table: {
+      minWidth: 650,
+    },
+  });
 
+  
+  const classes = useStyles();  
   React.useEffect(() => {
     document.body.classList.add("board-page");
     document.body.classList.add("sidebar-collapse");
@@ -28,19 +51,7 @@ function BoardPage() {
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
-  const items = Question.map(data=>{
-    return(
-    <div>
-      <ul>
-        <li style={{position:'relative',left:'10vh'}}>
-          <span >{data.question}</span>
-          <span >{data.answer1}</span>
-          <span >{data.answer2}</span>
-        </li>
-      </ul>
-    </div>
-    )
-  })
+
   return (
     <>
       <ExamplesNavbar />
@@ -49,43 +60,36 @@ function BoardPage() {
         <div className="section">
           <Container>
              <Row>
-               
+             <TableContainer component={Paper}>
+      <Table className={classes.table} aria-label="simple table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Dessert (100g serving)</TableCell>
+            <TableCell align="right">Calories</TableCell>
+            <TableCell align="right">Fat&nbsp;(g)</TableCell>
+            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
+            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+          </TableRow>
+        </TableHead>
+        <TableBody>
+          {rows.map((row) => (
+            <TableRow key={row.name}>
+              <TableCell component="th" scope="row">
+                {row.name}
+              </TableCell>
+              <TableCell align="right">{row.calories}</TableCell>
+              <TableCell align="right">{row.fat}</TableCell>
+              <TableCell align="right">{row.carbs}</TableCell>
+              <TableCell align="right">{row.protein}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </TableContainer>
             </Row> 
           </Container>
         </div>
-        <div>
-                <h2 className="text-center">게시판 테스트</h2>
-                <div className ="row">
-                    <table className="table table-striped table-bordered">
-                        <thead>
-                            <tr>
-                                <th>글 번호</th>
-                                <th>타이틀 </th>
-                                <th>작성자 </th>
-                                <th>작성일 </th>
-                                <th>갱신일 </th>
-                                <th>좋아요수</th>
-                              
-                            </tr>
-                        </thead>
-                        <tbody>
-                        
-                                     <tr >
-                                        <td> 1</td>
-                                        <td> 2 </td>
-                                        <td> 3 </td>
-                                        <td> 4 </td>
-                                        <td> 5 </td>
-                                        <td> 6 </td>
-                                       
-                                    </tr>
-                                
-                            
-                        </tbody>
-                    </table>
-                    
-                </div>
-                </div>
+       
         <DefaultFooter />
       </div>
     </>
