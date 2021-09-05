@@ -119,7 +119,7 @@ const updatecount = (mbti)=>{
    if(mbti == 'f'){
      setCount({counts:count.counts+1 , f: count.f+1});
    }else{
-     setCount({counts:count.counts+1 });
+     setCount({counts:count.counts+1,i:count.i,s:count.s });
    }
 
   
@@ -167,7 +167,7 @@ const updatecount = (mbti)=>{
    
     
   }else if(count.counts=='15'&&data.num=='0'){
-    alert(count.counts);
+ 
     return( 
       <Intro>
     <a style={{color:"white",fontSize:"30px"}}
@@ -175,7 +175,7 @@ const updatecount = (mbti)=>{
     href="/testResult"
     
   >결과 보기</a>
-  <br/><br/><br/><br/>
+  <br/><br/>
   </Intro>
    )
   }
