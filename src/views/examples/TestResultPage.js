@@ -9,7 +9,7 @@ import styled, { css } from 'styled-components/macro'
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import TestPageHeader from "components/Headers/TestPageHeader.js";
-import DefaultFooter from "components/Footers/DefaultFooter.js";
+import DarkFooter from "components/Footers/DarkFooter";
 import { options } from "preact";
 
 
@@ -148,7 +148,7 @@ function TestPage() {
 
         </div>
         
-        <DefaultFooter />
+        <DarkFooter />
       </div>
   
     </>
