@@ -1,10 +1,9 @@
 import React from "react";
-import Calendar from "node_modules/@ericz1803/react-google-calendar";
-import { css } from "node_modules/@emotion/react";
+import Calendar from "@ericz1803/react-google-calendar";
+import { css } from "@emotion/react";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 
 // core components
-import IndexNavbar from "components/Navbars/IndexNavbar.js";
 import DatePageHeader from "components/Headers/DatePageHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
