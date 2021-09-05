@@ -34,7 +34,7 @@ function SearchPageHeader() {
         ></div>
         <div className="content-center">
           <Container>
-            <h1 className="title">MBTI별 여행지 추천</h1>
+            <h1 className="title">당신의 추천 여행지 입니다.</h1>
           </Container>
         </div>
       </div>
