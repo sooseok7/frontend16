@@ -42,7 +42,7 @@ function IndexHeader() {
               className="n-logo"
               src={require("assets/img/now-logo.png").default}
             ></img> */}
-          <Search placeholder={""} style={{resizeMode:"contain" ,  width:"1000px" ,opacity: 0.1}}/>
+          <Search  input={{ fluid: true  }}  placeholder={""} style={{resizeMode:"contain" ,  width:"1000px" ,opacity: 0.1}}/>
             <h4>Travel16에 오신 것을 환영합니다.<br></br>
             자신의 mbti를 통하여 맞춤형 여행지 추천을 받을 수 있습니다.</h4>
           </div>

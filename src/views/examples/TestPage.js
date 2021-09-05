@@ -13,7 +13,7 @@ import {
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import TestPageHeader from "components/Headers/TestPageHeader.js";
-import DefaultFooter from "components/Footers/DefaultFooter.js";
+import DarkFooter from "components/Footers/DarkFooter.js";
 import { options } from "preact";
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
@@ -87,7 +87,18 @@ const Question2 = styled.div`
 `;
 
 function TestPage() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState({
+    counts:0,
+    i:1,
+    s:1,
+    t:1,
+    j:1,
+    s:1,
+    n:1,
+    f:1,
+    p:1
+  }
+  );
   React.useEffect(() => {
     document.body.classList.add("test-page");
     document.body.classList.add("sidebar-collapse");
@@ -101,11 +112,27 @@ function TestPage() {
   }, []);
 
 
+const updatecount = (mbti)=>{
+
+
+
+   if(mbti == 'f'){
+     setCount({counts:count.counts+1 , f: count.f+1});
+   }else{
+     setCount({counts:count.counts+1 });
+   }
+
+  
+};
+
+
 
   const items = Question.map(data =>{
 
-    if(count== '0' && data.num=='0'){
+    if(count.counts== '0' && data.num=='0'){
+      
       return(
+        
       <div>
    
    <Intro>
@@ -115,22 +142,22 @@ function TestPage() {
             <br/>
             <br/>
             <br/>
-            <Button2 onClick={() => setCount(count + 1)}>시작</Button2>
+            <Button2 onClick={() => updatecount()}>시작</Button2>
         </Intro>
       
 
     </div>
       )
     }
-    else if(data.num== count && count != '0' ){
-
+    else if(data.num== count.counts && count.counts != '0' ){
+      
   return(
     <QuizWindow>
    
           <Question2 style={{color:"white"}}><h1>{data.question }</h1></Question2><br/>
           <Options>
-          <Option  onClick={() => setCount(count + 1)}>{data.answer1}</Option>
-          <Option onClick={() => setCount(count + 1)}>{data.answer2}</Option>
+          <Option  onClick={() => updatecount(data.answer1_mbti)}>{data.answer1}</Option>
+          <Option onClick={() => updatecount(data.answer2_mbti)}>{data.answer2}</Option>
           <br/>
           </Options>
     </QuizWindow>
@@ -139,8 +166,8 @@ function TestPage() {
     
    
     
-  }else if(count=='15'&&data.num=='0'){
-
+  }else if(count.counts=='15'&&data.num=='0'){
+    alert(count.counts);
     return( 
       <Intro>
     <a style={{color:"white",fontSize:"30px"}}
@@ -152,7 +179,7 @@ function TestPage() {
   </Intro>
    )
   }
-
+    
 
 })
   
@@ -164,19 +191,18 @@ function TestPage() {
         <TestPageHeader />
        
          <div style={{backgroundColor:"black"}} className="section section-team text-center">
-   
-
+        
+     
          {items}
          {/* <Intro>
             <h1>Take the quiz.</h1>
             <h4>Whenever, you want.</h4>
             <button  css={btnCSS}>Begin</button>
         </Intro> */}
-    
 
         </div>
-        
-        <DefaultFooter />
+      
+        <DarkFooter />
       </div>
   
     </>
