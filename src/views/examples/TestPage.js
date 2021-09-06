@@ -154,7 +154,16 @@ const updatecount = (mbti)=>{
   return(
     <QuizWindow>
    
-          <Question2 style={{color:"white"}}><h1>{data.question }</h1></Question2><br/>
+          <Question2 style={{color:"white"}}><h1>{data.question.split("\n").map((line)=> { //this.props.data.content: 내용
+            return (
+              <span>
+                {line}
+                <br />
+              </span>
+            );
+          })}
+
+          {/* {this.props.data.content} */} </h1></Question2><br/>
           <Options>
           <Option  onClick={() => updatecount(data.answer1_mbti)}>{data.answer1}</Option>
           <Option onClick={() => updatecount(data.answer2_mbti)}>{data.answer2}</Option>
