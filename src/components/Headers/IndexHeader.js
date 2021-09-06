@@ -1,14 +1,15 @@
 /*eslint-disable*/
-import React from "react";
+import React, { useState } from "react";
 
 import { Search } from 'semantic-ui-react';
 // reactstrap components
 import { Container } from "reactstrap";
+import { valueToNode } from "@babel/types";
 // core components
 
 function IndexHeader() {
   let pageHeader = React.createRef();
-
+ 
   React.useEffect(() => {
     if (window.innerWidth > 991) {
       const updateScroll = () => {
@@ -22,7 +23,17 @@ function IndexHeader() {
       };
     }
   });
-
+  const onClick = (e) =>{
+    window.open("https://search.daum.net/search?w=tot&&q="+e.target.value,'_blank');
+  };
+  
+  const onCheckEnter=(e)=>{
+    
+    if(e.key == 'Enter'){
+      onClick(e);
+    }
+  }
+ 
   return (
     <>
       <div className="page-header clear-filter">
@@ -42,7 +53,7 @@ function IndexHeader() {
               className="n-logo"
               src={require("assets/img/now-logo.png").default}
             ></img> */}
-          <Search  input={{ fluid: true  }}  placeholder={""} style={{resizeMode:"contain" ,  width:"1000px" ,opacity: 0.1}}/>
+          <Search onKeyPress={onCheckEnter} input={{ fluid: true  }}  placeholder={""} style={{resizeMode:"contain" ,  width:"1000px" ,opacity: 0.1}}/>
             <h4>Travel16에 오신 것을 환영합니다.<br></br>
             자신의 mbti를 통하여 맞춤형 여행지 추천을 받을 수 있습니다.</h4>
           </div>
