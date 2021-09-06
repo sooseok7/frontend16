@@ -1,5 +1,5 @@
 import React from "react";
-
+import axios from 'axios';
 // reactstrap components
 
 
@@ -10,7 +10,7 @@ import DefaultFooter from "components/Footers/DefaultFooter.js";
 import Suggest from "./Suggest";
 
 function SearchPage() {
-
+ 
   React.useEffect(() => {
     document.body.classList.add("search-page");
     document.body.classList.add("sidebar-collapse");
