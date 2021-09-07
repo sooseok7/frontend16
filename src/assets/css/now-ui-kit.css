@@ -3309,11 +3309,13 @@ Created using IcoMoon - icomoon.io
     font-size: 0.8571em;
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    line-height: 1.625rem; }
+    line-height: 1.625rem;
+    margin-left: 3px; }
   .navbar .navbar-toggler {
     width: 37px;
     height: 27px;
     outline: 0;
+    margin-right: 3px;
     cursor: pointer; }
     .navbar .navbar-toggler.navbar-toggler-left {
       position: relative;

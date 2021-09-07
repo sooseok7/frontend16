@@ -53,9 +53,9 @@ function IndexHeader() {
               className="n-logo"
               src={require("assets/img/now-logo.png").default}
             ></img> */}
-            <h4 style={{marginBottom:"1px"}}>Travel16에 오신 것을 환영합니다.<br/></h4>
-            <h4 style={{marginTop:"5px"}}> 자신의 mbti를 통하여 맞춤형 여행지 추천을 받을 수 있습니다.</h4>
-          <Search onKeyPress={onCheckEnter} input={{ fluid: true  }}  placeholder={""} style={{resizeMode:"contain" ,  width:"1000px" ,opacity: 0.3}}/>
+            <h5 style={{marginBottom:"1px"}}>Travel16에 오신 것을 환영합니다.<br/></h5>
+            <h5 style={{marginTop:"5px"}}> 자신의 mbti를 통하여 맞춤형 여행지 추천을 받을 수 있습니다.</h5>
+          <Search onKeyPress={onCheckEnter} input={{ fluid: true  }}  placeholder={""} style={{resizeMode:"contain" ,  width:"100%" ,opacity: 0.4}}/>
           </div>
 
           {/* <h6 className="category category-absolute">
