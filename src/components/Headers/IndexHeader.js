@@ -53,16 +53,16 @@ function IndexHeader() {
               className="n-logo"
               src={require("assets/img/now-logo.png").default}
             ></img> */}
-          <Search onKeyPress={onCheckEnter} input={{ fluid: true  }}  placeholder={""} style={{resizeMode:"contain" ,  width:"1000px" ,opacity: 0.1}}/>
-            <h4>Travel16에 오신 것을 환영합니다.<br></br>
-            자신의 mbti를 통하여 맞춤형 여행지 추천을 받을 수 있습니다.</h4>
+            <h4 style={{marginBottom:"1px"}}>Travel16에 오신 것을 환영합니다.<br/></h4>
+            <h4 style={{marginTop:"5px"}}> 자신의 mbti를 통하여 맞춤형 여행지 추천을 받을 수 있습니다.</h4>
+          <Search onKeyPress={onCheckEnter} input={{ fluid: true  }}  placeholder={""} style={{resizeMode:"contain" ,  width:"1000px" ,opacity: 0.3}}/>
           </div>
 
           {/* <h6 className="category category-absolute">
             Designed by{" "}
             <a href="http://invisionapp.com/?ref=creativetim" target="_blank">
               <img
-                alt="..."
+                alt="...";
                 className="invision-logo"
                 src={require("assets/img/invision-white-slim.png").default}
               ></img>
