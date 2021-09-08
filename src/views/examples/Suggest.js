@@ -7,49 +7,56 @@ import { Button, Container, Row, Col } from "reactstrap";
 
 function Suggest() {
   const [names,setNames]=useState([]);
+  
   const [addresss,setLocationObj] =useState({
     locationfinal:""
   });
- axios.get('http://api.visitkorea.or.kr/openapi/service/rest/DataLabService/metcoRegnVisitrDDList?serviceKey=ZyXbs3ggoxjvBgNnPZIbqucXxkimzEhCbTUf2TCX6PoRp%2BTOPYloYNtCYjVBaZzDEm8tpcfCZJW6RVoIRejKpg%3D%3D&MobileOS=ETC&MobileApp=AppTest&startYmd=20210513&endYmd=2021513&_type=json')
-    .then((Response)=>{console.log(Response.data)})
+  const [max,setMax] =useState(0);
+ axios.get('http://localhost:8080/api//getinformation'
+ )
+ 
+    .then((Response)=>
+  // console.log(Response.data.response.body.items)
+   setNames(Response.data.response.body.items)
+    //for(max = 0; max < Response.data.response.body.items.length; max++) {
+      // console.log(index, JSON.stringify(Response.data.response.body.items[index]));
+      //let read = JSON.stringify(Response.data.response.body.items[index]);
+      //let data = JSON.parse(read);
+     //names.push(data);
+       //console.log(data);
+    //}
+    //console.log(Response.data.response.body.items[1])
+    )
     //setNames({name:Response.data.response.body.items.item[1].areaNm, daywkDivNm:Response.data.response.body.items.item[1].daywkDivNm})})
   .catch((Error)=>{console.log(Error)});
-  
-  axios.get(`https://dapi.kakao.com/v2/local/search/address.json?query=서울시 서초구`, {
-    headers: { Authorization: 'KakaoAK 37f2c03eb13accd2781060098af002b8' },
-})
-    .then(res => {
-      const location = res.data.documents[0];
-  //alert(location.address.x)
-        setLocationObj({
-         
 
-            locationfinal:"https://map.kakao.com/link/to/크리스피드"+","+location.address.y+","+location.address.x
-        })
-    })
-  return (
-  
-    <>
+
+  const namelist = names.map((name,index)=> {
+    const searchurl="https://search.daum.net/search??w=tot&&q="+ name.trrsrtNm 
+    const mapurl="https://map.kakao.com/link/to/,"+name.trrsrtNm+"," +name.latitude+","+name.longitude
+    return (
+
+      
       <div className="section section-nucleo-icons">
       <Container>
-          <Row>
+          <Row key={index}>
             <Col lg="6" md="12">
-              <h2 className="title">여행지이름</h2>
+              <h2 className="title">{name.trrsrtNm}</h2>
               <h5 className="description">
-                설명
+                {name.trrsrtIntrcn}
               </h5>
               <Button
                 className="btn-round mr-1"
                 color="info"
                 size="lg"
-                href="https://search.daum.net/search??w=tot&&q=크리스피드"
+                href = {searchurl}
                 target="_blank"
               > 자세히
               </Button>
               <Button
                 className="btn-round"
                 color="info"
-                href= {addresss.locationfinal}
+                href={mapurl}
                 outline
                 size="lg"
                 target="_blank"
@@ -60,7 +67,26 @@ function Suggest() {
           </Row>
         </Container>
       </div>
-    </>
+    
+    
+     
+   
+
+    )
+  }
+  
+  
+);
+
+  return (
+
+    <>
+    <div>
+  {namelist}
+    </div>
+  </>
+  
+   
     
   );
 }
