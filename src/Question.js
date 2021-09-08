@@ -3,15 +3,14 @@ import react,{Component} from "react";
 const Question = [
   {
     "num":"0",
-    "question":"여행성향 테스트를 시작합니다"
-    
-  },
-  {
+    "question":"여행성향테스트를 시작합니다."
+  
+  },{
     "num":"1",
-    "question":"드디어 여행이 시작 되었다! 눈앞에 불꽃놀이가 펼쳐졌다.\n 당신은 어떤 생각을 하는가?",
-    "answer1":"예쁘다고 생각함",
+    "question":"드디어 여행이 시작 되었다! 눈앞에 불꽃놀이가 펼쳐졌다. 당신은 어떤 생각을 하는가?",
+    "answer1":"우와 이쁘다",
     "answer1_mbti":"f",
-    "answer2":"아무생각이 없음",
+    "answer2":"사람 개 많겠다",
     "answer2_mbti":"t"
   },
   {
@@ -24,25 +23,25 @@ const Question = [
   },
   {
     "num":"3",
-    "question":"당신은 여행을 떠날 때 어떤 것을 선호하는가?",
-    "answer1":"계획적인 것",
+    "question":"여행지핫플이 하필 오늘 휴무날이었다.이럴때 당신은?",
+    "answer1":"너무 짜증이 남. 다음일정에 지장이생길수도",
     "answer1_mbti":"j",
-    "answer2":"즉흥적인 것",
+    "answer2":"근처 아무데나가서 행복한시간을보냄",
     "answer2_mbti":"p"
   },{
     "num":"4",
-    "question":"당신은 여행을 다닐 때 어떤 것을 애용하는가?",
-    "answer1":"대중교통을 애용함",
+    "question":"당신은 여행장소로 이동할 때 어떤 것을 중요하게 여기는가?",
+    "answer1":"저렴하게",
     "answer1_mbti":"대중교통",
-    "answer2":"택시를 애용함",    
+    "answer2":"편하게",    
     "answer2_mbti":"택시"
  
   },{
     "num":"5",
-    "question":"당신은 친구들과 밥을 먹으러 갈때 어떤 행동을 하는가?",
-    "answer1":"유명한 맛집을 찾아감",
+    "question":"친구들과 밥을 먹으러 갔을 때 사람이 기다리는 사람이 많으면 어떻게 하는가??",
+    "answer1":"이왕 알아보고 왔는데 기다림",
     "answer1_mbti":"J",
-    "answer2":"눈에 보이는 음식점을 감",
+    "answer2":"귀찮으니 눈에 보이는곳에 들어감",
     "answer2_mbti":"P"
   },
   {
@@ -64,10 +63,10 @@ const Question = [
   },
   {
     "num":"8",
-    "question":"당신은 길에서 데스노트를 주웠을 때 \n 어떤 행동을 하는가? ",
-    "answer1":"읽고 사용함",
+    "question":"당신은 길에서 데스노트를 주웠을 때 어떤 행동을 하는가? ",
+    "answer1":"누가 훔쳐갈까봐 집부터감",
     "answer1_mbti":"n",
-    "answer2":"읽고 지나감",
+    "answer2":"그냥 읽고 지나감",
     "answer2_mbti":"s"
   },
   {
@@ -89,25 +88,25 @@ const Question = [
   },
   {
     "num":"11",
-    "question":"평소에 당신의 옷차림은 어떠한가?",
-    "answer1":"깔끔함",
+    "question":"로또에 당첨되는 상상을 어떻게 하는가?",
+    "answer1":"오 완전좋을듯!",
     "answer1_mbti":"s",
-    "answer2":"개성있음",
+    "answer2":"일단 건물사고 세계일주하고오면 집값올라있겠지?또....",
     "answer2_mbti":"n"
   },  {
     "num":"12",
-    "question":"당신은 행동과 생각중 어떤 것을 먼저 하는가?",
-    "answer1":"행동하고 생각함",
+    "question":"집에 도착 했을 때 아무도 없었다. 당신의 기분은?",
+    "answer1":"외롭다",
     "answer1_mbti":"e",
-    "answer2":"생각하고 행동함",
+    "answer2":"편안하다",
     "answer2_mbti":"i"
   },
   {
     "num":"13",
-    "question":"당신의 방은 어떤 상태인가?",
-    "answer1":"정돈되어 있는 상태",
+    "question":"당신은 일을 처리할 때 어떤 식으로 처리하는가?",
+    "answer1":"빠르고 순차적으로 처리함",
     "answer1_mbti":"j",
-    "answer2":"어지러운 상태",
+    "answer2":"가능성을 열어두며 여지를 남겨둠",
     "answer_mbti":"p"
   },
   {
@@ -124,5 +123,3 @@ const Question = [
 ];
  
 export default Question;
-
-

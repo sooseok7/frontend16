@@ -105,12 +105,14 @@
         padding-top: $padding-base-vertical;
         padding-bottom: $padding-base-vertical;
         line-height: $line-height-nav-link;
+        margin-left: 3px;
     }
 
     .navbar-toggler{
         width: 37px;
         height: 27px;
         outline: 0;
+        margin-right: 3px;
         cursor: pointer;
 
         &.navbar-toggler-left{
