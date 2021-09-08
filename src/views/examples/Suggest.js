@@ -12,7 +12,7 @@ function Suggest() {
     locationfinal:""
   });
   const [max,setMax] =useState(0);
- axios.get('http://localhost:8080/api//getinformation'
+ axios.get('http://localhost:8080/api/getinformation'
  )
  
     .then((Response)=>
