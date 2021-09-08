@@ -8,7 +8,7 @@ import styled, { css } from 'styled-components/macro'
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import TestPageHeader from "components/Headers/TestPageHeader.js";
+import TestResultHeader from "components/Headers/TestResultHeader";
 import DarkFooter from "components/Footers/DarkFooter";
 import { options } from "preact";
 
@@ -133,7 +133,7 @@ function TestPage() {
       <ExamplesNavbar />
 
       <div className="wrapper">
-        <TestPageHeader />
+        <TestResultHeader />
        
          <div style={{backgroundColor:"black"}} className="section section-team text-center">
    
