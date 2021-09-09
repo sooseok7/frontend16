@@ -20,17 +20,17 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import TransparentFooter from "components/Footers/TransparentFooter.js";
 
-function JoinPage() {
+function LoginPage() {
   const [firstFocus, setFirstFocus] = React.useState(false);
   const [lastFocus, setLastFocus] = React.useState(false);
   React.useEffect(() => {
-    document.body.classList.add("join-page");
+    document.body.classList.add("login-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("join-page");
+      document.body.classList.remove("login-page");
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
@@ -98,25 +98,7 @@ function JoinPage() {
                     <InputGroup
                       className={
                         "no-border input-lg" +
-                        (firstFocus ? " input-group-focus" : "")
-                      }
-                    >
-                      <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
-                          <i className="now-ui-icons users_circle-08"></i>
-                        </InputGroupText>
-                      </InputGroupAddon>
-                      <Input
-                        placeholder="Last Name..."
-                        type="text"
-                        onFocus={() => setFirstFocus(true)}
-                        onBlur={() => setFirstFocus(false)}
-                      ></Input>
-                    </InputGroup>
-                    <InputGroup
-                      className={
-                        "no-border input-lg" +
-                        (firstFocus ? " input-group-focus" : "")
+                        (lastFocus ? " input-group-focus" : "")
                       }
                     >
                       <InputGroupAddon addonType="prepend">
@@ -125,13 +107,31 @@ function JoinPage() {
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="First Name..."
+                        placeholder="Last Name..."
                         type="text"
-                        onFocus={() => setFirstFocus(true)}
-                        onBlur={() => setFirstFocus(false)}
+                        onFocus={() => setLastFocus(true)}
+                        onBlur={() => setLastFocus(false)}
                       ></Input>
                     </InputGroup>
-                  </CardBody>
+                    <InputGroup
+                      className={
+                        "no-border input-lg" +
+                        (lastFocus ? " input-group-focus" : "")
+                      }
+                    >
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="now-ui-icons text_caps-small"></i>
+                        </InputGroupText>
+                      </InputGroupAddon>
+                      <Input
+                        placeholder="Last Name..."
+                        type="text"
+                        onFocus={() => setLastFocus(true)}
+                        onBlur={() => setLastFocus(false)}
+                      ></Input>
+                    </InputGroup>
+                  
                   <CardFooter className="text-center">
                     <Button
                       block
@@ -143,7 +143,9 @@ function JoinPage() {
                     >
                       Get Started
                     </Button>
+                    
                   </CardFooter>
+                  </CardBody>
                 </Form>
               </Card>
             </Col>
@@ -155,4 +157,4 @@ function JoinPage() {
   );
 }
 
-export default JoinPage;
+export default LoginPage;
