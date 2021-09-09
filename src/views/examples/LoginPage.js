@@ -112,7 +112,6 @@ function LoginPage() {
                         <a
                           className="link"
                           href="join-page"
-
                         >
                           Create Account
                         </a>
