@@ -35,6 +35,7 @@ import TestPage from "views/examples/TestPage.js";
 import ResultPage from "views/examples/ResultPage";
 import Calendars from "views/examples/Calendars";
 import TestResultPage from "views/examples/TestResultPage.js";
+import SuggestDetail from "views/examples/SuggestDetail.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -75,6 +76,10 @@ ReactDOM.render(
         <Route
         path="/testResult"
         render={(props) => <TestResultPage {...props} />}
+        />
+         <Route
+        path="/suggestdetail"
+        render={(props) => <SuggestDetail {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />

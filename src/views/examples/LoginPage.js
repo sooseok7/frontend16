@@ -111,8 +111,8 @@ function LoginPage() {
                       <h6>
                         <a
                           className="link"
-                          href="join-page"
-                          onClick={(e) => e.preventDefault()}
+                          href="/join-page"
+                          
                         >
                           Create Account
                         </a>
