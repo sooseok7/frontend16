@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from 'axios';
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
 
 // core components
 
@@ -16,8 +17,8 @@ function Suggest() {
  )
  
     .then((Response)=>
-  // console.log(Response.data.response.body.items)
-   setNames(Response.data.response.body.items)
+ console.log(Response.data.response.body.items)
+   //setNames(Response.data.response.body.items)
     //for(max = 0; max < Response.data.response.body.items.length; max++) {
       // console.log(index, JSON.stringify(Response.data.response.body.items[index]));
       //let read = JSON.stringify(Response.data.response.body.items[index]);
@@ -42,9 +43,9 @@ function Suggest() {
           <Row key={index}>
             <Col lg="6" md="12">
               <h2 className="title">{name.trrsrtNm}</h2>
-              <h5 className="description">
+              <Link to="/suggestdetail"><h5 className="description">
                 {name.trrsrtIntrcn}
-              </h5>
+              </h5></Link>
               <Button
                 className="btn-round mr-1"
                 color="info"
