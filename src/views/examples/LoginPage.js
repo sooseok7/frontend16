@@ -95,7 +95,7 @@ function LoginPage() {
                         onBlur={() => setLastFocus(false)}
                       ></Input>
                     </InputGroup>
-                  </CardBody>
+                  
                   <CardFooter className="text-center">
                     <Button
                       block
@@ -111,8 +111,8 @@ function LoginPage() {
                       <h6>
                         <a
                           className="link"
-                          href="/join-page"
-                          
+                          href="join-page"
+
                         >
                           Create Account
                         </a>
@@ -123,13 +123,13 @@ function LoginPage() {
                         <a
                           className="link"
                           href="findname"
-                          onClick={(e) => e.preventDefault()}
                         >
                           Need Help?
                         </a>
                       </h6>
                     </div>
                   </CardFooter>
+                  </CardBody>
                 </Form>
               </Card>
             </Col>
