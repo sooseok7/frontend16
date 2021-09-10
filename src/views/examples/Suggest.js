@@ -17,8 +17,8 @@ function Suggest() {
  )
  
     .then((Response)=>
- console.log(Response.data.response.body.items)
-   //setNames(Response.data.response.body.items)
+ //console.log(Response.data.response.body.items)
+   setNames(Response.data.response.body.items)
     //for(max = 0; max < Response.data.response.body.items.length; max++) {
       // console.log(index, JSON.stringify(Response.data.response.body.items[index]));
       //let read = JSON.stringify(Response.data.response.body.items[index]);
@@ -35,6 +35,7 @@ function Suggest() {
   const namelist = names.map((name,index)=> {
     const searchurl="https://search.daum.net/search??w=tot&&q="+ name.trrsrtNm 
     const mapurl="https://map.kakao.com/link/to/,"+name.trrsrtNm+"," +name.latitude+","+name.longitude
+    const link = "/suggestdetail/"+ name.trrsrtNm 
     return (
 
       
@@ -43,7 +44,7 @@ function Suggest() {
           <Row key={index}>
             <Col lg="6" md="12">
               <h2 className="title">{name.trrsrtNm}</h2>
-              <Link to="/suggestdetail"><h5 className="description">
+              <Link to={link} ><h5 className="description">
                 {name.trrsrtIntrcn}
               </h5></Link>
               <Button

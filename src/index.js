@@ -79,7 +79,7 @@ ReactDOM.render(
         render={(props) => <TestResultPage {...props} />}
         />
          <Route
-        path="/suggestdetail"
+        path="/suggestdetail/:word"
         render={(props) => <SuggestDetail {...props} />}
         />
          <Route
