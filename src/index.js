@@ -36,6 +36,7 @@ import ResultPage from "views/examples/ResultPage";
 import Calendars from "views/examples/Calendars";
 import TestResultPage from "views/examples/TestResultPage.js";
 import SuggestDetail from "views/examples/SuggestDetail.js";
+import Custom from "views/examples/Custom.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
@@ -80,6 +81,10 @@ ReactDOM.render(
          <Route
         path="/suggestdetail/:word"
         render={(props) => <SuggestDetail {...props} />}
+        />
+         <Route
+        path="/custom"
+        render={(props) => <Custom {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />

@@ -50,7 +50,7 @@ const btnCSS = css`
 const Options = styled.div`
     display: flex;
     flex-direction: column;
-    width: 70%;
+    width: 90%;
     margin: 2em auto;
 
     @media screen and (min-width: 1180px) {
@@ -82,7 +82,7 @@ const Option = styled.button`
 `;
 
 const Question2 = styled.div`
-    width: 70%;
+    width: 90%;
     margin: 0 auto;
 `;
 
