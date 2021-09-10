@@ -7,23 +7,29 @@ import { Button, Container, Row, Col } from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import SearchPageHeader from "components/Headers/SearchPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
+import { useParams } from "react-router-dom";
 
-function SuggestDetail() {
+function SuggestDetail(props) {
   const [names,setNames]=useState([]);
   const [lengthss,setLengths]=useState();
   const [loading,setLoading]=useState();
+  const {word}=useParams();  
+
   React.useEffect(() => {
     let isSubscribed = true;
     axios
       .get(
-        'http://localhost:8080/api/getPhoto'
+        'http://localhost:8080/api/getPhoto?word='+word
       )
       .then(Response => {
-console.log(Response.data);
+
+     
           if (Response.status === 200) {
+            
             setNames(Response.data.response.body.items.item);
             setLengths(Response.data.response.body.items.length);
-           ;
+            console.log(Response.data.response.body.items.length);
+            console.log(Response.data.response.body.items.item);
            // check if this component still mounted
            if (isSubscribed) {
              setLoading(false);
@@ -37,6 +43,7 @@ console.log(Response.data);
       window.scrollTo(0, 0);
       document.body.scrollTop = 0;
       return function cleanup() {
+        
         document.body.classList.remove("search-page");
         document.body.classList.remove("sidebar-collapse");
         isSubscribed = false
@@ -45,71 +52,95 @@ console.log(Response.data);
 
 }, []);
     
- 
-    
-     
+function Namelist (){
+  if(lengthss != '1' && lengthss != '0' && lengthss != undefined){
+  names.map((name,index)=> {
+    return (
 
- const namelist = ()=>{
-    if(lengthss != '1'){
-    names.map((name,index)=> {
-      return (
-
-      
-        <div className="section section-nucleo-icons">
-        <Container>
-            <Row key={index}>
-              <Col lg="6" md="12">
-                <h2 className="title">{name.galTitle}</h2>
-               <h5 className="description">
-                 <img src= {name.galWebImageUrl}></img>
-                </h5>
-         
-              </Col>
-            </Row>
-          </Container>
-        </div>
     
-    
-     
+      <div className="section section-nucleo-icons">
+      <Container>
+          <Row key={index}>
+            <Col lg="6" md="12">
+              <h2 className="title">{name.galTitle}</h2>
+             <h5 className="description">
+               <img src= {name.galWebImageUrl}></img>
+              </h5>
+       
+            </Col>
+          </Row>
+        </Container>
+      </div>
+  
+  
    
-
-      )
-    }
  
+
     )
- 
- }else{
+  }
 
- 
+  )
 
-     return (
+}else if(lengthss == '1'|| lengthss == undefined ){
 
-     
-       <div className="section section-nucleo-icons">
-       <Container>
-           <Row >
-             <Col lg="6" md="12">
-               <h2 className="title">{names.galTitle}</h2>
-              <h5 className="description">
-                <img src= {names.galWebImageUrl}></img>
-               </h5>
-        
-             </Col>
-           </Row>
-         </Container>
-       </div>
+
+
+   return (
+
    
-   
-    
+     <div className="section section-nucleo-icons">
+     <Container>
+         <Row >
+           <Col lg="6" md="12">
+             <h2 className="title">{names.galTitle}</h2>
+            <h5 className="description">
+              <img src= {names.galWebImageUrl}></img>
+             </h5>
+      
+           </Col>
+         </Row>
+       </Container>
+     </div>
+ 
+ 
   
 
-     )
-  
+
+   )
+   
 
 
 
- }
- }
+}else if( lengthss == '0' ){
+  return(
+    <Container>
+    <Row >
+      <Col lg="6" md="12">
+        <h2 className="title">사진이 없어용</h2>
+       <h5 className="description">
+     사진이 없어용
+        </h5>
+ 
+      </Col>
+    </Row>
+  </Container>
+  )
+}else{
+  return(
+    <Container>
+    <Row >
+      <Col lg="6" md="12">
+        <h2 className="title">사진이 없어용</h2>
+       <h5 className="description">
+     사진이 없어용
+        </h5>
+ 
+      </Col>
+    </Row>
+  </Container>
+  )
+}
+}
 
 
   return (
@@ -118,7 +149,11 @@ console.log(Response.data);
       <div className="wrapper">
         <SearchPageHeader />
         <div className="main">
-        {namelist}
+        <div className="section section-nucleo-icons">
+      <Namelist/>
+      
+        </div>
+   
         </div>
         <DefaultFooter />
       </div>
