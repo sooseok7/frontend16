@@ -1,7 +1,9 @@
 import React from "react";
-import  { Calendar, momentLocalizer  } from 'react-big-calendar';
+import  { Calendar, momentLocalizer  } from 'react-big-calendar'; //여기에서 이미 calendar를 ㅓimport 할 수 있게 해놓음 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import moment from "moment";
+import moment from "moment"; // 밑에 언어랑 시간대 가져옴
+import Holiday from '../../Holiday';
+
 
 // reactstrap components
 // import {
@@ -17,48 +19,34 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 // import Carousel from "./index-sections/Carousel.js";
 
 function Calendars() {
-  const localizer = momentLocalizer(moment)
+  const localizer = momentLocalizer(moment) // 위에 import
 
 
 
   React.useEffect(() => {
-    document.body.classList.add("search-page");
+    document.body.classList.add("calendars");
   document.body.classList.add("sidebar-collapse");
   document.documentElement.classList.remove("nav-open");
   window.scrollTo(0, 0);
   document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("result-page");
+      document.body.classList.remove("calendars");
       document.body.classList.remove("sidebar-collapse");
     };
   });
-const myEventsList = 
-  [
-    {
-      title:"출근",
-      allDat:false,
-      start: new Date(2021,9,9,10,0),
-      end: new Date(2021,9,9,10,30)
-    },
-    {
-      title:"퇴근",
-      allDat:false,
-      start: new Date(2021,12,9,10,0),
-      end: new Date(2021,12,9,10,30)
-    }
-  ];
+const myEventsList=Holiday; // json으로 작성한거 임시로 넣어서 밑에 있는 이벤트로 들어감
 
    
  
-const Calendarfinal = () =>{
+const Calendarfinal = () =>{ //위에 import로 이미 캘린더는 생성이 되었고 const가 변수선언이랑 비슷한건데 이걸 .. 컴포넌트? 로 해서 밑에 넣음
   return(
   <div>
       <Calendar
-      localizer={localizer}
-      events={myEventsList}
-      startAccessor="start"
+      localizer={localizer} //언어와 시간대
+      events={myEventsList} //출퇴근 위에꺼 입력됨
+      startAccessor="start" 
       endAccessor="end"
-      style={{ height: 750 ,margin: 10 }}
+      style={{ height: 690 ,margin: 30 }}
     />
     
 
@@ -73,7 +61,7 @@ const Calendarfinal = () =>{
     <div>
     <ExamplesNavbar />
         <DatePageHeader />
-        <Calendarfinal />
+        <Calendarfinal /> {/* 여기에 걍 넣어준거 */}
         <DarkFooter />
       </div>
     </>
