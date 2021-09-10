@@ -1,42 +1,72 @@
 import React from "react";
-// reactstrap components
 
+// reactstrap components
+import {Container, Button, Input } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function Custom() {
- 
+  let pageHeader = React.createRef();
+
   React.useEffect(() => {
-    document.body.classList.add("custom");
-    document.body.classList.add("sidebar-collapse");
-    document.documentElement.classList.remove("nav-open");
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    return function cleanup() {
-      document.body.classList.remove("custom");
-      document.body.classList.remove("sidebar-collapse");
-    };
+    if (window.innerWidth > 991) {
+      const updateScroll = () => {
+        let windowScrollTop = window.pageYOffset / 3;
+        pageHeader.current.style.transform =
+          "translate3d(0," + windowScrollTop + "px,0)";
+      };
+      window.addEventListener("scroll", updateScroll);
+      return function cleanup() {
+        window.removeEventListener("scroll", updateScroll);
+      };
+    }
   });
   return (
     <>
-      <ExamplesNavbar />
-      <div className="wrapper">
-        <div className="main">
+      <div className="page-header">
+        <div
+          className="page-header-image"
+          style={{
+            backgroundImage:
+              "url(" + require("assets/img/bg5.jpg").default + ")",
+          }}
+          ref={pageHeader}
+        ></div>
+        <div className="content-center">
+          <Container>
+            <h1 className="title">당신의 일정을 입력해주세요</h1><br/>
+            <h4>제목<Input
+            placeholder="제목..."
+            type="text"
+            ></Input></h4>
+            <h4>시작날짜<Input
+            placeholder="시작날짜..."
+            type="date"
+            ></Input></h4>
+            <h4>종료날짜<Input
+            placeholder="종료날짜..."
+            type="date"
+            ></Input></h4>
+            <h4>장소<Input
+            placeholder="장소..."
+            type="text"
+            ></Input></h4>
+            <br/>
+            <Button
+            block
+            className="btn-round"
+            color="white"
+            href="#pablo"
+            onClick={(e) => e.preventDefault()}
+            size="lg"
+            >
+                등록
+                </Button>
+          </Container>
         </div>
-        <DefaultFooter />
       </div>
     </>
   );
 }
 
 export default Custom;
-
-//제목 및 시간추가 //겉으로는 이것만 뜨도록
-
-//시간
-
-//장소
-
-//
