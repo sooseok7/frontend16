@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import  { Calendar, momentLocalizer  } from 'react-big-calendar'; //여기에서 이미 calendar를 ㅓimport 할 수 있게 해놓음 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from "moment"; // 밑에 언어랑 시간대 가져옴
-import Holiday from '../../Holiday';
+import Anyday from '../../Anyday';
+import axios from 'axios';
+
 
 
 // reactstrap components
@@ -19,7 +21,21 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 // import Carousel from "./index-sections/Carousel.js";
 
 function Calendars() {
+  const [names,setNames]=useState([]);
+  
+  const [addresss,setLocationObj] =useState({
+    locationfinal:""
+  });
+  const [max,setMax] =useState(0);
+ axios.get('http://localhost:8080/api/getHoliDeInfo'
+ )
+
+ .then((Response)=>
+ console.log(Response.data))
+ .catch((Error)=>{console.log(Error)});
+
   const localizer = momentLocalizer(moment) // 위에 import
+
 
 
 
@@ -34,7 +50,7 @@ function Calendars() {
       document.body.classList.remove("sidebar-collapse");
     };
   });
-const myEventsList=Holiday; // json으로 작성한거 임시로 넣어서 밑에 있는 이벤트로 들어감
+const myEventsList=Anyday; // json으로 작성한거 임시로 넣어서 밑에 있는 이벤트로 들어감
 
    
  
