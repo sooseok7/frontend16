@@ -1,12 +1,36 @@
-import React from "react";
-
+import React ,{useState}from "react";
+import axios from "axios";
 // reactstrap components
 import {Container, Button, Input } from "reactstrap";
 
 // core components
 
 function Custom() {
+   const [Schedules, setSchedule] = useState({
+     id:"",
+     startdate:"",
+     enddate:"",
+     title:"",
+     alldat:"false"
+    }
+   );
   let pageHeader = React.createRef();
+
+
+
+ 
+  const f3 = async () => {
+    console.log(Schedules);
+    axios.post('http://localhost:8080/api/saveschedule', Schedules)
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+  }
+
+
 
   React.useEffect(() => {
     if (window.innerWidth > 991) {
@@ -35,37 +59,49 @@ function Custom() {
         <div className="content-center">
           <Container>
             <h1 className="title">당신의 일정을 입력해주세요</h1><br/>
-            <h3>제목<Input
+            <h2>제목<Input
             placeholder="제목..."
             type="text"
-            ></Input></h3>
-            <h3>시작날짜<Input
+            name="title"
+
+            onChange={({ target: { value } }) => setSchedule({
+              title:value,
+               id:Schedules.id,
+            startdate:Schedules.startdate,
+            enddate:Schedules.enddate,
+            alldat:Schedules.alldat})}
+
+
+            ></Input></h2>
+            <h2>시작날짜<Input
             placeholder="시작날짜..."
-            type="date"
-            ></Input></h3>
-            <h3>시작시간<Input
-            placeholder="시작날짜..."
-            type="date"
-            ></Input></h3>
-            <h3>종료날짜<Input
+            type="datetime-local"
+            name="startdate"
+            onChange={({ target: { value } }) => setSchedule({
+              title:Schedules.title,
+               id:Schedules.id,
+            startdate:value,
+            enddate:Schedules.enddate,
+            alldat:Schedules.alldat})}
+            ></Input></h2>
+            <h2>종료날짜<Input
             placeholder="종료날짜..."
-            type="date"
-            ></Input></h3>
-            <h3>종료시간<Input
-            placeholder="종료날짜..."
-            type="time"
-            ></Input></h3>
-            <h3>장소<Input
-            placeholder="장소..."
-            type="text"
-            ></Input></h3>
+            type="datetime-local"
+            name="enddate"
+            onChange={({ target: { value } }) => setSchedule({
+              title:Schedules.title,
+               id:Schedules.id,
+            startdate:Schedules.startdate,
+            enddate:value,
+            alldat:Schedules.alldat})}
+            ></Input></h2>
             <br/>
             <Button
             block
             className="btn-round"
             color="white"
-            href="#pablo"
-            onClick={(e) => e.preventDefault()}
+            // href=""
+            onClick={f3}
             size="lg"
             >
                 등록
