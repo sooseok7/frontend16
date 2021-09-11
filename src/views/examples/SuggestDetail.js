@@ -83,7 +83,7 @@ function Namelist (){
 
 }else if(lengthss == '1'|| lengthss == undefined ){
 
-
+if( names != undefined){
 
    return (
 
@@ -107,7 +107,21 @@ function Namelist (){
 
 
    )
-   
+}else {
+  return(
+    <Container>
+    <Row >
+      <Col lg="6" md="12">
+        <h2 className="title">사진이 없어용</h2>
+       <h5 className="description">
+     사진이 없어용
+        </h5>
+ 
+      </Col>
+    </Row>
+  </Container>
+  )
+}
 
 
 

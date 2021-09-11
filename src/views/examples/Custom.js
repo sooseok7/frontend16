@@ -35,22 +35,30 @@ function Custom() {
         <div className="content-center">
           <Container>
             <h1 className="title">당신의 일정을 입력해주세요</h1><br/>
-            <h4>제목<Input
+            <h3>제목<Input
             placeholder="제목..."
             type="text"
-            ></Input></h4>
-            <h4>시작날짜<Input
+            ></Input></h3>
+            <h3>시작날짜<Input
             placeholder="시작날짜..."
             type="date"
-            ></Input></h4>
-            <h4>종료날짜<Input
+            ></Input></h3>
+            <h3>시작시간<Input
+            placeholder="시작날짜..."
+            type="date"
+            ></Input></h3>
+            <h3>종료날짜<Input
             placeholder="종료날짜..."
             type="date"
-            ></Input></h4>
-            <h4>장소<Input
+            ></Input></h3>
+            <h3>종료시간<Input
+            placeholder="종료날짜..."
+            type="time"
+            ></Input></h3>
+            <h3>장소<Input
             placeholder="장소..."
             type="text"
-            ></Input></h4>
+            ></Input></h3>
             <br/>
             <Button
             block

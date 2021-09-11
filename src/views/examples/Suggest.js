@@ -14,9 +14,7 @@ function Suggest() {
   });
   const [max,setMax] =useState(0);
  axios.get('http://localhost:8080/api/getinformation'
- )
- 
-    .then((Response)=>
+ ) .then((Response)=>
  //console.log(Response.data.response.body.items)
    setNames(Response.data.response.body.items)
     //for(max = 0; max < Response.data.response.body.items.length; max++) {
@@ -32,6 +30,8 @@ function Suggest() {
   .catch((Error)=>{console.log(Error)});
 
 
+
+
   const namelist = names.map((name,index)=> {
     const searchurl="https://search.daum.net/search??w=tot&&q="+ name.trrsrtNm 
     const mapurl="https://map.kakao.com/link/to/,"+name.trrsrtNm+"," +name.latitude+","+name.longitude
@@ -43,10 +43,10 @@ function Suggest() {
       <Container>
           <Row key={index}>
             <Col lg="6" md="12">
-              <h2 className="title">{name.trrsrtNm}</h2>
-              <Link to={link} ><h5 className="description">
+              <h2 className="title">{name.trrsrtNm}</h2>   <Link to={link} > +사진</Link>
+             <h5 className="description">
                 {name.trrsrtIntrcn}
-              </h5></Link>
+              </h5>
               <Button
                 className="btn-round mr-1"
                 color="info"
@@ -65,6 +65,7 @@ function Suggest() {
               >
                 길찾기
               </Button>
+            
             </Col>
           </Row>
         </Container>
