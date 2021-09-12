@@ -9,12 +9,13 @@ import { Link } from "react-router-dom";
 function Suggest() {
   const [names,setNames]=useState([]);
   
-  const [addresss,setLocationObj] =useState({
-    locationfinal:""
-  });
-  const [max,setMax] =useState(0);
+  //const [addresss,setLocationObj] =useState({
+  //  locationfinal:""
+  //});
+  //const [max,setMax] =useState(0);
  axios.get('http://localhost:8080/api/getinformation'
- ) .then((Response)=>
+ )
+ .then((Response)=>
  //console.log(Response.data.response.body.items)
    setNames(Response.data.response.body.items)
     //for(max = 0; max < Response.data.response.body.items.length; max++) {

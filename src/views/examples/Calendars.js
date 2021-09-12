@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import  { Calendar, momentLocalizer  } from 'react-big-calendar'; //여기에서 이미 calendar를 ㅓimport 할 수 있게 해놓음 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from "moment"; // 밑에 언어랑 시간대 가져옴
-import Anyday from '../../Anyday';
+//import Anyday from '../../Anyday';
 import axios from 'axios';
 
 
@@ -23,15 +23,16 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 function Calendars() {
   const [names,setNames]=useState([]);
   const localizer = momentLocalizer(moment); // 위에 import
-  const [addresss,setLocationObj] =useState({
+  /*const [addresss,setLocationObj] =useState({
     locationfinal:""
   });
   const [max,setMax] =useState(0);
   const [loading,setLoading]=useState();
 
+  */
   React.useEffect(() => {
     let isSubscribed = true;
-    axios.get('http://localhost:8080/api/getHoliDeInfo?yearss='+moment(). year())
+    axios.get('http://localhost:8080/api/getHoliDeInfo?yearss='+moment().year())
       .then(Response => {
 
      
@@ -41,7 +42,7 @@ function Calendars() {
             console.log(Response.data.response.body.items.item);
            // check if this component still mounted
            if (isSubscribed) {
-             setLoading(false);
+             //setLoading(false);
            }
          }
       });
@@ -84,6 +85,7 @@ const Calendarfinal = () =>{
   return(
   <div>
       <Calendar
+      onSelectEvent={event => window.open("./custom")}
       localizer={localizer} //언어와 시간대
       events={events} //출퇴근 위에꺼 입력됨
       startAccessor="start" 

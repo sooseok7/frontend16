@@ -1,12 +1,12 @@
 import React,{useState} from "react";
 import Question from '../../Question';
 
-import styled, { css } from 'styled-components/macro'
-import {
-  NavItem,
-  NavLink
+import styled from 'styled-components/macro'
+// import {
+//   NavItem,
+//   NavLink
  
-} from "reactstrap";
+// } from "reactstrap";
 // reactstrap components
 
 
@@ -14,8 +14,8 @@ import {
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import TestPageHeader from "components/Headers/TestPageHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
-import { options } from "preact";
-import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
+//import { options } from "preact";
+//import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 
 const QuizWindow = styled.div`
     text-align: center;
@@ -44,9 +44,10 @@ const Intro = styled.div`
   text-align: center;
 `;
 
-const btnCSS = css`
+/*const btnCSS = css`
     margin-top: 2em;
 `;
+*/
 const Options = styled.div`
     display: flex;
     flex-direction: column;
