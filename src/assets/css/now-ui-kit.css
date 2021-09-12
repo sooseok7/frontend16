@@ -1767,6 +1767,16 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
   .btn-round[class*="btn-outline-"] {
     padding: 10px 22px; }
 
+.btn-calendar {
+  border-width: 1px;
+  border-radius: 10px !important;
+  padding: 11px 23px;
+  position: relative;
+  margin-left:89%;
+  margin-top: -30%;
+}
+
+
 [class*="btn-outline-"] {
   border: 1px solid;
   padding: 10px 22px;
