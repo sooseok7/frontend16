@@ -4,7 +4,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from "moment"; // 밑에 언어랑 시간대 가져옴
 //import Anyday from '../../Anyday';
 import axios from 'axios';
-
+import CalendarButton from './CalendarButton';
 
 
 // reactstrap components
@@ -106,6 +106,7 @@ const Calendarfinal = () =>{
     <ExamplesNavbar />
         <DatePageHeader />
         <Calendarfinal /> {/* 여기에 걍 넣어준거 */}
+        <CalendarButton/>
         <DarkFooter />
       </div>
     </>
