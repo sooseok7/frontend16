@@ -1,5 +1,3 @@
-import react,{Component} from "react";
-
 const QuestionResult = [
   {
     "mbti":"ISTJ",

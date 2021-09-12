@@ -1,7 +1,7 @@
-import React,{useState} from "react";
+import React from "react";
 
 import QuestionResult from '../../QuestionResult';
-import styled, { css } from 'styled-components/macro'
+import styled from 'styled-components/macro'
 
 // reactstrap components
 
@@ -10,51 +10,47 @@ import styled, { css } from 'styled-components/macro'
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import TestResultHeader from "components/Headers/TestResultHeader";
 import DarkFooter from "components/Footers/DarkFooter";
-import { options } from "preact";
+//import { options } from "preact";
 
 
-const QuizWindow = styled.div`
-    text-align: center;
-    font-size: clamp(20px, 2.5vw, 24px);
-    margin-top: 10vh;
-`;
-const Button2 = styled.div`
-border: 1px solid #616A94;
-border-radius: 50px;
-padding: 15px 30px;
-text-decoration: none;
-color: #616A94;
-background-color: #161A31;
-transition: 0.3s;
-font-size: 1em;
-cursor: pointer;
-outline: none;
+//const QuizWindow = styled.div`
+//    text-align: center;
+//    font-size: clamp(20px, 2.5vw, 24px);
+//    margin-top: 10vh;`;
+//const Button2 = styled.div`
+//border: 1px solid #616A94;
+//border-radius: 50px;
+//padding: 15px 30px;
+//text-decoration: none;
+//color: #616A94;
+//background-color: #161A31;
+//transition: 0.3s;
+//font-size: 1em;
+//cursor: pointer;
+//outline: none;
 
-&:hover {
-    color: white;
-    background-color: #616A94;
-}
-`;
+//&:hover {
+///    color: white;
+//    background-color: #616A94;
+//}`;
 const Intro = styled.div`
   margin-top: 8em;
   text-align: center;
 `;
 
-const btnCSS = css`
-    margin-top: 2em;
-`;
-const Options = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 70%;
-    margin: 2em auto;
+//const btnCSS = css`
+//    margin-top: 2em;`;
+//const Options = styled.div`
+//    display: flex;
+//    flex-direction: column;
+//    width: 70%;
+//    margin: 2em auto;
+//
+//    @media screen and (min-width: 1180px) {
+//        width: 50%;
+//    }`;
 
-    @media screen and (min-width: 1180px) {
-        width: 50%;
-    }
-`;
-
-const Option = styled.button`
+/* const Option = styled.button`
     display: block;
     border: 1px solid #616A94;
     border-radius: 15px;
@@ -81,9 +77,10 @@ const Question2 = styled.div`
     width: 70%;
     margin: 0 auto;
 `;
+*/
 
 function TestPage() {
-  const [count, setCount] = useState(0);
+  //const [count, setCount] = useState(0);
   React.useEffect(() => {
     document.body.classList.add("test-page");
     document.body.classList.add("sidebar-collapse");

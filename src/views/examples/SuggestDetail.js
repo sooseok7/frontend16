@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from 'axios';
 // reactstrap components
-import { Button, Container, Row, Col } from "reactstrap";
+import { Container, Row, Col } from "reactstrap";
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
@@ -12,7 +12,7 @@ import { useParams } from "react-router-dom";
 function SuggestDetail(props) {
   const [names,setNames]=useState([]);
   const [lengthss,setLengths]=useState();
-  const [loading,setLoading]=useState();
+  //const [loading,setLoading]=useState();
   const {word}=useParams();  
 
   React.useEffect(() => {
@@ -32,7 +32,7 @@ function SuggestDetail(props) {
             console.log(Response.data.response.body.items.item);
            // check if this component still mounted
            if (isSubscribed) {
-             setLoading(false);
+             //setLoading(false);
            }
          }
       });
