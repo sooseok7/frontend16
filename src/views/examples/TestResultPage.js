@@ -2,7 +2,7 @@ import React from "react";
 
 import QuestionResult from '../../QuestionResult';
 import styled from 'styled-components/macro'
-
+import Suggest from "./Suggest";
 // reactstrap components
 
 
@@ -82,13 +82,13 @@ const Question2 = styled.div`
 function TestPage() {
   //const [count, setCount] = useState(0);
   React.useEffect(() => {
-    document.body.classList.add("test-page");
+    document.body.classList.add("result-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("test-page");
+      document.body.classList.remove("result-page");
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
@@ -100,13 +100,34 @@ function TestPage() {
       return(
       
    
-   <Intro>
-            <h1 style={{color:"white"}}>{data2.mbti}</h1>
-            <h4 style={{color:"white"}}>{data2.nickname}</h4>
+<Intro>
+            <h1 style={{color:"white"}}>{data2.mbti.split("\n").map((line)=> { //this.props.data.content: 내용
+            return (
+              <span>
+                {line}
+                <br />
+              </span>
+            );
+          })}</h1>
+            <h4 style={{color:"white"}}>{data2.nickname.split("\n").map((line)=> { //this.props.data.content: 내용
+            return (
+              <span>
+                {line}
+                <br />
+              </span>
+            );
+          })}</h4>
             <br/>
             <br/>
           
-            <h4 style={{color:"white"}}>{data2.features}</h4>
+            <h4 style={{color:"white"}}>{data2.features.split("\n").map((line)=> { //this.props.data.content: 내용
+            return (
+              <span>
+                {line}
+                <br />
+              </span>
+            );
+          })}</h4>
             <br/>
             <br/>
             <br/>
@@ -144,7 +165,7 @@ function TestPage() {
     
 
         </div>
-        
+        <Suggest/>
         <DarkFooter />
       </div>
   

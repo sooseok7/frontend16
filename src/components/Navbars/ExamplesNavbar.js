@@ -83,7 +83,7 @@ function ExamplesNavbar() {
              <Nav navbar>
               <NavItem>
               <NavLink
-              href="http://localhost:3000/test-page"
+              href="test-page"
             >
              <p>여행성향테스트</p>
             </NavLink>
@@ -91,15 +91,15 @@ function ExamplesNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/search-page"
+              href="result-page"
             >
-             <p>여행지 추천</p>
+             <p>나의여행성향</p>
               </NavLink>
               </NavItem>
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/calendars"       
+              href="calendars"       
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>달력</p>
@@ -108,7 +108,7 @@ function ExamplesNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/board-page"     
+              href="board-page"     
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>게시판</p>
