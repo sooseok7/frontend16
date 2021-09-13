@@ -1,6 +1,6 @@
 import React from "react";
 // reactstrap components
-import { Button} from "reactstrap";
+import { Button, Container} from "reactstrap";
 
 // core components
 
@@ -8,13 +8,16 @@ function CalendarButton() {
     //const link = "/suggestdetail/"+ name.trrsrtNm 
     return (
 
+      
+      <Container>
               <Button
-                class="btn-calendar"
-                color="white"
+                className="btn-calendar"
+                color="info"
                 href="./custom"
                 target="_blank"
               >등록
               </Button>
+        </Container>
     )
   }
 

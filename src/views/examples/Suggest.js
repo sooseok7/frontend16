@@ -44,7 +44,7 @@ function Suggest() {
       <Container>
           <Row key={index}>
             <Col lg="6" md="12">
-              <h2 className="title">{name.trrsrtNm}</h2>   <Link to={link} > +사진</Link>
+              <h2 className="title">{name.trrsrtNm}</h2>   <div className="picture"><Link to={link} > +사진</Link></div>
              <h5 className="description">
                 {name.trrsrtIntrcn}
               </h5>

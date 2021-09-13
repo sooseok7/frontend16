@@ -67,7 +67,7 @@ ReactDOM.render(
           render={(props) => <TestPage {...props} />}
         />
         <Route
-          path="/result-page"
+          path="/result"
           render={(props) => <ResultPage {...props} />}
         />
         <Route
@@ -75,7 +75,7 @@ ReactDOM.render(
           render={(props) => <JoinPage {...props} />}
         />     
         <Route
-        path="/testResult"
+        path="/result-page"
         render={(props) => <TestResultPage {...props} />}
         />
          <Route

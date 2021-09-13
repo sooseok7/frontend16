@@ -110,6 +110,14 @@
     background-color: $transparent-bg;
 }
 
+.btn-calendar{
+    border-width: 1px;
+    border-radius: 10px !important;
+    padding: 11px 23px;
+    position: relative;
+    margin-left:89%;
+    margin-top: -30%;
+}
 [class*="btn-outline-"],
 .btn-link{
     &.disabled,

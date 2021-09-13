@@ -90,9 +90,9 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="search-page"
+              href="result-page"
             >
-             <p>여행지 추천</p>
+             <p>나의여행성향</p>
             </NavLink>
               </NavItem>
 
