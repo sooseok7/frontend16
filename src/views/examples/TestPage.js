@@ -155,28 +155,42 @@ const updatecount = (mbti)=>{
   return(
     <QuizWindow>
    
-          <Question2 style={{color:"white"}}><h1>{data.question.split("\n").map((line)=> { //this.props.data.content: 내용
-            return (
-              <span>
-                {line}
-                <br />
-              </span>
-            );
-          })}
+    <Question2 style={{color:"white"}}><h1>{data.question.split("\n").map((line)=> { //this.props.data.content: 내용
+      return (
+        <span>
+          {line}
+          <br />
+        </span>
+      );
+    })}
 
-          {/* {this.props.data.content} */} </h1></Question2><br/>
-          <Options>
-          <Option  onClick={() => updatecount(data.answer1_mbti)}>{data.answer1}</Option>
-          <Option onClick={() => updatecount(data.answer2_mbti)}>{data.answer2}</Option>
-          <br/>
-          </Options>
-    </QuizWindow>
+    {/* {this.props.data.content} */} </h1></Question2><br/>
+    <Options>
+    <Option  onClick={() => updatecount(data.answer1_mbti)}>{data.answer1.split("\n").map((line)=> { //this.props.data.content: 내용
+      return (
+        <span>
+          {line}
+          <br />
+        </span>
+      );
+    })}</Option>
+    <Option onClick={() => updatecount(data.answer2_mbti)}>{data.answer2.split("\n").map((line)=> { //this.props.data.content: 내용
+      return (
+        <span>
+          {line}
+          <br />
+        </span>
+      );
+    })}</Option>
+    <br/>
+    </Options>
+</QuizWindow>
     )
 
     
    
     
-  }else if(count.counts=='15'&&data.num=='0'){
+  }else if(count.counts=='16'&&data.num=='0'){
  
     return( 
       <Intro>
