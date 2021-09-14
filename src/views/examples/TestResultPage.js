@@ -3,6 +3,8 @@ import React from "react";
 import QuestionResult from '../../QuestionResult';
 import styled from 'styled-components/macro'
 import Suggest from "./Suggest";
+import Person from "./Person";
+import MbtiPicture from "./MbtiPicture";
 // reactstrap components
 
 
@@ -151,6 +153,7 @@ function TestPage() {
       <ExamplesNavbar />
 
       <div className="wrapper">
+        {/* <MbtiPicture/> */}
         <TestResultHeader />
        
          <div style={{backgroundColor:"black"}} className="section section-team text-center">
@@ -165,6 +168,7 @@ function TestPage() {
     
 
         </div>
+        {/* <Person/> */}
         <Suggest/>
         <DarkFooter />
       </div>
