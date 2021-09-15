@@ -38,7 +38,6 @@ import TestResultPage from "views/examples/TestResultPage.js";
 import SuggestDetail from "views/examples/SuggestDetail.js";
 import Custom from "views/examples/Custom.js";
 import Person from "views/examples/Person.js";
-import MbtiPicture from "views/examples/MbtiPicture.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -92,10 +91,6 @@ ReactDOM.render(
         <Route
         path="/person"
         render={(props) => <Person {...props} />}
-        />
-        <Route
-        path="/mbtipicture"
-        render={(props) => <MbtiPicture {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
