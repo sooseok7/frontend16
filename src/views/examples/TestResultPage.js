@@ -4,7 +4,6 @@ import QuestionResult from '../../QuestionResult';
 import styled from 'styled-components/macro'
 import Suggest from "./Suggest";
 import Person from "./Person";
-import MbtiPicture from "./MbtiPicture";
 // reactstrap components
 
 
@@ -83,6 +82,7 @@ const Question2 = styled.div`
 
 function TestPage() {
   //const [count, setCount] = useState(0);
+  let mbti_A="img/noresult.jpg"
   React.useEffect(() => {
     document.body.classList.add("result-page");
     document.body.classList.add("sidebar-collapse");
@@ -98,7 +98,7 @@ function TestPage() {
   const items2 = QuestionResult.map(data2 =>{
 
    if(data2.mbti=="ISTJ"){
-      
+     mbti_A="img/"+"ISTJ"+".jpg"
       return(
       
    
@@ -153,10 +153,14 @@ function TestPage() {
       <ExamplesNavbar />
 
       <div className="wrapper">
-        {/* <MbtiPicture/> */}
+        
         <TestResultHeader />
-       
-         <div style={{backgroundColor:"black"}} className="section section-team text-center">
+        <div>
+          <img className="mbtipicture" alt="mbti_A" src={mbti_A}
+        />
+        </div>
+        
+        <div style={{backgroundColor:"black"}} className="section section-team text-center">
    
 
          {items2}
@@ -168,7 +172,7 @@ function TestPage() {
     
 
         </div>
-        {/* <Person/> */}
+        <Person/>
         <Suggest/>
         <DarkFooter />
       </div>

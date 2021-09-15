@@ -196,7 +196,7 @@ const updatecount = (mbti)=>{
       <Intro>
     <a style={{color:"white",fontSize:"30px"}}
     className="link"
-    href="/testResult"
+    href="/result-page"
     
   >결과 보기</a>
   <br/><br/>
