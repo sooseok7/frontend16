@@ -141,8 +141,21 @@
       height: 50px;
       float: center;
 }
+
+.section2 {
+    padding: 100px 30px;
+    position: relative;
+    background: #FFFFFF;
+    .row + .category{
+        margin-top: $margin-base-vertical;
+    }
+}
+
 .mbtipicture{
-        width: 100%;
+        width: 300px;
+        margin-top: 45px;
+        margin-bottom: -45px;
+        position: relative;
 }
 
 .result-box {
@@ -170,19 +183,38 @@
 }
 .img-halt-box .list li:first-child>span.label-top{
     display: block;
-    margin: 0 auto;
     width: 4.65625rem;
     height: 1.75rem;
     background-color: transparent;
     background-repeat: no-repeat;
     background-position-x: center;
     background-position-y: center;
-    text-indent: -9999px;
     background-size: cover;
+    margin-left: 8px;
 }
+.img-halt-box .list li:last-child>span.label-top{
+    display: block;
+    width: 6.65625rem;
+    height: 1.75rem;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-size: cover;
+    margin-left: 8px;
+}
+
+.person1{
+    list-style:none;
+    padding-left: 10px;
+}
+
+.person2{
+    list-style:none;
+}
+
 .img-halt-box .list li>span {
     font-family: 'Jalnan', sans-serif;
-    color: #000;
     text-align: center;
     line-height: 1.35;
     margin-bottom: 0.3125rem;
@@ -195,12 +227,18 @@
     font-family: 'RixGulim', sans-serif;
 }
 .img-halt-box .list a {
-    width: 50%;
+    width: 70%;
     padding: 0 5%;
     box-sizing: border-box;
 }
 
-
+.label-bottom{
+    color: #2a2a2a;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    margin: 0.46875rem 0;
+    display: block;
+}
 
 .btn-lg{
    @include btn-size($padding-large-vertical, $padding-large-horizontal, $font-size-large, $border-radius-large);
@@ -229,6 +267,31 @@
     top: 50%;
     margin-top: -1px;
     right: 8px;
+}
+
+.person-type{
+    z-index: 3;
+    line-height: 1.5;
+    font-size: 35px;
+    text-align: center;
+    position: relative;
+}
+
+
+.btn-gray-round {
+    font-size: 0.75rem;
+    background-color: #cbcbcb;
+    border-radius: 5.53125rem;
+    text-align: center;
+    color: #fff;
+    display: block;
+    margin-top: 5px;
+    margin-left: 13px;
+}
+
+.sugggest-title{
+    text-align: center;
+    font-size: 55px;
 }
 
 .btn-facebook {

@@ -8,11 +8,8 @@ import TableContainer from '@material-ui/core/TableContainer';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
+import { Button, Container, Row} from "reactstrap";
 // reactstrap components
- import {
-   Container,
-  Row,
- } from "reactstrap";
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
@@ -58,6 +55,7 @@ function BoardPage() {
       <div className="wrapper">
         <BoardPageHeader />
         <div className="section">
+          <div class="board-title">자유게시판</div>
           <Container>
              <Row>
              <TableContainer component={Paper}>
@@ -88,6 +86,15 @@ function BoardPage() {
     </TableContainer>
             </Row> 
           </Container>
+          <Button
+                className=""
+                color="info"
+                href="./boardinput"
+                //target="_blank"
+              >등록
+              </Button>
+            
+            <Button class="">조회</Button>
         </div>
        
         <DefaultFooter />

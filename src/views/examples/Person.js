@@ -7,24 +7,26 @@ function Person() {
 
 return(
     <div class="result-box">
+                <div class="person-type">유형별 잘맞는 사람</div>
         <div class="result-box-title">
+
             <div class="img-halt-box">
                 <ui class="list">
-                    <li>
-                        <span class="label-top">왼쪽추천</span>
+                    <li class="person1">
+                        <span class="label-top">Like</span>
                         <img
                         //alt="bg5"
                         src={mbti_B}/>
                         <span class="label-bottom">설명이던가</span>
-                        <a href="#" class="btn-gray-round small">보러가기</a>
+                        <a href="#" class="btn-gray-round">보러가기</a>
                     </li>
-                    <li>
-                        <span class="label-top">오룬쪽추천</span>
+                    <li class="person2">
+                        <span class="label-top">Hate</span>
                         <img
                         //alt="bg5"
                         src={mbti_C}/>
                         <span class="label-bottom">설명이던가</span>
-                        <a href="#" class="btn-gray-round small">보러가기</a>
+                        <a href="#" class="btn-gray-round">보러가기</a>
                     </li>
                 </ui>
             </div>

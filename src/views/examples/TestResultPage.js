@@ -35,7 +35,7 @@ import DarkFooter from "components/Footers/DarkFooter";
 //    background-color: #616A94;
 //}`;
 const Intro = styled.div`
-  margin-top: 8em;
+  margin-top: 5em;
   text-align: center;
 `;
 
@@ -73,7 +73,6 @@ const Intro = styled.div`
         }
     }
 `;
-
 const Question2 = styled.div`
     width: 70%;
     margin: 0 auto;
@@ -152,17 +151,15 @@ function TestPage() {
     <>
       <ExamplesNavbar />
 
-      <div className="wrapper">
-        
-        <TestResultHeader />
-        <div>
-          <img className="mbtipicture" alt="mbti_A" src={mbti_A}
-        />
-        </div>
-        
-        <div style={{backgroundColor:"black"}} className="section section-team text-center">
-   
 
+        <TestResultHeader />
+        
+        
+        <div style={{backgroundColor:"black"}} className="section2 section-team text-center">
+   
+      
+          <img className="mbtipicture" alt="mbti_A" src={mbti_A}/>
+          
          {items2}
          {/* <Intro>
             <h1>Take the quiz.</h1>
@@ -173,9 +170,11 @@ function TestPage() {
 
         </div>
         <Person/>
+        <div class="sugggest-title">
+            당신의 추천 여행지는
+          </div>
         <Suggest/>
         <DarkFooter />
-      </div>
   
     </>
   );
