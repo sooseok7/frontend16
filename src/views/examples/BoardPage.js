@@ -12,7 +12,7 @@ import { Button, Container, Row} from "reactstrap";
 // reactstrap components
 import { useParams } from "react-router-dom";
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import BoardPageHeader from "components/Headers/BoardPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
@@ -110,7 +110,7 @@ function isPagingNext() {
 
   return (
     <>
-      <ExamplesNavbar />
+       <ResultNavbar />
       <div className="wrapper">
         <BoardPageHeader />         
         <div className="section">
@@ -158,7 +158,7 @@ function isPagingNext() {
               <Button
                 className="btn-board"
                 color="info"
-                href="./boardinput"
+                href="http://localhost:3000/boardinput"
                 //target="_blank"
               >등록
               </Button>
