@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useStyles,useState} from "react";
 import axios from 'axios';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
@@ -10,34 +10,38 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Button, Container, Row} from "reactstrap";
 // reactstrap components
-
+import { useParams } from "react-router-dom";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import BoardPageHeader from "components/Headers/BoardPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
-function createData(name, calories, fat, carbs, protein) {
-  return { name, calories, fat, carbs, protein };
-}
-const rows = [
-  createData('Frozen yoghurt', 159, 6.0, 24, 4.0),
-  createData('Ice cream sandwich', 237, 9.0, 37, 4.3),
-  createData('Eclair', 262, 16.0, 24, 6.0),
-  createData('Cupcake', 305, 3.7, 67, 4.3),
-  createData('Gingerbread', 356, 16.0, 49, 3.9),
-];
-function BoardPage() {
-  axios.get('http://localhost:8080/api/test')
-  .then((Response)=>{console.log(Response.data)})
-  .catch((Error)=>{console.log(Error)})
-  const useStyles = makeStyles({
-    table: {
-      minWidth: 650,
-    },
-  });
 
-  
+function BoardPage() {
+   //axios.get('http://localhost:8080/api/test')
+   //then((Response)=>{console.log(Response.data)})
+   //.catch((Error)=>{console.log(Error)})
+   const useStyles = makeStyles({
+     table: {
+      minWidth: 650,
+     },
+   });
+var now = new Date();
+  //  const {keyword}=useParams();  
   const classes = useStyles();  
+  const [p_num,setNum]=useState(1);
+  const [keyword,setKeyword]=useState();
+  const [pagingData,setData]=useState([]);
+  const [list,setList]=useState([]);
+  const hrefs="http://localhost:3000/board-page/"+keyword;
+
   React.useEffect(() => {
+    axios.get('http://localhost:8080/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword)
+    .then(Response => {
+        if (Response.status === 200) {
+          setData(Response.data.pagingData);
+          setList(Response.data.list);
+       }
+    });
     document.body.classList.add("board-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -49,54 +53,133 @@ function BoardPage() {
     };
   }, []);
 
+function listBoard(p_num, keyword)
+{
+
+    axios.get('http://localhost:8080/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword)
+    .then(Response => {
+        if (Response.status === 200) {
+          setData(Response.data.pagingData);
+          setList(Response.data.list);
+          
+       }
+    })
+  };
+ 
+function viewPaging() {
+  const pageNums = [];
+  for (let i = pagingData.pageNumStart; i <= pagingData.pageNumEnd; i++) {
+      pageNums.push(i);
+  }
+  let currentpage = pagingData.currentPageNum;
+  return (pageNums.map((page) =>
+      <li className="page-item" key={page.toString()}>
+          <a className="page-link" onClick={() => listBoard(p_num , keyword)}>
+              {
+                  (function () {
+                      if (page == currentpage)
+                          return (<div style={{ color: '#fbb9ab', fontWeight: 'bold' }}>{page}</div>);
+                      else return (<div>{page}</div>);
+                  })()
+              }
+          </a>
+      </li>
+  ));
+};
+
+function isPagingPrev() {
+  if (pagingData.prev) {
+      return (
+          <li className="page-item">
+              <a className="page-link" onClick={() => listBoard(pagingData.currentPageNum - 1,keyword)} tabIndex="-1">Previous</a>
+          </li>
+      );
+  }
+};
+
+function isPagingNext() {
+  if (pagingData.next) {
+      return (
+         <li className="page-item">
+              <a className="page-link" onClick={() => listBoard(pagingData.currentPageNum + 1, keyword)} tabIndex="-1">Next</a>
+          </li>
+      );
+  }
+};
+
+
   return (
     <>
       <ExamplesNavbar />
       <div className="wrapper">
-        <BoardPageHeader />
+        <BoardPageHeader />         
         <div className="section">
-          <div class="board-title">자유게시판</div>
+          {/* <div class="board-title">자유게시판</div> */}
           <Container>
              <Row>
              <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+           
+            <TableCell align="right">title</TableCell>
+            <TableCell align="right">date</TableCell>
+            <TableCell align="right">id</TableCell>
+            <TableCell align="right">views</TableCell>
+
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <TableRow key={row.name}>
+          { list.map((row) => (
+            <TableRow key={row.idx}>
               <TableCell component="th" scope="row">
-                {row.name}
+                {row.title}
               </TableCell>
-              <TableCell align="right">{row.calories}</TableCell>
-              <TableCell align="right">{row.fat}</TableCell>
-              <TableCell align="right">{row.carbs}</TableCell>
-              <TableCell align="right">{row.protein}</TableCell>
+              <TableCell align="right">{row.board_date}</TableCell>
+              <TableCell align="right">{row.id}</TableCell>
+              <TableCell align="right">{row.views}</TableCell>
             </TableRow>
-          ))}
+          ))} 
         </TableBody>
       </Table>
     </TableContainer>
             </Row> 
           </Container>
-          <Button
-                className=""
+          <input type="text" placeholder="검색하기" style={{ width:"100px"}}
+                                            name="search"
+                                            className="text-search"onClick={e => setKeyword(e.target.value)} />
+          <Button class="btn-view"
+                color="info"
+                href="./boardinput"
+                href= {hrefs}
+                //target="_blank"
+                >조회</Button>
+
+              <Button
+                className="btn-board"
                 color="info"
                 href="./boardinput"
                 //target="_blank"
               >등록
               </Button>
-            
-            <Button class="">조회</Button>
         </div>
-       
+        { <div >                   
+                            <nav aria-label="Page navigation example">
+                                <ul className="pagination justify-content-center">
+                               
+                                    {
+                                        isPagingPrev()
+                                    }
+                                    {
+                                        viewPaging()
+                                    }
+                                    {
+                                        isPagingNext()
+                                    }
+                                </ul>
+                            </nav>
+                        </div>
+      }
         <DefaultFooter />
       </div>
     </>
