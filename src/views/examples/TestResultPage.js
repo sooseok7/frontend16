@@ -3,88 +3,22 @@ import { useParams } from "react-router-dom";
 import QuestionResult from '../../QuestionResult';
 import styled from 'styled-components/macro'
 import Suggest from "./Suggest";
-import Person from "./Person";
-// reactstrap components
-
-
-// core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import TestResultHeader from "components/Headers/TestResultHeader";
 import DarkFooter from "components/Footers/DarkFooter";
-//import { options } from "preact";
 
-
-//const QuizWindow = styled.div`
-//    text-align: center;
-//    font-size: clamp(20px, 2.5vw, 24px);
-//    margin-top: 10vh;`;
-//const Button2 = styled.div`
-//border: 1px solid #616A94;
-//border-radius: 50px;
-//padding: 15px 30px;
-//text-decoration: none;
-//color: #616A94;
-//background-color: #161A31;
-//transition: 0.3s;
-//font-size: 1em;
-//cursor: pointer;
-//outline: none;
-
-//&:hover {
-///    color: white;
-//    background-color: #616A94;
-//}`;
 const Intro = styled.div`
   margin-top: 5em;
   text-align: center;
 `;
 
-//const btnCSS = css`
-//    margin-top: 2em;`;
-//const Options = styled.div`
-//    display: flex;
-//    flex-direction: column;
-//    width: 70%;
-//    margin: 2em auto;
-//
-//    @media screen and (min-width: 1180px) {
-//        width: 50%;
-//    }`;
-
-/* const Option = styled.button`
-    display: block;
-    border: 1px solid #616A94;
-    border-radius: 15px;
-    padding: 15px 30px;
-    text-decoration: none;
-    color: #616A94;
-    background-color: #161A31;
-    transition: 0.3s;
-    font-size: 1em;
-    outline: none;
-    user-select: none;
-    margin-top: 1em;
-    cursor: pointer;
-    
-    @media screen and (min-width: 1180px) {
-        &:hover {
-            color: white;
-            background-color: #616A94;
-        }
-    }
-`;
-const Question2 = styled.div`
-    width: 70%;
-    margin: 0 auto;
-`;
-*/
 
 function TestPage() {
-  //const [count, setCount] = useState(0);
   const {testresult}=useParams();  
 
   let mbti_A="img/noresult.jpg"
-
+  let mbti_B ="img/logo.png"
+    let mbti_C ="img/default-avatar.png"
   React.useEffect(() => {
     document.body.classList.add("result-page");
     document.body.classList.add("sidebar-collapse");
@@ -102,6 +36,8 @@ function TestPage() {
    if(data2.mbti == testresult){
      mbti_A="img/"+testresult+".jpg"
       return(
+        <div>
+        <div style={{backgroundColor:"black"}} className="section2 section-team text-center">
      <div>
         <img className="mbtipicture" alt="mbti_A" src={mbti_A}/>
 <Intro>  
@@ -127,25 +63,50 @@ function TestPage() {
       
 
         </div>
+        </div>
+            <div class="result-box">
+            <div class="person-type">유형별 잘맞는 사람</div>
+    <div class="result-box-title">
+
+        <div class="img-halt-box">
+            <ui class="list">
+                <li class="person1">
+                    <span class="label-top">{data2.like}</span>
+                    <img
+                    //alt="bg5"
+                    src={mbti_B}/>
+                    <span class="label-bottom">{data2.likefeatures}</span>
+                    <a href="#" class="btn-gray-round">보러가기</a>
+                </li>
+                <li class="person2">
+                    <span class="label-top">{data2.hate}</span>
+                    <img
+                    //alt="bg5"
+                    src={mbti_C}/>
+                    <span class="label-bottom">{data2.hatefeatures}</span>
+                    <a href="#" class="btn-gray-round">보러가기</a>
+                </li>
+            </ui>
+        </div>
+    </div>
+</div>
+</div>
       )
     }
     
     
-  })
+  });
 
-
-
-  
   
   return (
     <>
-      <ExamplesNavbar />
+      <ResultNavbar />
 
 
         <TestResultHeader />
         
         
-        <div style={{backgroundColor:"black"}} className="section2 section-team text-center">
+        
    
       
          
@@ -157,9 +118,7 @@ function TestPage() {
             <button  css={btnCSS}>Begin</button>
         </Intro> */}
     
-
-        </div>
-        <Person/>
+    
         <div class="sugggest-title">
             당신의 추천 여행지는
           </div>

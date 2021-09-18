@@ -216,7 +216,7 @@ const num3=  (count.t >= count.f) ? 'T' : 'F'
     className="link"
     href = {hrefs}
     
-  >결과 보기{names}</a>
+  >결과 보기</a>
 
   </Intro>
    )

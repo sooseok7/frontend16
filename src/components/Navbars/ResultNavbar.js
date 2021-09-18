@@ -1,7 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 // reactstrap components
 import {
-  // Button,
   Collapse,
   DropdownToggle,
   DropdownMenu,
@@ -13,10 +13,10 @@ import {
   NavLink,
   Nav,
   Container,
-  // UncontrolledTooltip,
+  //UncontrolledTooltip,
 } from "reactstrap";
 
-function IndexNavbar() {
+function ResultNavbar() {
   const [navbarColor, setNavbarColor] = React.useState("navbar-transparent");
   const [collapseOpen, setCollapseOpen] = React.useState(false);
   React.useEffect(() => {
@@ -49,9 +49,9 @@ function IndexNavbar() {
           }}
         />
       ) : null}
-      <Navbar className={"fixed-top " + navbarColor} expand="lg" color="black">
+      <Navbar className={"fixed-top " + navbarColor} color="black" expand="lg">
         <Container>
-          <div className="navbar-translate">
+        <div className="navbar-translate">
             <NavbarBrand
               href="index"
               // target="_blank" 새창
@@ -79,10 +79,11 @@ function IndexNavbar() {
             isOpen={collapseOpen}
             navbar
           >
-            <Nav navbar>
+
+             <Nav navbar>
               <NavItem>
               <NavLink
-              href="test-page"
+              href="http://localhost:3000/test-page"
             >
              <p>여행성향테스트</p>
             </NavLink>
@@ -90,15 +91,15 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="result-page"
+              href="http://localhost:3000/result-page"
             >
              <p>나의여행성향</p>
-            </NavLink>
+              </NavLink>
               </NavItem>
 
               <NavItem>
               <NavLink
-              href="calendars"
+              href="http://localhost:3000/calendars"       
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>달력</p>
@@ -107,7 +108,7 @@ function IndexNavbar() {
 
               <NavItem>
               <NavLink
-              href="board-page"
+              href="http://localhost:3000/board-page"     
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>게시판</p>
@@ -126,12 +127,11 @@ function IndexNavbar() {
                   <p>마이페이지</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem href="join-page"
-                  >
+                  <DropdownItem to="http://localhost:3000/join-page" tag={Link}>
                   <p>정보수정</p>
                   </DropdownItem>
                   <DropdownItem
-                    href="examples-page"
+                    href="http://localhost:3000/login-page"
                     // target="_blank"
                   >
                     <p>로그아웃</p>
@@ -146,61 +146,6 @@ function IndexNavbar() {
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>로그인</p>
                 </NavLink>
-
-              {/* <NavItem>
-                <Button
-                  className="nav-link btn-neutral"
-                  color="info"
-                  href="http://localhost:3000/index"
-                  id="upgrade-to-pro"
-                >
-                 <i className="now-ui-icons arrows-1_share-66 mr-1"></i>
-                  <p>버튼이 꼭 필요해?</p>
-                </Button>
-                <UncontrolledTooltip target="#upgrade-to-pro">
-                  아 이거 왜 안지워져
-                </UncontrolledTooltip>
-              </NavItem> */}
-
-              {/* <NavItem>
-                <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
-                  target="_blank"
-                  id="twitter-tooltip"
-                >
-                  <i className="fab fa-twitter"></i>
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
-                  target="_blank"
-                  id="facebook-tooltip"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-                <UncontrolledTooltip target="#facebook-tooltip">
-                  Like us on Facebook
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-                  target="_blank"
-                  id="instagram-tooltip"
-                >
-                  <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-                <UncontrolledTooltip target="#instagram-tooltip">
-                  Follow us on Instagram
-                </UncontrolledTooltip>
-              </NavItem> */}
               </NavItem>
             </Nav>
           </Collapse>
@@ -210,4 +155,4 @@ function IndexNavbar() {
   );
 }
 
-export default IndexNavbar;
+export default ResultNavbar;

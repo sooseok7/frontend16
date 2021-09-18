@@ -31,7 +31,6 @@ import Calendars from "views/examples/Calendars";
 import TestResultPage from "views/examples/TestResultPage.js";
 import SuggestDetail from "views/examples/SuggestDetail.js";
 import Custom from "views/examples/Custom.js";
-import Person from "views/examples/Person.js";
 import BoardInput from "views/examples/BoardInput.js";
 
 ReactDOM.render(
@@ -82,10 +81,6 @@ ReactDOM.render(
          <Route
         path="/custom"
         render={(props) => <Custom {...props} />}
-        />
-        <Route
-        path="/person"
-        render={(props) => <Person {...props} />}
         />
         <Route
         path="/boardinput"
