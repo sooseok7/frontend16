@@ -72,7 +72,7 @@ ReactDOM.render(
           render={(props) => <JoinPage {...props} />}
         />     
         <Route
-        path="/result-page"
+        path="/result-page/:testresult"
         render={(props) => <TestResultPage {...props} />}
         />
          <Route

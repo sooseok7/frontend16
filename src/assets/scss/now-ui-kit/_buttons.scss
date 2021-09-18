@@ -118,7 +118,27 @@
     margin-left:89%;
     margin-top: -30%;
 }
+.btn-board{
+    border-width: 2px;
+    border-radius: 10px !important;
+    position: relative;
+    max-width: fit-content;
+    float: right;
+}
+.btn-view{
+    border-width: 2px;
+    border-radius: 10px !important;
+    position: relative;
+    max-width: fit-content;
+    float: left;
+}
+
+.text-search{
+    float: left;
+}
+
 [class*="btn-outline-"],
+
 .btn-link{
     &.disabled,
     &:disabled,

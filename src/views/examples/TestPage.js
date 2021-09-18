@@ -100,6 +100,7 @@ function TestPage() {
     p:1
   }
   );
+  const [names,setNames]=useState();
   React.useEffect(() => {
     document.body.classList.add("test-page");
     document.body.classList.add("sidebar-collapse");
@@ -115,21 +116,38 @@ function TestPage() {
 
 const updatecount = (mbti)=>{
 
-
-
    if(mbti == 'f'){
-     setCount({counts:count.counts+1 , f: count.f+1});
-   }else{
-     setCount({counts:count.counts+1,i:count.i,s:count.s });
-   }
+     setCount({counts:count.counts+1,i:count.i,s:count.s ,t:count.t , j:count.j , s: count.s , n: count.n , f: count.f+1, p: count.p});
+   }else if( mbti =='i'){
+     setCount({counts:count.counts+1,i:count.i+1,s:count.s ,t:count.t , j:count.j , s: count.s , n: count.n , f: count.f, p: count.p});
+   }else if( mbti =='s'){
+    setCount({counts:count.counts+1,i:count.i,s:count.s+1 ,t:count.t , j:count.j , s: count.s , n: count.n , f: count.f, p: count.p});
+  }else if( mbti =='t'){
+    setCount({counts:count.counts+1,i:count.i,s:count.s ,t:count.t +1, j:count.j , s: count.s , n: count.n , f: count.f, p: count.p });
+  }else if( mbti =='j'){
+    setCount({counts:count.counts+1,i:count.i,s:count.s ,t:count.t , j:count.j+1 , s: count.s , n: count.n , f: count.f, p: count.p });
+  }else if( mbti =='s'){
+    setCount({counts:count.counts+1,i:count.i,s:count.s ,t:count.t , j:count.j , s: count.s +1, n: count.n , f: count.f, p: count.p });
+  }else if( mbti =='n'){
+    setCount({counts:count.counts+1,i:count.i,s:count.s ,t:count.t , j:count.j , s: count.s , n: count.n+1 , f: count.f, p: count.p });
+  }else if( mbti =='p'){
+    setCount({counts:count.counts+1,i:count.i,s:count.s ,t:count.t , j:count.j , s: count.s , n: count.n , f: count.f, p: count.p+1 });
+  }else {
+    setCount({counts:count.counts+1,i:count.i,s:count.s ,t:count.t , j:count.j , s: count.s , n: count.n , f: count.f, p: count.p });
+  }
+ const num1= (count.i >= count.e) ? 'I' : 'E' 
+ const num2= (count.s >= count.n )? 'S' : 'N' 
+const num3=  (count.t >= count.f) ? 'T' : 'F' 
+ const num4=  (count.j >= count.p )? 'J' : 'P' 
+  setNames(num1+num2+num3+num4)
 
-  
+
 };
 
 
 
   const items = Question.map(data =>{
-
+  
     if(count.counts== '0' && data.num=='0'){
       
       return(
@@ -191,15 +209,15 @@ const updatecount = (mbti)=>{
    
     
   }else if(count.counts=='16'&&data.num=='0'){
- 
+    const hrefs="/result-page/"+names
     return( 
       <Intro>
     <a style={{color:"white",fontSize:"30px"}}
     className="link"
-    href="/result-page"
+    href = {hrefs}
     
-  >결과 보기</a>
-  <br/><br/>
+  >결과 보기{names}</a>
+
   </Intro>
    )
   }

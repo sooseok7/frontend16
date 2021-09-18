@@ -1,5 +1,5 @@
 import React from "react";
-
+import { useParams } from "react-router-dom";
 import QuestionResult from '../../QuestionResult';
 import styled from 'styled-components/macro'
 import Suggest from "./Suggest";
@@ -81,7 +81,10 @@ const Question2 = styled.div`
 
 function TestPage() {
   //const [count, setCount] = useState(0);
+  const {testresult}=useParams();  
+
   let mbti_A="img/noresult.jpg"
+
   React.useEffect(() => {
     document.body.classList.add("result-page");
     document.body.classList.add("sidebar-collapse");
@@ -96,32 +99,19 @@ function TestPage() {
 
   const items2 = QuestionResult.map(data2 =>{
 
-   if(data2.mbti=="ISTJ"){
-     mbti_A="img/"+"ISTJ"+".jpg"
+   if(data2.mbti == testresult){
+     mbti_A="img/"+testresult+".jpg"
       return(
-      
-   
-<Intro>
-            <h1 style={{color:"white"}}>{data2.mbti.split("\n").map((line)=> { //this.props.data.content: 내용
-            return (
-              <span>
-                {line}
-                <br />
-              </span>
-            );
-          })}</h1>
-            <h4 style={{color:"white"}}>{data2.nickname.split("\n").map((line)=> { //this.props.data.content: 내용
-            return (
-              <span>
-                {line}
-                <br />
-              </span>
-            );
-          })}</h4>
+     <div>
+        <img className="mbtipicture" alt="mbti_A" src={mbti_A}/>
+<Intro>  
+
+            <h1 style={{color:"white"}}>{data2.mbti}</h1>
+            <h4 style={{color:"white"}}>{data2.nickname}</h4>
             <br/>
             <br/>
           
-            <h4 style={{color:"white"}}>{data2.features.split("\n").map((line)=> { //this.props.data.content: 내용
+            <h4 style={{color:"white"}}>{data2.features.split("\n").map((line)=> { 
             return (
               <span>
                 {line}
@@ -136,7 +126,7 @@ function TestPage() {
         </Intro>
       
 
-
+        </div>
       )
     }
     
@@ -158,7 +148,7 @@ function TestPage() {
         <div style={{backgroundColor:"black"}} className="section2 section-team text-center">
    
       
-          <img className="mbtipicture" alt="mbti_A" src={mbti_A}/>
+         
           
          {items2}
          {/* <Intro>
