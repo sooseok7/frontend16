@@ -91,9 +91,9 @@ function ResultNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/result-page"
+              href="http://localhost:3000/tour-page"
             >
-             <p>나의여행성향</p>
+             <p>전국여행</p>
               </NavLink>
               </NavItem>
 

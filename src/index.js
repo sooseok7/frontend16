@@ -33,6 +33,7 @@ import SuggestDetail from "views/examples/SuggestDetail.js";
 import Custom from "views/examples/Custom.js";
 import BoardInput from "views/examples/BoardInput.js";
 import BoardRead from "views/examples/BoardRead.js";
+import TourPage from "views/examples/TourPage.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -90,6 +91,10 @@ ReactDOM.render(
         <Route
         path="/boardread/:num"
         render={(props) => <BoardRead {...props} />}
+        />
+        <Route
+        path="/tour-page"
+        render={(props) => <TourPage {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />

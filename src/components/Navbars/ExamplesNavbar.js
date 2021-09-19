@@ -91,9 +91,9 @@ function ExamplesNavbar() {
 
               <NavItem>
               <NavLink
-              href="result-page"
+              href="tour-page"
             >
-             <p>나의여행성향</p>
+             <p>전국여행</p>
               </NavLink>
               </NavItem>
 
