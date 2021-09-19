@@ -26,17 +26,19 @@ function BoardPage() {
      },
    });
 var now = new Date();
-  //  const {keyword}=useParams();  
+
   const classes = useStyles();  
   const [p_num,setNum]=useState(1);
   const [keyword,setKeyword]=useState();
   const [pagingData,setData]=useState([]);
   const [list,setList]=useState([]);
-  const hrefs="http://localhost:3000/board-page/"+keyword;
+
 
   React.useEffect(() => {
     axios.get('http://localhost:8080/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword)
     .then(Response => {
+      console.log(Response)
+
         if (Response.status === 200) {
           setData(Response.data.pagingData);
           setList(Response.data.list);
@@ -53,11 +55,12 @@ var now = new Date();
     };
   }, []);
 
-function listBoard(p_num, keyword)
+function listBoard(num, keyword)
 {
 
-    axios.get('http://localhost:8080/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword)
+    axios.get('http://localhost:8080/api/getPagingBoard?p_num='+num+'&keyword='+keyword)
     .then(Response => {
+      console.log(Response.data.pagingData)
         if (Response.status === 200) {
           setData(Response.data.pagingData);
           setList(Response.data.list);
@@ -74,7 +77,7 @@ function viewPaging() {
   let currentpage = pagingData.currentPageNum;
   return (pageNums.map((page) =>
       <li className="page-item" key={page.toString()}>
-          <a className="page-link" onClick={() => listBoard(p_num , keyword)}>
+          <a className="page-link" onClick={() => listBoard(page , keyword)}>
               {
                   (function () {
                       if (page == currentpage)
@@ -133,7 +136,7 @@ function isPagingNext() {
           { list.map((row) => (
             <TableRow key={row.idx}>
               <TableCell component="th" scope="row">
-                {row.title}
+              <a onClick={() => window.location.href ='./boardread/'+row.idx}>{row.title}</a>
               </TableCell>
               <TableCell align="right">{row.board_date}</TableCell>
               <TableCell align="right">{row.id}</TableCell>
@@ -147,18 +150,17 @@ function isPagingNext() {
           </Container>
           <input type="text" placeholder="검색하기" style={{ width:"100px"}}
                                             name="search"
-                                            className="text-search"onClick={e => setKeyword(e.target.value)} />
+                                            className="text-search" onChange={e => setKeyword(e.target.value)} />
           <Button class="btn-view"
                 color="info"
-                href="./boardinput"
-                href= {hrefs}
+                onClick={() => listBoard(1, keyword)}
                 //target="_blank"
                 >조회</Button>
 
               <Button
                 className="btn-board"
                 color="info"
-                href="http://localhost:3000/boardinput"
+                href="http://localhost:3000/boardinput/new"
                 //target="_blank"
               >등록
               </Button>

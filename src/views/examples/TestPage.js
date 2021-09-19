@@ -215,9 +215,7 @@ const num3=  (count.t >= count.f) ? 'T' : 'F'
     <a style={{color:"white",fontSize:"30px"}}
     className="link"
     href = {hrefs}
-    
   >결과 보기</a>
-
   </Intro>
    )
   }

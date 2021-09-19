@@ -16,9 +16,9 @@ const Intro = styled.div`
 function TestPage() {
   const {testresult}=useParams();  
 
-  let mbti_A="img/noresult.jpg"
-  let mbti_B ="img/logo.png"
-    let mbti_C ="img/default-avatar.png"
+  let mbti_A="/img/noresult.jpg"
+  let mbti_B ="/img/noresult.png"
+    let mbti_C ="/img/noresult.png"
   React.useEffect(() => {
     document.body.classList.add("result-page");
     document.body.classList.add("sidebar-collapse");
@@ -34,7 +34,9 @@ function TestPage() {
   const items2 = QuestionResult.map(data2 =>{
 
    if(data2.mbti == testresult){
-     mbti_A="img/"+testresult+".jpg"
+     mbti_A="/img/"+testresult+".jpg"
+     mbti_B="/img/"+data2.like+".jpg"
+     mbti_C="/img/"+data2.hate+".jpg"
       return(
         <div>
         <div style={{backgroundColor:"black"}} className="section2 section-team text-center">

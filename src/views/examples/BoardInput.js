@@ -5,10 +5,16 @@ import moment from 'moment';
 // 안써도 자동으로 한국 시간을 불러온다. 명확하게 하기 위해 import
 import 'moment/locale/ko';
 import TestPage from "./TestPage";
+import { useParams } from "react-router-dom";
+import { identifier } from "@babel/types";
 function BoardInput() {
    
 const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
+
+const {mode} = useParams(); 
+
     const [Board, setBoard] = useState({
+      idx:null,
          title: " ",
          content: " ",
          board_date: nowTime,
@@ -16,22 +22,47 @@ const nowTime = moment().format('YYYY-MM-DD HH:mm:ss');
          view: "0"
 }
       );
+   
      let pageHeader = React.createRef();
 
+     React.useEffect(() => {
+       if(mode != 'new'){
+      axios.get('http://localhost:8080/api/board/'+mode)
+      .then(function (response) {
+        console.log(response)
+          setBoard(response.data);
+    
+      })
+      .catch(function (error) {
+        console.log(error);
+      });}
 
+    }, []);
+  
      const f3 = async () => {
-        console.log(Board);
+       if(mode==='new'){ //new
         axios.post('http://localhost:8080/api/board', Board)
       .then(function (response) {
         console.log(response);
-        window.location.href ='http://localhost:3000/board-page'
+        window.location.href ='http://localhost:3000/boardread/'+response.data.idx
       })
       .catch(function (error) {
         console.log(error);
       });
+    }else { //update
+      axios.put('http://localhost:8080/api/board/'+Board.idx, Board)
+      .then(function (response) {
+        console.log(response);
+        window.location.href ='http://localhost:3000/boardread/'+Board.idx
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    }
+
       }
 
-      //alert(Board.title);
+
     return(
 <div className="page-header">
         <div
@@ -49,9 +80,10 @@ const nowTime = moment().format('YYYY-MM-DD HH:mm:ss');
             placeholder="제목..."
             type="text"
             name="title"
-
+value={Board.title}
             onChange={({ target: { value } }) => 
              setBoard({
+               idx:Board.idx,
                  title: value,
                  content: Board.content,
                  board_date: Board.board_date,
@@ -67,7 +99,9 @@ const nowTime = moment().format('YYYY-MM-DD HH:mm:ss');
             placeholder="내용..."
             type="textarea"
             name="content"
+            value={Board.content}
             onChange={({ target: { value } }) => setBoard({
+              idx:Board.idx,
                 title: Board.title,
                 content: value,
                 board_date: Board.board_date,
@@ -80,7 +114,7 @@ const nowTime = moment().format('YYYY-MM-DD HH:mm:ss');
             block
             className="btn-view"
             color="black"
-            href="board-page"
+            href="../board-page"
             size="5px"
             >
                 목록
@@ -98,6 +132,7 @@ const nowTime = moment().format('YYYY-MM-DD HH:mm:ss');
                 
           </Container>
         </div>
+        
       </div>
 
     )
