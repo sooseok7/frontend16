@@ -32,6 +32,7 @@ import TestResultPage from "views/examples/TestResultPage.js";
 import SuggestDetail from "views/examples/SuggestDetail.js";
 import Custom from "views/examples/Custom.js";
 import BoardInput from "views/examples/BoardInput.js";
+import BoardRead from "views/examples/BoardRead.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -83,8 +84,12 @@ ReactDOM.render(
         render={(props) => <Custom {...props} />}
         />
         <Route
-        path="/boardinput"
+        path="/boardinput/:mode"
         render={(props) => <BoardInput {...props} />}
+        />
+        <Route
+        path="/boardread/:num"
+        render={(props) => <BoardRead {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
