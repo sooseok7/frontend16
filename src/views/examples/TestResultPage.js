@@ -38,7 +38,6 @@ function TestPage() {
      mbti_B="/img/"+data2.like+".jpg"
      mbti_C="/img/"+data2.hate+".jpg"
       return(
-        <div>
         <div style={{backgroundColor:"black"}} className="section2 section-team text-center">
      <div>
         <img className="mbtipicture" alt="mbti_A" src={mbti_A}/>
@@ -64,7 +63,6 @@ function TestPage() {
         </Intro>
       
 
-        </div>
         </div>
             <div class="result-box">
             <div class="person-type">유형별 잘맞는 사람</div>
