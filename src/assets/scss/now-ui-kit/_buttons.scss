@@ -115,28 +115,56 @@
     border-radius: 10px !important;
     padding: 11px 23px;
     position: relative;
-    margin-left:89%;
-    margin-top: -30%;
+    margin-right:7%;
+    margin-top: -40px;
+    float: right;
+
+}
+.btn-result{
+    color:white;
+    background-color: #000000;
+    font-Size:30px;
+    border-radius:20px;
+    border:1px solid #FFFFFF;
 }
 .btn-board{
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 10px !important;
     position: relative;
     max-width: fit-content;
     float: right;
+    border: 1px solid #FFFFFF;
+    margin-right: -8px;
+
 }
 .btn-view{
-    border-width: 2px;
+    border-width: 1px;
     border-radius: 10px !important;
     position: relative;
     max-width: fit-content;
     float: left;
+    border: 1px solid #FFFFFF;
 }
 
 .text-search{
+    border-radius: 7px !important;
+    position: relative;
+    border: 1px solid #FFFFFF;
+    border-width: 2px;
+    height: 25px;
     float: left;
+    margin-right: 5px;
+    margin-top: 17px;
+    margin-left: -5px;
 }
 
+.board-reply{
+    border-radius: 10px !important;
+    position: relative;
+    border: 1px solid #FFFFFF;
+    border-width: 2px;
+    height: 25px;
+}
 [class*="btn-outline-"],
 
 .btn-link{
@@ -180,6 +208,7 @@
 
 .result-box {
     margin-top: 1.25rem;
+    background-color: #000000;
 }
 .img-halt-box .result-box-title {
     font-size: 1.09375rem;
@@ -211,6 +240,7 @@
     background-position-y: center;
     background-size: cover;
     margin-left: 8px;
+    color: #ffffff;
 }
 .img-halt-box .list li:last-child>span.label-top{
     display: block;
@@ -222,15 +252,17 @@
     background-position-y: center;
     background-size: cover;
     margin-left: 8px;
+    color: #ffffff;
 }
 
 .person1{
     list-style:none;
-    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .person2{
     list-style:none;
+    padding-left: 10px;
 }
 
 .img-halt-box .list li>span {
@@ -250,10 +282,11 @@
     width: 70%;
     padding: 0 5%;
     box-sizing: border-box;
+    display: inline-block;
 }
 
 .label-bottom{
-    color: #2a2a2a;
+    color: #ffffff;
     font-size: 0.9375rem;
     font-weight: 500;
     margin: 0.46875rem 0;
@@ -295,23 +328,28 @@
     font-size: 35px;
     text-align: center;
     position: relative;
+    color: #FFFFFF;
 }
 
 
 .btn-gray-round {
     font-size: 0.75rem;
-    background-color: #cbcbcb;
+    background-color: #000000;
     border-radius: 5.53125rem;
     text-align: center;
     color: #fff;
     display: block;
     margin-top: 5px;
     margin-left: 13px;
+    border: 1px solid #ffffff;
 }
 
 .sugggest-title{
     text-align: center;
     font-size: 55px;
+    background-color: #000000;
+    color: #ffffff;
+    position: relative;
 }
 
 .btn-facebook {

@@ -147,11 +147,14 @@ function isPagingNext() {
       </Table>
     </TableContainer>
             </Row> 
-          </Container>
-          <input type="text" placeholder="검색하기" style={{ width:"100px"}}
-                                            name="search"
-                                            className="text-search" onChange={e => setKeyword(e.target.value)} />
-          <Button class="btn-view"
+            <input type="text"
+          placeholder="검색하기.."
+          name="search"
+          type="text"
+          className="text-search"
+          onChange={e => setKeyword(e.target.value)} />
+          
+          <Button className="btn-view"
                 color="info"
                 onClick={() => listBoard(1, keyword)}
                 //target="_blank"
@@ -164,6 +167,8 @@ function isPagingNext() {
                 //target="_blank"
               >등록
               </Button>
+          </Container>
+          
         </div>
         { <div >                   
                             <nav aria-label="Page navigation example">

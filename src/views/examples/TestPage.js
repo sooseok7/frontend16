@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import Question from '../../Question';
-
+import { Button } from "reactstrap";
 import styled from 'styled-components/macro'
 // import {
 //   NavItem,
@@ -23,12 +23,12 @@ const QuizWindow = styled.div`
     margin-top: 10vh;
 `;
 const Button2 = styled.div`
-border: 1px solid #616A94;
+border: 1px solid #ffffff;
 border-radius: 50px;
 padding: 15px 30px;
 text-decoration: none;
-color: #616A94;
-background-color: #161A31;
+color: #ffffff;
+background-color: #000000;
 transition: 0.3s;
 font-size: 1em;
 cursor: pointer;
@@ -36,7 +36,7 @@ outline: none;
 
 &:hover {
     color: white;
-    background-color: #616A94;
+    background-color: #000000;
 }
 `;
 const Intro = styled.div`
@@ -61,12 +61,12 @@ const Options = styled.div`
 
 const Option = styled.button`
     display: block;
-    border: 1px solid #616A94;
+    border: 1px solid #ffffff;
     border-radius: 15px;
     padding: 15px 30px;
     text-decoration: none;
-    color: #616A94;
-    background-color: #161A31;
+    color: #ffffff;
+    background-color: #000000;
     transition: 0.3s;
     font-size: 1em;
     outline: none;
@@ -77,7 +77,7 @@ const Option = styled.button`
     @media screen and (min-width: 1180px) {
         &:hover {
             color: white;
-            background-color: #616A94;
+            background-color: #000000;
         }
     }
 `;
@@ -212,10 +212,10 @@ const num3=  (count.t >= count.f) ? 'T' : 'F'
     const hrefs="/result-page/"+names
     return( 
       <Intro>
-    <a style={{color:"white",fontSize:"30px"}}
-    className="link"
+    <Button
+    className="btn-result"
     href = {hrefs}
-  >결과 보기</a>
+  >결과 보기</Button>
   </Intro>
    )
   }
