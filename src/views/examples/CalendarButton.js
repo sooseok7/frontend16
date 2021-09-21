@@ -9,7 +9,7 @@ function CalendarButton() {
     return (
 
       
-      <Container>
+      
               <Button
                 className="btn-calendar"
                 color="info"
@@ -17,7 +17,7 @@ function CalendarButton() {
                 target="_blank"
               >등록
               </Button>
-        </Container>
+        
     )
   }
 

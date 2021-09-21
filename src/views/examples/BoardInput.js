@@ -15,8 +15,8 @@ const {mode} = useParams();
 
     const [Board, setBoard] = useState({
       idx:null,
-         title: " ",
-         content: " ",
+         title: "",
+         content: "",
          board_date: nowTime,
          id: "test",        
          view: "0"
@@ -80,6 +80,7 @@ const {mode} = useParams();
             placeholder="제목..."
             type="text"
             name="title"
+            class="form-control2"
 value={Board.title}
             onChange={({ target: { value } }) => 
              setBoard({
@@ -111,7 +112,6 @@ value={Board.title}
             ></Input></h2>
             <br/>
             <Button
-            block
             className="btn-view"
             color="black"
             href="../board-page"
@@ -120,7 +120,6 @@ value={Board.title}
                 목록
                 </Button>
             <Button
-            block
             className="btn-board"
             color="black"
             // href=""

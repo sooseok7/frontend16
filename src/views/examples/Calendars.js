@@ -90,7 +90,7 @@ const Calendarfinal = () =>{
       events={events} //출퇴근 위에꺼 입력됨
       startAccessor="start" 
       endAccessor="end"
-      style={{ height: 690 ,margin: 30 }}
+      style={{ height: 690 ,margin: 30, marginBottom: 40}}
     />
     
 
