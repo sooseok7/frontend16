@@ -22,7 +22,7 @@ function BoardPage() {
    //.catch((Error)=>{console.log(Error)})
    const useStyles = makeStyles({
      table: {
-      minWidth: 650,
+      minWidth: 100,
      },
    });
 var now = new Date();
@@ -81,7 +81,7 @@ function viewPaging() {
               {
                   (function () {
                       if (page == currentpage)
-                          return (<div style={{ color: '#fbb9ab', fontWeight: 'bold' }}>{page}</div>);
+                          return (<div style={{ color: '#ff5d28', fontWeight: 'bold' }}>{page}</div>);
                       else return (<div>{page}</div>);
                   })()
               }
@@ -119,28 +119,28 @@ function isPagingNext() {
         <div className="section">
           {/* <div class="board-title">자유게시판</div> */}
           <Container>
-             <Row>
+             <Row className="board-page">
              <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
            
-            <TableCell align="right">title</TableCell>
-            <TableCell align="right">date</TableCell>
-            <TableCell align="right">id</TableCell>
-            <TableCell align="right">views</TableCell>
+            <TableCell align="center">title</TableCell>
+            <TableCell align="center">date</TableCell>
+            <TableCell align="center">id</TableCell>
+            <TableCell align="center">views</TableCell>
 
           </TableRow>
         </TableHead>
         <TableBody>
           { list.map((row) => (
             <TableRow key={row.idx}>
-              <TableCell component="th" scope="row">
+              <TableCell align="center" component="th" scope="row">
               <a onClick={() => window.location.href ='./boardread/'+row.idx}>{row.title}</a>
               </TableCell>
-              <TableCell align="right">{row.board_date}</TableCell>
-              <TableCell align="right">{row.id}</TableCell>
-              <TableCell align="right">{row.views}</TableCell>
+              <TableCell align="center">{row.board_date}</TableCell>
+              <TableCell align="center">{row.id}</TableCell>
+              <TableCell align="center">{row.views}</TableCell>
             </TableRow>
           ))} 
         </TableBody>
