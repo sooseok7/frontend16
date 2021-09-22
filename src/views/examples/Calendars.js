@@ -22,6 +22,8 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 
 function Calendars() {
   const [names,setNames]=useState([]);
+  const [viewss,setViews]=useState();
+  const [datedss,setDates]=useState();
   const localizer = momentLocalizer(moment); // 위에 import
   /*const [addresss,setLocationObj] =useState({
     locationfinal:""
@@ -75,7 +77,16 @@ const events= names.map((data)=>{
   }
 })
 
+const handleSlotSelect = slotInfo => {
 
+   //if (viewss === 'month') { // assumes you got 'view' from state
+  //   // ... do some date stuff to get _just the date_ from the slotInfo.start
+setDates(slotInfo.start)
+  setViews('day')
+  //alert(datedss);
+  // }
+  // ... any other slot selection functionality for other views
+};
 //const myEventsList=Anyday; // json으로 작성한거 임시로 넣어서 밑에 있는 이벤트로 들어감
 
 const Calendarfinal = () =>{ 
@@ -90,6 +101,16 @@ const Calendarfinal = () =>{
       events={events} //출퇴근 위에꺼 입력됨
       startAccessor="start" 
       endAccessor="end"
+      selectable={true}
+      onNavigate={datedss}
+      date={datedss}
+      defaultView={viewss}
+      defaultDate={datedss}
+      getDrilldownView={(targetDate, currentViewName, configuredViewNames) =>{
+        setViews(currentViewName)
+        return null}
+      }
+      onSelectSlot={handleSlotSelect}
       style={{ height: 690 ,margin: 30, marginBottom: 40}}
     />
     
