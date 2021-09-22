@@ -22,7 +22,15 @@ function BoardPage() {
    //.catch((Error)=>{console.log(Error)})
    const useStyles = makeStyles({
      table: {
-      minWidth: 100,
+      minWidth: 100, backgroundColor: "black",
+      color: "white",
+      border: "1px solid white",
+      borderRadius: "10px",
+      "& .MuiTableCell-head": {
+        color: "white"},
+      "& .MuiTableCell-body": {
+          color: "white"
+      }
      },
    });
 var now = new Date();
@@ -154,7 +162,7 @@ function isPagingNext() {
           className="text-search"
           onChange={e => setKeyword(e.target.value)} />
           
-          <Button className="btn-view"
+          <Button className="btn-search"
                 color="info"
                 onClick={() => listBoard(1, keyword)}
                 //target="_blank"

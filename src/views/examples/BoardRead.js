@@ -101,8 +101,8 @@ function BoardRead() {
       const commentarray= Commentlist.map((data)=>{
 if(Commentlist.length != '0'){
         return (
-          <div style={{backgroundColor:"white"}} >
-<h5 style={{color:"black"}}>{data.content} &nbsp;  &nbsp;  &nbsp;  &nbsp; {data.comment_id} <button onClick={()=> deletecomment(data.idx)}>삭제</button>  </h5>      
+          <div class="list-reply" >
+<h5 style={{color:"white"}}>{data.comment_id} &nbsp;  &nbsp;{data.content}  &nbsp;  &nbsp; {data.comment_date} <button class="del-reply" onClick={()=> deletecomment(data.idx)}>삭제</button>  </h5>      
 
           </div>
 
@@ -126,7 +126,7 @@ if(Commentlist.length != '0'){
         ></div>
         <div className="content-center">
           <Container>
-            <h1 className="title">ㄱㅔㅅㅣㅍㅏㄴ</h1><br/>
+            <h1 className="title">게시판</h1><br/>
             <h2><Input
             placeholder={Board.title}
             name="title"  disabled
@@ -138,20 +138,16 @@ if(Commentlist.length != '0'){
             type="textarea"
             name="content" disabled
             /></h2>
-            <br/>
             <Button
             block
             className="btn-view"
-            color="black"
             href="../board-page"
             size="5px"
             >
                 목록
                 </Button>
                 <Button
-            block
-            className="btn-board"
-            color="black"
+            className="btn-delete"
             // href=""
             onClick={f4}
             size="5px"
@@ -159,18 +155,17 @@ if(Commentlist.length != '0'){
                 삭제
                 </Button>
             <Button
-            block
-            className="btn-board"
-            color="black"
+            className="btn-update"
             // href=""
             onClick={f3}
             size="5px"
             >
                 수정
                 </Button>
+                <br/><br/><br/>
           <textarea className="board-reply"
-                                type="text"
-                                placeholder="댓글" name="answer"
+                                type="textarea"
+                                placeholder="댓글 입력해봐요.." name="answer"
                               
                                 onChange={({ target: { value } }) => setComment({
                                     content: value,
@@ -180,11 +175,14 @@ if(Commentlist.length != '0'){
                                     board_no: Board.idx,
                                     views: "0"
                            })}
-                            />
-                            <button className="btn-reply" onClick={f5} >댓글</button>
+                            /><br/>
+                            <button className="btn-reply" size="5px" onClick={f5} >댓글</button>
           </Container>
+          <br/>
+          <br/>
+          {commentarray}
         </div>
-        {commentarray}
+
       </div>
       </div>
     )
