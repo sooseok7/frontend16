@@ -6,6 +6,7 @@ import Suggest from "./Suggest";
 import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import TestResultHeader from "components/Headers/TestResultHeader";
 import DarkFooter from "components/Footers/DarkFooter";
+import { Button } from "reactstrap";
 
 const Intro = styled.div`
   margin-top: 5em;
@@ -75,16 +76,30 @@ function TestPage() {
                     <img
                     //alt="bg5"
                     src={mbti_B}/>
-                    <span class="label-bottom">{data2.likefeatures}</span>
-                    <a href="#" class="btn-gray-round">보러가기</a>
+                    <span class="label-bottom">{data2.likefeatures.split("\n").map((line)=> { 
+            return (
+              <span>
+                {line}
+                <br />
+              </span>
+            );
+          })}</span>
+                    <a href={data2.like} class="btn-gray-round">보러가기</a>
                 </li>
                 <li class="person2">
                     <span class="label-top">{data2.hate}</span>
                     <img
                     //alt="bg5"
                     src={mbti_C}/>
-                    <span class="label-bottom">{data2.hatefeatures}</span>
-                    <a href="#" class="btn-gray-round">보러가기</a>
+                    <span class="label-bottom">{data2.hatefeatures.split("\n").map((line)=> { 
+            return (
+              <span>
+                {line}
+                <br />
+              </span>
+            );
+          })}</span>
+                    <a href={data2.hate} class="btn-gray-round">보러가기</a>
                 </li>
             </ui>
         </div>
@@ -123,6 +138,10 @@ function TestPage() {
             당신의 추천 여행지는
           </div>
         <Suggest/>
+        <div style={{backgroundColor:"black"}}>
+        <Button className="btn-calendars" href="http://localhost:3000/calendars">달력이동</Button>
+        <Button className="btn-schedule" href="">일정 짜주기</Button><br/>
+        <Button className="btn-retest" href="http://localhost:3000/test-page"style={{display:"block"}}>테스트 다시하기</Button></div>
         <DarkFooter />
   
     </>
