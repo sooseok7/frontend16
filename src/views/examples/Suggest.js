@@ -40,16 +40,16 @@ function Suggest() {
     return (
 
       
-      <div className="section section-nucleo-icons">
+      <div className="section3 section-nucleo-icons">
       <Container>
           <Row key={index}>
             <Col lg="6" md="12">
-              <h2 className="title">{name.trrsrtNm}</h2>   <div className="picture"><Link to={link} > +사진</Link></div>
+              <h2 className="title">{name.trrsrtNm}   <div className="suggestdetail"><Link to={link} > +날씨 &nbsp;</Link><Link to={link} > +사진</Link></div></h2>
              <h5 className="description">
                 {name.trrsrtIntrcn}
               </h5>
               <Button
-                className="btn-round mr-1"
+                className="btn-detail"
                 color="info"
                 size="lg"
                 href = {searchurl}
@@ -57,7 +57,7 @@ function Suggest() {
               > 자세히
               </Button>
               <Button
-                className="btn-round"
+                className="btn-direction"
                 color="info"
                 href={mapurl}
                 outline
