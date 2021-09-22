@@ -146,6 +146,14 @@
     border: 1px solid #FFFFFF;
 }
 
+.btn-reply{
+    border-width: 1px;
+    border-radius: 10px !important;
+    position: relative;
+    max-width: fit-content;
+    float: left;
+    border: 1px solid #FFFFFF;
+}
 .text-search{
     border-radius: 7px !important;
     position: relative;
@@ -157,7 +165,10 @@
     margin-top: 17px;
     margin-left: -5px;
 }
-
+.board-page{
+    background-color: #000000;
+    color: #ffffff;
+}
 .board-reply{
     border-radius: 10px !important;
     position: relative;

@@ -168,12 +168,7 @@ if(Commentlist.length != '0'){
             >
                 수정
                 </Button>
-    
-                    <div >
-
-                        <div className="row" >
-
-                            <textarea className="comment-textarea"
+          <textarea className="board-reply"
                                 type="text"
                                 placeholder="댓글" name="answer"
                               
@@ -186,14 +181,10 @@ if(Commentlist.length != '0'){
                                     views: "0"
                            })}
                             />
-                            <button className="main-btn" onClick={f5} >댓글</button>
-
-
-                        </div>
-                    </div>
-                    {commentarray}
+                            <button className="btn-reply" onClick={f5} >댓글</button>
           </Container>
         </div>
+        {commentarray}
       </div>
       </div>
     )
