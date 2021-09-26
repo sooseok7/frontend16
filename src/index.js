@@ -34,6 +34,7 @@ import Custom from "views/examples/Custom.js";
 import BoardInput from "views/examples/BoardInput.js";
 import BoardRead from "views/examples/BoardRead.js";
 import TourPage from "views/examples/TourPage.js";
+import ThemaPage from "views/examples/ThemaPage.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -95,6 +96,10 @@ ReactDOM.render(
         <Route
         path="/tour-page"
         render={(props) => <TourPage {...props} />}
+        />
+         <Route
+        path="/thema-page"
+        render={(props) => <ThemaPage {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />

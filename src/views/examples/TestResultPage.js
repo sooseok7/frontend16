@@ -135,13 +135,21 @@ function TestPage() {
     
     
         <div class="sugggest-title">
-            당신의 추천 여행지는
+            당신의 추천 여행지는<br/>
+          </div>
+          <div className="btn-moving">
+            <Button className="btn-first">눌</Button>
+            <Button className="btn-second">러</Button>
+            <Button className="btn-third">보</Button>
+            <Button className="btn-fourth">세</Button>
+            <Button className="btn-fifth">요</Button>
           </div>
         <Suggest/>
         <div style={{backgroundColor:"black"}}>
-        <Button className="btn-calendars" href="http://localhost:3000/calendars">달력이동</Button>
-        <Button className="btn-schedule" href="">일정 짜주기</Button><br/>
+        <Button className="btn-calendars" href="http://localhost:3000/tour-page">지역별 여행지</Button>
+        <Button className="btn-schedule" href="http://localhost:3000/thema-pape">테마별 여행지</Button><br/>
         <Button className="btn-retest" href="http://localhost:3000/test-page"style={{display:"block"}}>테스트 다시하기</Button></div>
+        <div style={{backgroundColor:"black"}}><br/></div>
         <DarkFooter />
   
     </>
