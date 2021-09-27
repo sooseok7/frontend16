@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
+import axios from 'axios';
 import QuestionResult from '../../QuestionResult';
 import styled from 'styled-components/macro'
 import Suggest from "./Suggest";
 import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import TestResultHeader from "components/Headers/TestResultHeader";
 import DarkFooter from "components/Footers/DarkFooter";
-import { Button } from "reactstrap";
-
+import { Button, Container, Row, Col } from "reactstrap";
+import { Link } from "react-router-dom";
+import { useForkRef } from "@material-ui/core";
+import geolib from 'geolib';
+import { getDistance ,convertUnit} from "geolib"
 const Intro = styled.div`
   margin-top: 5em;
   text-align: center;
@@ -16,11 +20,35 @@ const Intro = styled.div`
 
 function TestPage() {
   const {testresult}=useParams();  
+  const [nums,setNums]=useState([]); 
+  const [names,setNames]=useState([]);
+  const [locationss,setLocation] = useState();
+
 
   let mbti_A="/img/noresult.jpg"
   let mbti_B ="/img/noresult.png"
     let mbti_C ="/img/noresult.png"
   React.useEffect(() => {
+    let isSubscribed = true;
+
+    axios.get('http://localhost:8080/api/getinformation'
+    )
+    .then((Response)=>{
+    if (Response.status === 200) {
+      if (isSubscribed) {
+      setNames(Response.data.response.body.items)
+
+      const result = QuestionResult.filter(kk => kk.mbti === testresult)
+      setNums(result[0].num)
+ 
+     // check if this component still mounted
+
+     }
+    }
+  })
+   // console.log(Response.data.response.body.items)
+.catch((Error)=>{console.log(Error)});
+
     document.body.classList.add("result-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -29,16 +57,23 @@ function TestPage() {
     return function cleanup() {
       document.body.classList.remove("result-page");
       document.body.classList.remove("sidebar-collapse");
+      console.log('unmounting...');
+      
+      isSubscribed=false;
     };
+   
   }, []);
-
+ 
   const items2 = QuestionResult.map(data2 =>{
 
    if(data2.mbti == testresult){
+    
+    
      mbti_A="/img/"+testresult+".jpg"
      mbti_B="/img/"+data2.like+".jpg"
      mbti_C="/img/"+data2.hate+".jpg"
       return(
+        <div>
         <div style={{backgroundColor:"black"}} className="section2 section-team text-center">
      <div>
         <img className="mbtipicture" alt="mbti_A" src={mbti_A}/>
@@ -106,45 +141,136 @@ function TestPage() {
     </div>
 </div>
 </div>
+
+<div class="sugggest-title">
+당신의 추천 여행지는<br/>
+</div>
+
+ </div>
       )
     }
     
     
   });
+let array1={} ;
+let array2={} ;
+let array3={} ;
+let array4={};
+let array5={};
+  const Namelists= names.map((name,index)=> {
+ 
 
-  
+   
+    return(<div>
+      {  
+        nums.map((i,index2)=> {
+    
+          if(index == i){
+      
+       // setLocation([locationss,name]);
+     if(index2 === 0){
+       array1 = name
+     }else if(index2 ===1){
+      array2 = name
+     }
+     else if(index2 ===2){
+      array3 = name
+    }else if(index2 ===3){
+      array4 = name
+    }else if(index2 ===4){
+      array5 = name
+    }
+           const searchurl="https://search.daum.net/search??w=tot&&q="+ name.trrsrtNm
+           const mapurl="https://map.kakao.com/link/to/,"+name.trrsrtNm+"," +name.latitude+","+name.longitude
+           const link = "/suggestdetail/"+ name.trrsrtNm
+
+        return(
+          <div className="section3 section-nucleo-icons">
+    
+          <Container>
+              <Row key={index}>
+                 {/* <h5> {name.rdnmadr.split(" ")[0]}</h5>  */}
+                <Col lg="6" md="12">
+                  <h2 className="title">{name.trrsrtNm}  <div className="suggestdetail"><Link to={link} > +날씨 &nbsp;</Link><Link to={link} > +사진</Link></div></h2>
+                 <h5 className="description">
+                    {name.trrsrtIntrcn}
+                  </h5>
+                  <Button
+                    className="btn-detail"
+                    color="info"
+                    size="lg"
+                    href = {searchurl}
+                    target="_blank"
+                  > 자세히
+                  </Button>
+                  <Button
+                    className="btn-direction"
+                    color="info"
+                    href={mapurl}
+                    outline
+                    size="lg"
+                    target="_blank"
+                  >
+                    길찾기
+                  </Button>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+    
+    
+    
+       );
+      }
+    
+        })
+      }
+      </div>
+    )
+  }
+);
+function calculateDistance(a,b,c,d){
+
+
+  const dist = getDistance(
+    { latitude: parseInt(a), longitude: parseInt(b) },
+    { latitude: parseInt(c), longitude:parseInt(d) }
+  );
+//const dist10 =dist/1000;
+console.log('distance:', dist) //getting right value 54209m
+return dist/1000;
+}
+
+
   return (
     <>
       <ResultNavbar />
 
 
-        <TestResultHeader />
-        
-        
-        
-   
-      
-         
-          
+        <TestResultHeader />        
          {items2}
          {/* <Intro>
             <h1>Take the quiz.</h1>
             <h4>Whenever, you want.</h4>
             <button  css={btnCSS}>Begin</button>
         </Intro> */}
-    
-    
-        <div class="sugggest-title">
-            당신의 추천 여행지는<br/>
-          </div>
-          <div className="btn-moving">
-            <Button className="btn-first">눌</Button>
-            <Button className="btn-second">러</Button>
-            <Button className="btn-third">보</Button>
-            <Button className="btn-fourth">세</Button>
-            <Button className="btn-fifth">요</Button>
-          </div>
-        <Suggest/>
+
+ 
+<div className="btn-moving">
+<br/>
+    <Button className="btn-first"></Button> -{calculateDistance(array1.latitude,array1.longitude,array2.latitude,array2.longitude)} KM- &nbsp;&nbsp; 
+      <Button className="btn-second"></Button> - {calculateDistance(array2.latitude,array2.longitude,array3.latitude,array3.longitude)}KM- &nbsp;&nbsp;
+      <Button className="btn-third"></Button>   - {calculateDistance(array3.latitude,array3.longitude,array4.latitude,array4.longitude)}KM- &nbsp;&nbsp;
+      <Button className="btn-fourth"></Button> -{calculateDistance(array4.latitude,array4.longitude,array5.latitude,array5.longitude)}KM- &nbsp;&nbsp;
+      <Button className="btn-fifth"></Button>  
+      <br></br>
+      {array1.trrsrtNm}&emsp; &emsp;&emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &nbsp;
+      {array2.trrsrtNm}&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp; &nbsp;
+      {array3.trrsrtNm}&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &nbsp;
+      {array4.trrsrtNm}&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp; &nbsp;
+      {array5.trrsrtNm}
+    </div>
+          {Namelists}
         <div style={{backgroundColor:"black"}}>
         <Button className="btn-calendars" href="http://localhost:3000/tour-page">지역별 여행지</Button>
         <Button className="btn-schedule" href="http://localhost:3000/thema-pape">테마별 여행지</Button><br/>
