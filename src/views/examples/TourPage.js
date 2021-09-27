@@ -19,6 +19,8 @@ function TourPage() {
     };
   }, []);
 
+  // function handleSubmit(e)
+
   const location1 = async () => {
     location = "Seoul";
    }
@@ -184,7 +186,7 @@ function TourPage() {
               </a>
             </p>
             </div>
-            {/* 
+            {/*
             1. 하나의 div.zone_cont 안에 각각의 데이터가 새로 적용 되는 방식
             2. 탭 메뉴 클릭시 해당되는 컨텐츠에 클래스 zoneCont1~15가 추가되면서
             display:block 이 된다.
@@ -233,9 +235,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -266,9 +268,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -340,7 +342,7 @@ function TourPage() {
                 </div>
               </div>
             </div>
-            
+
             <div class="zoneCont3 zone_cont on">
               <div class="area_mid" id="areamid">
                 {/* <a href="javascript:goAreaFeed("온택트강남페스티벌", "희망으로의 한걸음!<br/>강남전역은 강남페스티벌 무대",
@@ -385,9 +387,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -418,9 +420,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -506,9 +508,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -539,9 +541,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -635,9 +637,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -668,9 +670,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -744,9 +746,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -777,9 +779,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -853,9 +855,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -886,9 +888,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -962,9 +964,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -995,9 +997,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -1055,9 +1057,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -1088,9 +1090,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -1266,9 +1268,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -1299,9 +1301,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -1426,9 +1428,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -1459,9 +1461,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -1559,9 +1561,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -1592,9 +1594,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -1703,9 +1705,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -1736,9 +1738,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -1848,9 +1850,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -1881,9 +1883,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -2024,9 +2026,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -2057,9 +2059,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -2204,9 +2206,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -2237,9 +2239,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -2364,9 +2366,9 @@ function TourPage() {
                       {/* 4개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div id="arearight">
                 <div id="area-right" id="area4">
@@ -2397,9 +2399,9 @@ function TourPage() {
                       {/* 5개일때 */}
                     </li>
                   </ul>
-                
+
                 </div>
-                
+
               </div>
               <div class="list_sub">
                 <div class="inr">
@@ -2417,7 +2419,7 @@ function TourPage() {
               </div>
             </div>
 
-          </div> 
+          </div>
         </div>
         <DarkFooter />
       </div>

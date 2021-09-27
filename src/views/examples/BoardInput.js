@@ -44,7 +44,7 @@ const {mode} = useParams();
         axios.post('http://localhost:8080/api/board', Board)
       .then(function (response) {
         console.log(response);
-        window.location.href ='http://localhost:3000/boardread/'+response.data.idx
+        window.location.href ='./boardread/'+response.data.idx
       })
       .catch(function (error) {
         console.log(error);
@@ -53,7 +53,7 @@ const {mode} = useParams();
       axios.put('http://localhost:8080/api/board/'+Board.idx, Board)
       .then(function (response) {
         console.log(response);
-        window.location.href ='http://localhost:3000/boardread/'+Board.idx
+        window.location.href ='./boardread/'+Board.idx
       })
       .catch(function (error) {
         console.log(error);

@@ -53,7 +53,7 @@ function ResultNavbar() {
         <Container>
         <div className="navbar-translate">
             <NavbarBrand
-              href="index"
+              href="../index"
               // target="_blank" 새창
               id="navbar-brand"
             >
@@ -83,7 +83,7 @@ function ResultNavbar() {
              <Nav navbar>
               <NavItem>
               <NavLink
-              href="http://localhost:3000/test-page"
+              href="../test-page"
             >
              <p>여행성향테스트</p>
             </NavLink>
@@ -91,7 +91,7 @@ function ResultNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/tour-page"
+              href="../tour-page"
             >
              <p>전국여행</p>
               </NavLink>
@@ -99,7 +99,7 @@ function ResultNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/calendars"       
+              href="../calendars"       
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>달력</p>
@@ -108,7 +108,7 @@ function ResultNavbar() {
 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/board-page"     
+              href="../board-page"     
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>게시판</p>
@@ -127,11 +127,11 @@ function ResultNavbar() {
                   <p>마이페이지</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem to="http://localhost:3000/join-page" tag={Link}>
+                  <DropdownItem to="../join-page" tag={Link}>
                   <p>정보수정</p>
                   </DropdownItem>
                   <DropdownItem
-                    href="http://localhost:3000/login-page"
+                    href="../login-page"
                     // target="_blank"
                   >
                     <p>로그아웃</p>
@@ -141,7 +141,7 @@ function ResultNavbar() {
                 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/login-page"
+              href="../login-page"
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>로그인</p>
