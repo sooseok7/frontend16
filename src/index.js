@@ -82,7 +82,7 @@ ReactDOM.render(
         render={(props) => <SuggestDetail {...props} />}
         />
          <Route
-        path="/custom"
+        path="/custom/:mode"
         render={(props) => <Custom {...props} />}
         />
         <Route

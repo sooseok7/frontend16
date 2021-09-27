@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+
 import  { Calendar, momentLocalizer  } from 'react-big-calendar'; //여기에서 이미 calendar를 ㅓimport 할 수 있게 해놓음 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from "moment"; // 밑에 언어랑 시간대 가져옴
@@ -21,7 +22,9 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 // import Carousel from "./index-sections/Carousel.js";
 
 function Calendars() {
-  const [names,setNames]=useState([]);
+ 
+  const [names,setNames]=useState([]);const [eventss,setEventss]=useState([]);
+  const [id,setID]=useState("test");
   const [viewss,setViews]=useState();
   const [datedss,setDates]=useState();
   const localizer = momentLocalizer(moment); // 위에 import
@@ -41,13 +44,19 @@ function Calendars() {
           if (Response.status === 200) {
             
             setNames(Response.data.response.body.items.item);
-            console.log(Response.data.response.body.items.item);
-           // check if this component still mounted
-           if (isSubscribed) {
-             //setLoading(false);
-           }
+            axios.get('http://localhost:8080/api/getschedule/'+id)
+      .then(Response => {
+
+     
+          if (Response.status === 200) {
+            setEventss(Response.data);
+console.log(eventss )
          }
       });
+           // console.log(Response.data.response.body.items.item);
+         }
+      });
+      
       document.body.classList.add("calendars");
       document.body.classList.add("sidebar-collapse");
       document.documentElement.classList.remove("nav-open");
@@ -76,6 +85,16 @@ const events= names.map((data)=>{
     alldat:true
   }
 })
+ const events2= eventss.map((data)=>{
+
+    return {
+    id: data.id,
+      title: data.title,
+      start: data.startdate,
+      end: data.enddate,
+      alldat:data.alldat
+    }
+ })
 
 const handleSlotSelect = slotInfo => {
 
@@ -91,14 +110,17 @@ setDates(slotInfo.start)
 
 const Calendarfinal = () =>{ 
   //위에 import로 이미 캘린더는 생성이 되었고 const가 변수선언이랑 비슷한건데 이걸 .. 컴포넌트? 로 해서 밑에 넣음
-  console.log(events)
+  //console.log(events)
+const finalevent = Object.assign(events, events2);
+
+
  // setYears()
   return(
   <div>
       <Calendar
-      onSelectEvent={event => window.open("./custom")}
+      onSelectEvent={event => {if(event.id != null) window.open("./custom/"+event.id)}} //공휴일이랑 정한 일정 분리(?)
       localizer={localizer} //언어와 시간대
-      events={events} //출퇴근 위에꺼 입력됨
+      events={finalevent}   //출퇴근 위에꺼 입력됨
       startAccessor="start" 
       endAccessor="end"
       selectable={true}
