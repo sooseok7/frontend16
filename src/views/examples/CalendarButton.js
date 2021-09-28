@@ -13,7 +13,7 @@ function CalendarButton() {
               <Button
                 className="btn-calendar"
                 color="info"
-                href="./custom"
+                href="./custom/new"
                 target="_blank"
               >등록
               </Button>
