@@ -90,8 +90,8 @@ const events= names.map((data)=>{
     return {
     id: data.id,
       title: data.title,
-      start: data.startdate,
-      end: data.enddate,
+      start:  moment(data.startdate).toDate(),
+      end: moment(data.enddate).toDate(),
       alldat:data.alldat
     }
  })

@@ -9,10 +9,10 @@ function Custom() {
   const {mode}=useParams();  
    const [Schedules, setSchedule] = useState({
      id:"",
+     title:"",
      startdate:"",
      enddate:"",
-     title:"",
-     alldat:"false",
+     alldat:false,
      userid:"test"
     }
    );
@@ -24,10 +24,14 @@ function Custom() {
  
   const f3 = async () => {
     console.log(Schedules);
+    if(Schedules.startdate >= Schedules.enddate){
+      window.confirm("시작날짜를 종료날짜 이후로 설정해주세요");
+    }else{
     if(mode == "new"){
     axios.post('http://localhost:8080/api/saveschedule', Schedules)
   .then(function (response) {
     console.log(response);
+    window.confirm("새로고침 어케고치지");
     window.open("about:blank", "_self");
     window.close();
   })
@@ -35,9 +39,27 @@ function Custom() {
     console.log(error);
   });
 }else{
-  axios.post('http://localhost:8080/api/updateschedule'+ Schedules.id, Schedules)
+  axios.put('http://localhost:8080/api/updateschedule/'+ Schedules.id, Schedules)
   .then(function (response) {
     console.log(response);
+    window.confirm("새로고침 어케고치지");
+    window.open("about:blank", "_self");
+    window.close();
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+}}
+  }
+
+
+  const f4 = async () => {
+    console.log(Schedules);
+    if(mode != "new"){
+    axios.delete('http://localhost:8080/api/deleteschedule/'+mode)
+  .then(function (response) {
+    console.log(response);
+    window.confirm("새로고침 어케고치지");
     window.open("about:blank", "_self");
     window.close();
   })
@@ -47,27 +69,59 @@ function Custom() {
 }
   }
 
+function Buttons(){
+  if(mode == "new"){
+    return (
+      <div><Button
+      block
+      className="btn-round"
+      color="white"
+      // href=""
+      onClick={f3}
+      size="lg"
+      >
+          등록
+          </Button></div>
+      
+    )
+  }else if(mode !="new"){
+    return(
+      <div>
+  <Button
+      block
+      className="btn-round"
+      color="white"
+      // href=""
+      onClick={f3}
+      size="lg"
+      >
+          수정
+          </Button>
+            <Button
+            block
+            className="btn-round"
+            color="white"
+            // href=""
+            onClick={f4}
+            size="lg"
+            >
+                삭제
+                </Button>
+      </div>
+    
+    )
+  }
+}
 
 
   React.useEffect(() => {
     let isSubscribed = true;
-//     if(mode !="new"){
-      
-//       axios.get('http://localhost:8080/api/getschedulebyNum/'+mode
-//     )
-//     .then((Response)=>{
-//     if (Response.status === 200) {
-//       if (isSubscribed) {
-//         setSchedule(Response.data);
-//         console.log(Response.data);
-       
-//        }
-      
-//     }
-//   })
-// .catch((Error)=>{console.log(Error)});
+     if(mode !="new"){
 
-//     }
+axios
+.get('http://localhost:8080/api/getschedulebyNum/'+mode)
+.then(( Response ) => setSchedule(Response.data));
+     }
     if (window.innerWidth > 991) {
       const updateScroll = () => {
         let windowScrollTop = window.pageYOffset / 3;
@@ -84,7 +138,7 @@ function Custom() {
     return function cleanup() {
       isSubscribed = false;
     };
-  },[Schedules]);
+  },[]);
   return (
     <>
       <div className="page-header">
@@ -102,15 +156,17 @@ function Custom() {
             <h2>제목<Input
             placeholder="제목..."
             type="text"
-            name="title"
-
-            onChange={({ target: { value } }) => setSchedule({
-              title:value,
-               id:Schedules.id,
-            startdate:Schedules.startdate,
-            enddate:Schedules.enddate,
-            alldat:Schedules.alldat,
-          userid:Schedules.userid})}
+            value={Schedules.title}
+            onChange={({ target: { value } }) =>
+             setSchedule({
+              id:Schedules.id,
+     title:value,
+     startdate:Schedules.startdate,
+     enddate:Schedules.enddate,
+     alldat:Schedules.alldat,
+     userid:Schedules.userid
+        })
+        }
 
 
             ></Input></h2>
@@ -118,28 +174,30 @@ function Custom() {
             placeholder="시작날짜..."
             type="datetime-local"
             name="startdate"
+            value={Schedules.startdate}
             onChange={({ target: { value } }) => setSchedule({
+              id:Schedules.id,
               title:Schedules.title,
-               id:Schedules.id,
-            startdate:value,
-            enddate:Schedules.enddate,
-            alldat:Schedules.alldat,
-            userid:Schedules.userid})}
+              startdate:value,
+              enddate:Schedules.enddate,
+              alldat:Schedules.alldat,
+              userid:Schedules.userid})}
             ></Input></h2>
             <h2>종료날짜<Input
             placeholder="종료날짜..."
+            value={Schedules.enddate}
             type="datetime-local"
             name="enddate"
             onChange={({ target: { value } }) => setSchedule({
+              id:Schedules.id,
               title:Schedules.title,
-               id:Schedules.id,
-            startdate:Schedules.startdate,
-            enddate:value,
-            alldat:Schedules.alldat,
-            userid:Schedules.userid})}
+              startdate:Schedules.startdate,
+              enddate:value,
+              alldat:Schedules.alldat,
+              userid:Schedules.userid})}
             ></Input></h2>
             <br/>
-            <Button
+            {/* <Button
             block
             className="btn-round"
             color="white"
@@ -148,7 +206,8 @@ function Custom() {
             size="lg"
             >
                 등록
-                </Button>
+                </Button> */}
+          {Buttons()}
           </Container>
         </div>
       </div>
