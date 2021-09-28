@@ -141,7 +141,7 @@ function IndexNavbar() {
                 
               <NavItem>
               <NavLink
-              href="http://localhost:3000/login-page"
+              href="login-page"
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>로그인</p>

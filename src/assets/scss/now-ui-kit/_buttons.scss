@@ -634,7 +634,7 @@
 //tour-page
 
 .zone_wrap{
-    background: #edeef2;
+    background: #000000;
     padding-top: 31px;
     position: relative;
 }
@@ -642,41 +642,75 @@
 .zone_wrap .list_zone{
     position: relative;
     padding-bottom: 50px;
-    width: 940px;
+    width: 100%;
     margin: 0 auto;
 }
 
 .zone_wrap .tit{
     position: relative;
-    height: 59px;
-    overflow: hidden;
+    display: flex;
+    justify-content: center;
 }
 
 .zone_wrap .tit h2{
     float: left;
     font-weight: 800;
     font-size: 22px;
-    color: #333;
+    color: rgb(255, 255, 255);
     letter-spacing: -1px;
     line-height: 59px;
+}
+
+.zone_wrap .list_zone {
+    position: relative;
+    padding-bottom: 50px;
+    width: 100%;
+    margin: 0 auto;
 }
 
 .zone_wrap .list_zone .swiper-container2 {
     border-top: 2px solid #333;
     position: relative;
     overflow: hidden;
-    height: 67px;
+    height: 100%;
     align-items: center;
     background: none;
 }
 
+.zone_wrap .list_zone .swiper-container2 .swiper-wrapper {
+    width: 100%;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+.zone_wrap .list_zone .swiper-slide{
+    position: relative;
+    width: 49px;
+    text-align: center;
+}
+
+.zone_wrap .list_zone .swiper-slide button{
+    display: block;
+    width: 100%;
+    height: 34px;
+    font-size: 16px;
+    border-radius: 3px !important;
+    border: 1px solid #FFFFFF;
+    background-color: #000000;
+    color: #FFFFFF;
+}
+
 .zone_wrap .list_zone .swiper-container2.type0 .swiper-slide {
     width: 55px;
+    display: flex;
+    justify-content: center;
+    float: left;
 }
 
 .zone_wrap .zone_box{
     padding: 0 30px 23px 30px;
-    background: #fff;
+    background: rgb(0, 0, 0);
     border-radius: 10px;
 }
 
@@ -684,8 +718,9 @@
     overflow: hidden;
     width: 100%;
     padding: 37px 0 26px;
-    float: none;
+    float: left;
     margin: 0;
+    
 }
 
 .zone_cont.on{
@@ -720,18 +755,31 @@
     width: 300px;
 }
 
-.zone_cont .zone_cont .list_sub {
+.zone_wrap .zone_cont .list_sub {
     padding: 24px 95px 12px 0 !important;
     border-radius: 0;
     background: none;
     border-top: 1px dashed #c6c6c6;
 }
 
+.zone_cont .list_sub{
+    position: relative;
+    clear: both;
+    padding: 13px 40px 12px 40px;
+    background: #f7f7f7;
+    border-radius: 10px;
+}
+
 .zone_cont .list_sub .inr {
     overflow: hidden;
-    height: 25px;
+    height: 100%;
 }
 
 .zone_cont .list_sub ul {
     margin-left: -20px;
+}
+
+.zone_cont .list_sub li {
+    float: left;
+    margin-left: 20px;
 }

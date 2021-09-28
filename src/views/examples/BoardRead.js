@@ -63,14 +63,14 @@ function BoardRead() {
 
      const f3 = async () => {
         
-        window.location.href ='http://localhost:3000/boardinput/'+Board.idx
+        window.location.href ='./boardinput/'+Board.idx
       }
       const f4 = async () => {
         console.log(Board);
         //삭제/board/{no}
         axios.delete('http://localhost:8080/api/board/'+num)
         .then(function (response) {
-          window.location.href ='http://localhost:3000/board-page'
+          window.location.href ='./board-page'
         })
         .catch(function (error) {
           console.log(error);
@@ -81,7 +81,7 @@ function BoardRead() {
         console.log(Board); //createcomment
         axios.post('http://localhost:8080/api/board/comment',Comment)
         .then(function (response) {
-          window.location.href ='http://localhost:3000/boardread/'+Board.idx
+          window.location.href ='./boardread/'+Board.idx
         })
         .catch(function (error) {
           console.log(error);
@@ -91,7 +91,7 @@ function BoardRead() {
       function deletecomment(number){
         axios.delete('http://localhost:8080/api/board/comment/'+number)
         .then(function (response) {
-          window.location.href ='http://localhost:3000/boardread/'+Board.idx
+          window.location.href ='./boardread/'+Board.idx
         })
         .catch(function (error) {
           console.log(error);

@@ -171,7 +171,7 @@ function isPagingNext() {
               <Button
                 className="btn-board"
                 color="info"
-                href="http://localhost:3000/boardinput/new"
+                href="./boardinput/new"
                 //target="_blank"
               >등록
               </Button>
