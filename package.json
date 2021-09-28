@@ -3,6 +3,7 @@
   "version": "1.5.0",
   "private": true,
   "dependencies": {
+    "@aws-amplify/cli": "^6.1.0",
     "@emotion/react": "^11.4.1",
     "@ericz1803/react-google-calendar": "^4.2.1",
     "@fullcalendar/core": "^5.9.0",
