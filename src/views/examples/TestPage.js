@@ -161,7 +161,7 @@ const num3=  (count.t >= count.f) ? 'T' : 'F'
             <br/>
             <br/>
             <br/>
-            <Button2 style={{marginLeft:"10px", marginRight:"10px"}} onClick={() => updatecount()}>시작</Button2>
+            <Button2 style={{marginLeft:"20px", marginRight:"20px"}} onClick={() => updatecount()}>시작</Button2>
         </Intro>
       
 
