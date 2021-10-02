@@ -37,14 +37,14 @@ function Calendars() {
   */
   React.useEffect(() => {
     let isSubscribed = true;
-    axios.get('http://localhost:8080/api/getHoliDeInfo?yearss='+moment().year())
+    axios.get('/api/getHoliDeInfo?yearss='+moment().year())
       .then(Response => {
 
      
           if (Response.status === 200) {
             
             setNames(Response.data.response.body.items.item);
-            axios.get('http://localhost:8080/api/getschedule/'+id)
+            axios.get('/api/getschedule/'+id)
       .then(Response => {
 
      

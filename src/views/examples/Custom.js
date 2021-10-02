@@ -28,7 +28,7 @@ function Custom() {
       window.confirm("시작날짜를 종료날짜 이후로 설정해주세요");
     }else{
     if(mode == "new"){
-    axios.post('http://localhost:8080/api/saveschedule', Schedules)
+    axios.post('/api/saveschedule', Schedules)
   .then(function (response) {
     console.log(response);
     window.confirm("새로고침 어케고치지");
@@ -39,7 +39,7 @@ function Custom() {
     console.log(error);
   });
 }else{
-  axios.put('http://localhost:8080/api/updateschedule/'+ Schedules.id, Schedules)
+  axios.put('/api/updateschedule/'+ Schedules.id, Schedules)
   .then(function (response) {
     console.log(response);
     window.confirm("새로고침 어케고치지");
@@ -56,7 +56,7 @@ function Custom() {
   const f4 = async () => {
     console.log(Schedules);
     if(mode != "new"){
-    axios.delete('http://localhost:8080/api/deleteschedule/'+mode)
+    axios.delete('/api/deleteschedule/'+mode)
   .then(function (response) {
     console.log(response);
     window.confirm("새로고침 어케고치지");
@@ -119,7 +119,7 @@ function Buttons(){
      if(mode !="new"){
 
 axios
-.get('http://localhost:8080/api/getschedulebyNum/'+mode)
+.get('/api/getschedulebyNum/'+mode)
 .then(( Response ) => setSchedule(Response.data));
      }
     if (window.innerWidth > 991) {

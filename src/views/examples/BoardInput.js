@@ -27,7 +27,7 @@ const {mode} = useParams();
 
      React.useEffect(() => {
        if(mode != 'new'){
-      axios.get('http://localhost:8080/api/board/'+mode)
+      axios.get('/api/board/'+mode)
       .then(function (response) {
         console.log(response)
           setBoard(response.data);
@@ -41,19 +41,19 @@ const {mode} = useParams();
   
      const f3 = async () => {
        if(mode==='new'){ //new
-        axios.post('http://localhost:8080/api/board', Board)
+        axios.post('/api/board', Board)
       .then(function (response) {
         console.log(response);
-        window.location.href ='./boardread/'+response.data.idx
+        window.location.href ='../../boardread/'+response.data.idx
       })
       .catch(function (error) {
         console.log(error);
       });
     }else { //update
-      axios.put('http://localhost:8080/api/board/'+Board.idx, Board)
+      axios.put('/api/board/'+Board.idx, Board)
       .then(function (response) {
         console.log(response);
-        window.location.href ='./boardread/'+Board.idx
+        window.location.href ='../../boardread/'+Board.idx
       })
       .catch(function (error) {
         console.log(error);
@@ -81,7 +81,7 @@ const {mode} = useParams();
             type="text"
             name="title"
             class="form-control2"
-value={Board.title}
+            value={Board.title}
             onChange={({ target: { value } }) => 
              setBoard({
                idx:Board.idx,
@@ -112,7 +112,7 @@ value={Board.title}
             ></Input></h2>
             <br/>
             <Button
-            className="btn-view"
+            className="btn-viewboard"
             color="black"
             href="../board-page"
             size="5px"
@@ -120,7 +120,7 @@ value={Board.title}
                 목록
                 </Button>
             <Button
-            className="btn-board"
+            className="btn-inputboard"
             color="black"
             // href=""
             onClick={f3}

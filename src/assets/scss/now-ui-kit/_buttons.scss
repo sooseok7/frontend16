@@ -113,9 +113,9 @@
 .btn-calendar{
     border-width: 1px;
     border-radius: 10px !important;
-    padding: 11px 23px;
+    padding: 10px 20px;
     position: relative;
-    margin-right:7%;
+    margin-right:5%;
     margin-top: -40px;
     float: right;
 
@@ -138,6 +138,42 @@
     border: 1px solid #FFFFFF;
     margin-top: -6px;
 
+}
+.btn-inputboard{
+    border-width: 1px;
+    border-radius: 10px !important;
+    position: relative;
+    max-width: fit-content;
+    float: right;
+    color: #FFFFFF;
+    background-color: #000000bf;
+    border: 1px solid #FFFFFF;
+    margin-top: -27px;
+    margin-right: 3px;
+
+}
+.btn-viewboard{
+    border-width: 1px;
+    border-radius: 10px !important;
+    position: relative;
+    max-width: fit-content;
+    float: left;
+    color: #FFFFFF;
+    background-color: #000000bf;
+    border: 1px solid #FFFFFF;
+    margin-top: -27px;
+    margin-left: 5px;
+}
+.btn-searchboard{
+    border-width: 1px;
+    border-radius: 10px !important;
+    position: relative;
+    max-width: fit-content;
+    float: right;
+    color: #FFFFFF;
+    background-color: #000000;
+    border: 1px solid #FFFFFF;
+    margin-right: -6px;
 }
 .btn-search{
     border-width: 1px;
@@ -277,7 +313,7 @@
     position: relative;
     border: 1px solid #FFFFFF;
     border-width: 2px;
-    height: 26px;
+    height: 28px;
     float: left;
     margin-right: 5px;
     margin-top: 17px;

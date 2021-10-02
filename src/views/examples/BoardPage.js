@@ -43,7 +43,7 @@ var now = new Date();
 
 
   React.useEffect(() => {
-    axios.get('http://localhost:8080/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword)
+    axios.get('/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword)
     .then(Response => {
       console.log(Response)
 
@@ -66,7 +66,7 @@ var now = new Date();
 function listBoard(num, keyword)
 {
 
-    axios.get('http://localhost:8080/api/getPagingBoard?p_num='+num+'&keyword='+keyword)
+    axios.get('/api/getPagingBoard?p_num='+num+'&keyword='+keyword)
     .then(Response => {
       console.log(Response.data.pagingData)
         if (Response.status === 200) {
@@ -169,7 +169,7 @@ function isPagingNext() {
                 >조회</Button>
 
               <Button
-                className="btn-board"
+                className="btn-searchboard"
                 color="info"
                 href="./boardinput/new"
                 //target="_blank"
