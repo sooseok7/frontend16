@@ -17,13 +17,13 @@ background-color: #7585b359;
     background-color: $transparent-bg;
     border: 1px solid $light-gray;
     border-radius: $btn-round-radius;
-    color: $black-color;
+    color: #ffffff;
     height: auto;
     line-height: normal;
     font-size: $font-size-small;
     @include transition-input-focus-color();
     @include box-shadow(none);
-    background-color: #7585b359;
+    background-color: #00000052;
 
     .has-success &{
         border-color: $light-gray;
@@ -280,7 +280,7 @@ background-color: #7585b359;
 }
 textarea.form-control{
     color: #FFFFFF;
-    background-color: #000000;
+    background-color: #000000bf;
     border: 1px solid #FFFFFF;
     max-width: 100%;
     max-height: 100%;

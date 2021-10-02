@@ -31,7 +31,7 @@ function TestPage() {
   React.useEffect(() => {
     let isSubscribed = true;
 
-    axios.get('http://localhost:8080/api/getinformation'
+    axios.get('/api/getinformation'
     )
     .then((Response)=>{
     if (Response.status === 200) {
