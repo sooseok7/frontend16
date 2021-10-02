@@ -32,7 +32,7 @@ function BoardRead() {
 
 
      React.useEffect(() => {
-        axios.get('http://localhost:8080/api/board/'+num)
+        axios.get('/api/board/'+num)
         .then(function (response) {
             setBoard(response.data);
       
@@ -40,7 +40,7 @@ function BoardRead() {
         .catch(function (error) {
           console.log(error);
         });
-        axios.get('http://localhost:8080/api/getCommentById/'+num)
+        axios.get('/api/getCommentById/'+num)
         .then(function (response) {
           //console.log(response.data)
           setCommentList(response.data)
@@ -63,12 +63,12 @@ function BoardRead() {
 
      const f3 = async () => {
         
-        window.location.href ='./boardinput/'+Board.idx
+        window.location.href ='../boardinput/'+Board.idx
       }
       const f4 = async () => {
         console.log(Board);
         //삭제/board/{no}
-        axios.delete('http://localhost:8080/api/board/'+num)
+        axios.delete('/api/board/'+num)
         .then(function (response) {
           window.location.href ='./board-page'
         })
@@ -79,9 +79,9 @@ function BoardRead() {
       }
       const f5 = async () => {
         console.log(Board); //createcomment
-        axios.post('http://localhost:8080/api/board/comment',Comment)
+        axios.post('/api/board/comment',Comment)
         .then(function (response) {
-          window.location.href ='./boardread/'+Board.idx
+          window.location.href ='../boardread/'+Board.idx
         })
         .catch(function (error) {
           console.log(error);
@@ -89,9 +89,9 @@ function BoardRead() {
    
       }
       function deletecomment(number){
-        axios.delete('http://localhost:8080/api/board/comment/'+number)
+        axios.delete('/api/board/comment/'+number)
         .then(function (response) {
-          window.location.href ='./boardread/'+Board.idx
+          window.location.href ='../boardread/'+Board.idx
         })
         .catch(function (error) {
           console.log(error);
@@ -141,7 +141,7 @@ if(Commentlist.length != '0'){
             <Button
             block
             className="btn-view"
-            href="../board-page"
+            href="../../board-page"
             size="5px"
             >
                 목록

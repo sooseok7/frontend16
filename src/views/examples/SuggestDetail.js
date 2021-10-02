@@ -19,7 +19,7 @@ function SuggestDetail(props) {
     let isSubscribed = true;
     axios
       .get(
-        'http://localhost:8080/api/getPhoto?word='+word
+        '/api/getPhoto?word='+word
       )
       .then(Response => {
 
