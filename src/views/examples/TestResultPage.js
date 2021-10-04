@@ -324,8 +324,8 @@ return dist/1000;
     </div>
           {Namelists}
         <div style={{backgroundColor:"black"}}>
-        <Button className="btn-calendars" href="../tour-page">지역별 여행지</Button>
-        <Button className="btn-schedule" href="../thema-pape">테마별 여행지</Button><br/>
+        <Button className="btn-calendars" href="../tour-page">당신에게 맞는 지역별 여행 추천</Button>
+        <Button className="btn-schedule" href="../thema-pape">당신에게 맞는 여행 테마 추천</Button><br/>
         <Button className="btn-retest" href="../test-page"style={{display:"block"}}>테스트 다시하기</Button></div>
         <div style={{backgroundColor:"black"}}><br/></div>
         <DarkFooter />

@@ -76,59 +76,40 @@ switch (location){
 //target="_blank" rel=”noopener noreferrer”
 //rel=”noopener noreferrer”
 case'Seoul':
-return <><div class="box_logo" id="boxLogo">
-  <a href="https://korean.visitseoul.net/index" target="blank" rel="noopener noreferrer" class="logo" title="서울 홈페이지 새 창 열림">
-    <strong class="name">서울</strong>
-  </a><a href="https://korean.visitseoul.net/index" target="blank" rel="noopener noreferrer">너와 나의 서울</a></div>
-  <div class="zoneCont1 zone_cont on">
-    <div class="area_mid" id="areamid">
-      {/* <a href="javascript:goAreaFeed("온택트강남페스티벌", "희망으로의 한걸음!<br/>강남전역은 강남페스티벌 무대",
-    "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=fe453d08-14c6-4126-ae79-e576edeba486", "1", "0", "main"");" class="img">
-      <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=725eb1dc-3b77-406f-9854-d3c8f3d4159c" alt="온택트강남페스티벌">
-    </a>
-    </div> */}
-    </div>
-    <div class="area_left" id="arealeft">
-      <span>
-        "API"
-      </span>
-      <div class="txt_info">
-      </div>
-    </div>
-    <div id="arearight">
+return <>  <div class="zoneCont1 zone_cont on">
+      {/*<div id="arearight">
       <div id="area-right" id="area3">
         <ul>
           <li class="obj1 clfix">
-            {/* <div>
+           <div>
       <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
       <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
       "필름카메라📷의 매력"
       </a>
-    </div> */}
+    </div>
           </li>
           <li class="obj2 clfix">
-            {/* <div>
+            <div>
       <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
       <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
       "필름카메라📷의 매력"
       </a>
-    </div> */}
+    </div>
           </li>
           <li class="obj2 clfix">
-            {/* <div>
+            <div>
       <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
       <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
       "필름카메라📷의 매력"
       </a>
-    </div> */}
-            {/* 4개일때 */}
+    </div>4개일때
           </li>
         </ul>
 
       </div>
 
-    </div>
-    <div id="arearight">
+    </div> */}
+    {/* <div id="arearight">
       <div id="area-right" id="area4">
         <ul>
           <li class="obj1 clfix">
@@ -137,15 +118,15 @@ return <><div class="box_logo" id="boxLogo">
       <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
       "필름카메라📷의 매력"
       </a>
-    </div> */}
+    </div>
           </li>
           <li class="obj2 clfix">
-            {/* <div>
+            <div>
       <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
       <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
       "필름카메라📷의 매력"
       </a>
-    </div> */}
+    </div>
           </li>
           <li class="obj3 clfix">
             {/* <div>
@@ -154,16 +135,16 @@ return <><div class="box_logo" id="boxLogo">
       "필름카메라📷의 매력"
       </a>
     </div> */}
-            {/* 5개일때 */}
+            {/* 5개일때
           </li>
         </ul>
 
       </div>
 
-    </div>
+    </div> */}
     <div class="list_sub">
       <div class="inr">
-        <ul class="clfix" id="sigungulist">
+        {/* <ul class="clfix" id="sigungulist">
           <li>
             <a href="https://www.gangnam.go.kr/office/gfac/main.do" target="blank" rel="noopener noreferrer" title="강남구 문화관광 홈페이지_새창">강남구
             </a>
@@ -264,8 +245,26 @@ return <><div class="box_logo" id="boxLogo">
             <a href="https://www.jungnang.go.kr/portal/main/contents.do?menuNo=200371" target="blank" rel="noopener noreferrer" title="중랑구 문화관광 홈페이지_새창">중랑구
             </a>
           </li>
-        </ul>
+        </ul> */}
       </div>
+      <div class="area_left" id="arealeft">
+      <span>
+        "API"
+      </span>
+    </div>
+      <div class="txt_info">
+      </div>
+      <div class="box_logo" id="boxLogo">
+  <a href="https://korean.visitseoul.net/index" target="blank" rel="noopener noreferrer" class="logo" title="서울 홈페이지 새 창 열림">
+    <strong class="name">서울</strong>
+  </a><a href="https://korean.visitseoul.net/index" target="blank" rel="noopener noreferrer">너와 나의 서울</a></div>
+  <div class="area_mid" id="areamid">
+      {/* <a href="javascript:goAreaFeed("온택트강남페스티벌", "희망으로의 한걸음!<br/>강남전역은 강남페스티벌 무대",
+    "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=fe453d08-14c6-4126-ae79-e576edeba486", "1", "0", "main"");" class="img">
+      <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=725eb1dc-3b77-406f-9854-d3c8f3d4159c" alt="온택트강남페스티벌">
+    </a>
+    </div> */}
+    </div>
     </div>
   </div></> ;
 
@@ -356,7 +355,7 @@ case 'Busan' :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.bsgangseo.go.kr/visit/main.do" target="blank" rel="noopener noreferrer" title="강서구 문화관광 홈페이지_새창">강서구
               </a>
@@ -420,7 +419,7 @@ case 'Busan' :
               <a href="https://www.haeundae.go.kr/tour/index.do" target="blank" rel="noopener noreferrer" title="해운대구 문화관광 홈페이지_새창">해운대구
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></> ;
@@ -512,7 +511,7 @@ case 'Daegu' :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.nam.daegu.kr/tour/index.do" target="blank" rel="noopener noreferrer" title="남구 문화관광 홈페이지_새창">남구
               </a>
@@ -545,7 +544,7 @@ case 'Daegu' :
               <a href="https://www.jung.daegu.kr/new/culture/pages/main/" target="blank" rel="noopener noreferrer" title="중구 문화관광 홈페이지_새창">중구
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></> ;
@@ -636,7 +635,7 @@ case "Incheon":
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.ganghwa.go.kr/open_content/tour/" target="blank" rel="noopener noreferrer" title="강화군 문화관광 홈페이지_새창">강화군
               </a>
@@ -677,7 +676,7 @@ case "Incheon":
               <a href="https://www.icjg.go.kr/tour/index" target="blank" rel="noopener noreferrer" title="중구 문화관광 홈페이지_새창">중구
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>;
@@ -768,7 +767,7 @@ case "Incheon":
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.gwangsan.go.kr/culture/index.php" target="blank" rel="noopener noreferrer" title="광산구 문화관광 홈페이지_새창">광산구
               </a>
@@ -789,7 +788,7 @@ case "Incheon":
               <a href="http://www.seogu.gwangju.kr/culture/index.9is?contentUid=4028484950895ab20151186f742f0f8a" target="blank" rel="noopener noreferrer" title="서구 문화관광 홈페이지_새창">서구
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -881,7 +880,7 @@ case "Incheon":
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.daedeok.go.kr/ect/ECT.do" target="blank" rel="noopener noreferrer" title="대덕구 문화관광 홈페이지_새창">대덕구
               </a>
@@ -902,7 +901,7 @@ case "Incheon":
               <a href="https://www.djjunggu.go.kr/tour/index.do" target="blank" rel="noopener noreferrer" title="중구 문화관광 홈페이지_새창">중구
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -994,7 +993,7 @@ case "Ulsan" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.junggu.ulsan.kr/tour/index.ulsan" target="blank" rel="noopener noreferrer" title="중구 문화관광 홈페이지_새창">중구
               </a>
@@ -1015,7 +1014,7 @@ case "Ulsan" :
               <a href="https://tour.ulju.ulsan.kr/" target="blank" rel="noopener noreferrer" title="울주군 문화관광 홈페이지_새창">울주군
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -1107,7 +1106,7 @@ case "Gyeong-gi" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.gptour.go.kr/" target="blank" rel="noopener noreferrer" title="가평군 문화관광 홈페이지_새창">가평군
               </a>
@@ -1230,7 +1229,7 @@ case "Gyeong-gi" :
               <a href="https://tour.hscity.go.kr/NEW/0index/index.jsp" target="blank" rel="noopener noreferrer" title="화성시 문화관광 홈페이지_새창">화성시
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -1322,7 +1321,7 @@ case "Gang-won" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.gn.go.kr/tour/index.do" target="blank" rel="noopener noreferrer" title="강릉시 문화관광 홈페이지_새창">강릉시
               </a>
@@ -1394,7 +1393,7 @@ case "Gang-won" :
               <a href="https://www.hsg.go.kr/tour.web" target="blank" rel="noopener noreferrer" title="횡성군 문화관광 홈페이지_새창">횡성군
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -1486,7 +1485,7 @@ case "Chungbug" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.goesan.go.kr/tour/index.do" target="blank" rel="noopener noreferrer" title="괴산군 문화관광 홈페이지_새창">괴산군
               </a>
@@ -1531,7 +1530,7 @@ case "Chungbug" :
               <a href="https://www.jp.go.kr/tour.do" target="blank" rel="noopener noreferrer" title="증평군 문화관광 홈페이지_새창">증평군
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -1623,7 +1622,7 @@ case "Chungnam" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="http://www.gongju.go.kr/tour/" target="blank" rel="noopener noreferrer" title="공주시 문화관광 홈페이지_새창">공주시
               </a>
@@ -1679,7 +1678,7 @@ case "Chungnam" :
               <a href="https://www.gyeryong.go.kr/html/tour/index.html" target="blank" rel="noopener noreferrer" title="계룡시 문화관광 홈페이지_새창">계룡시
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -1771,7 +1770,7 @@ case "Jeonbug" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.gochang.go.kr/tour/index.gochang" target="blank" rel="noopener noreferrer" title="고창시 문화관광 홈페이지_새창">고창시
               </a>
@@ -1828,7 +1827,7 @@ case "Jeonbug" :
               <a href="https://jinan.go.kr/tour/" target="blank" rel="noopener noreferrer" title="진안군 문화관광 홈페이지_새창">진안군
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -1920,7 +1919,7 @@ case "Jeonnam" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.gangjin.go.kr/culture/index.do" target="blank" rel="noopener noreferrer" title="강진군 문화관광 홈페이지_새창">강진군
               </a>
@@ -2008,7 +2007,7 @@ case "Jeonnam" :
               <a href="http://www.hwasun.go.kr/index.do?S=S09" target="blank" rel="noopener noreferrer" title="화순군 문화관광 홈페이지_새창">화순군
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -2100,7 +2099,7 @@ case "Gyeongbug" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.gbgs.go.kr/open_content/tour/index.do" target="blank" rel="noopener noreferrer" title="경산시 문화관광 홈페이지_새창">경산시
               </a>
@@ -2192,7 +2191,7 @@ case "Gyeongbug" :
               <a href="https://www.pohang.go.kr/phtour/index.do" target="blank" rel="noopener noreferrer" title="포항시 문화관광 홈페이지_새창">포항시
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -2284,7 +2283,7 @@ case "Gyeongnam" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://tour.geoje.go.kr/index.geoje" target="blank" rel="noopener noreferrer" title="거제시 문화관광 홈페이지_새창">거제시
               </a>
@@ -2356,7 +2355,7 @@ case "Gyeongnam" :
               <a href="http://www.hc.go.kr/tour.web" target="blank" rel="noopener noreferrer" title="합천군 문화관광 홈페이지_새창">합천군
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>
@@ -2448,7 +2447,7 @@ case "Jeju" :
       </div>
       <div class="list_sub">
         <div class="inr">
-          <ul class="clfix" id="sigungulist">
+          {/* <ul class="clfix" id="sigungulist">
             <li>
               <a href="https://www.seogwipo.go.kr/field/tourist.htm" target="blank" rel="noopener noreferrer" title="서귀포시 문화관광 홈페이지_새창">서귀포시
               </a>
@@ -2457,7 +2456,7 @@ case "Jeju" :
               <a href="https://www.visitjeju.net/kr" target="blank" rel="noopener noreferrer" title="제주시 문화관광 홈페이지_새창">제주시
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </div></>

@@ -22,7 +22,6 @@ import "assets/scss/now-ui-kit.scss?v=1.5.0";
 import Index from "views/Index.js";
 import LoginPage from "views/examples/LoginPage.js";
 import JoinPage from "views/examples/JoinPage";
-import SearchPage from "views/examples/SearchPage.js";
 import BoardPage from "views/examples/BoardPage.js";
 import TestPage from "views/examples/TestPage.js";
 import ResultPage from "views/examples/ResultPage";
@@ -43,15 +42,10 @@ import WalkingPage from "views/examples/WalkingPage.js";
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
-      <Switch>
         <Route path="/index" render={(props) => <Index {...props} />} />
         <Route
           path="/calendars"
           render={(props) => <Calendars {...props} />}
-        />
-        <Route
-          path="/search-page"
-          render={(props) => <SearchPage {...props} />}
         />
         <Route
           path="/board-page"
@@ -123,7 +117,6 @@ ReactDOM.render(
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
-      </Switch>
     </Switch>
   </BrowserRouter>,
   document.getElementById("root")
