@@ -8,6 +8,9 @@ import {
   Carousel,
   CarouselItem,
   CarouselIndicators,
+  NavItem,
+  NavLink,
+  UncontrolledTooltip,
 } from "reactstrap";
 
 // core components
@@ -62,9 +65,19 @@ function CarouselSection() {
     <>
       <div className="section" id="carousel">
         <Container>
-          <div className="title">
-            <h4>Carousel</h4>
-          </div>
+        <NavItem style={{ backgroundColor: "black", textAlign:"center" }}>
+                <NavLink
+                  href="https://www.instagram.com/pic_chung"
+                  target="_blank"
+                  id="instagram-tooltip"
+                >
+                  <i className="fab fa-instagram"></i>
+                  <p className="d-lg-none d-xl-none">Instagram</p>
+                </NavLink>
+                <UncontrolledTooltip target="#instagram-tooltip">
+                  Follow us on Instagram
+                </UncontrolledTooltip>
+              </NavItem>
           <Row className="justify-content-center">
             <Col lg="8" md="12">
               <Carousel
@@ -119,8 +132,7 @@ function CarouselSection() {
             </Col>
           </Row>
         </Container>
-      </div>
-    </>
+      </div></>
   );
 }
 
