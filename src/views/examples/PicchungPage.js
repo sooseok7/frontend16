@@ -3,6 +3,7 @@ import React from "react";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
+import Carousel from "views/examples/Carousel.js";
 
 function PicchungPage() {
 
@@ -73,9 +74,7 @@ function PicchungPage() {
         </div>
       </div>
       
-      
-      
-      
+      <Carousel />
       <DarkFooter /></>
   );
 }
