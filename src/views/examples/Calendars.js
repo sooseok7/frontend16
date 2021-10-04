@@ -7,7 +7,6 @@ import moment from "moment"; // 밑에 언어랑 시간대 가져옴
 import axios from 'axios';
 import CalendarButton from './CalendarButton';
 
-
 // reactstrap components
 // import {
 // } from "reactstrap";
@@ -35,6 +34,12 @@ function Calendars() {
   const [loading,setLoading]=useState();
 
   */
+  const navigateContants = {
+    PREVIOUS: 'PREV',
+    NEXT: 'NEXT',
+    DATE: 'DATE'
+};
+
   React.useEffect(() => {
     let isSubscribed = true;
     axios.get('/api/getHoliDeInfo?yearss='+moment().year())
@@ -128,6 +133,7 @@ const finalevent = Object.assign(events, events2);
       date={datedss}
       defaultView={viewss}
       defaultDate={datedss}
+      onNavigate={(date) => setDates(date)}
       getDrilldownView={(targetDate, currentViewName, configuredViewNames) =>{
         setViews(currentViewName)
         return null}
