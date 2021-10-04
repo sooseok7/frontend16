@@ -53,6 +53,8 @@
     }
 
     &:before{
+        color: hsla(0, 0%, 0%, 0.13);
+
         display: inline-block;
         position: absolute;
         width: 0;
@@ -62,7 +64,7 @@
         top: -5px;
         left: 10px;
         right: auto;
-        color: #000;
+        
         border-bottom: .4em solid;
         border-right: .4em solid transparent;
         border-left: .4em solid transparent;
