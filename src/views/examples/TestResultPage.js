@@ -255,6 +255,58 @@ return dist/1000;
             <button  css={btnCSS}>Begin</button>
         </Intro> */}
 
+
+{/* 버튼 css라서 필요하면 쓸거임 */}
+
+{/* <h4>Navigation Pills</h4>
+              <Nav
+                className="nav-pills-info nav-pills-just-icons"
+                pills
+                role="tablist"
+              >
+                <NavItem>
+                  <NavLink
+                    className={pills === "1" ? "active" : ""}
+                    href="#pablo"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setPills("1");
+                    }}
+                  >
+                    <i className="far fa-gem"></i>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className={pills === "2" ? "active" : ""}
+                    href="#pablo"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setPills("2");
+                    }}
+                  >
+                    <i className="fa fa-thermometer-full"></i>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink
+                    className={pills === "3" ? "active" : ""}
+                    href="#pablo"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      setPills("3");
+                    }}
+                  >
+                    <i className="fa fa-suitcase"></i>
+                  </NavLink>
+                </NavItem>
+                <NavItem>
+                  <NavLink href="#pablo" disabled>
+                    <i className="fa fa-exclamation"></i>
+                  </NavLink>
+                </NavItem>
+              </Nav> */}
+
  
 <div className="btn-moving">
 <br/>
