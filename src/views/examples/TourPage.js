@@ -44,33 +44,30 @@ function TourPage() {
     setLocation("Ulsan");
   }
   const location8 = () => {
-    setLocation("Sejong");
-  }
-  const location9 = () => {
     setLocation("Gyeong-gi");
   }
-  const location10 = () => {
+  const location9 = () => {
     setLocation("Gang-won");
   }
-  const location11 = () => {
+  const location10 = () => {
     setLocation("Chungbug");
   }
-  const location12 = () => {
+  const location11 = () => {
     setLocation("Chungnam");
   }
-  const location13 = () => {
+  const location12 = () => {
     setLocation("Jeonbug");
   }
-  const location14 = () => {
+  const location13 = () => {
     setLocation("Jeonnam");
   }
-  const location15 = () => {
+  const location14 = () => {
     setLocation("Gyeongbug");
   }
-  const location16 = () => {
+  const location15 = () => {
     setLocation("Gyeongnam");
   }
-  const location17 = () => {
+  const location16 = () => {
     setLocation("Jeju");
   }
 
@@ -1016,103 +1013,6 @@ case "Ulsan" :
             </li>
             <li>
               <a href="https://tour.ulju.ulsan.kr/" target="blank" rel="noopener noreferrer" title="울주군 문화관광 홈페이지_새창">울주군
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div></>
-
-case "Sejong" :
-  return        <><div class="box_logo" id="boxLogo">
-    <a href="https://www.sejong.go.kr/tour.do" target="blank" rel="noopener noreferrer" class="logo" title="세종 홈페이지 새 창 열림">
-      <strong class="name">세종</strong>
-    </a><a href="https://www.sejong.go.kr/tour.do" target="blank" rel="noopener noreferrer">너와 나의 세종</a></div><div class="zoneCont8 zone_cont on">
-      <div class="area_mid" id="areamid">
-        {/* <a href="javascript:goAreaFeed("온택트강남페스티벌", "희망으로의 한걸음!<br/>강남전역은 강남페스티벌 무대",
-    "https://korean.visitkorea.or.kr/detail/fes_detail.do?cotid=fe453d08-14c6-4126-ae79-e576edeba486", "1", "0", "main"");" class="img">
-      <img src="https://cdn.visitkorea.or.kr/img/call?cmd=VIEW&id=725eb1dc-3b77-406f-9854-d3c8f3d4159c" alt="온택트강남페스티벌">
-    </a>
-    </div> */}
-      </div>
-      <div class="area_left" id="arealeft">
-        <span>
-          "API"
-        </span>
-        <div class="txt_info">
-        </div>
-      </div>
-      <div id="arearight">
-        <div id="area-right" id="area3">
-          <ul>
-            <li class="obj1 clfix">
-              {/* <div>
-      <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
-      <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
-      "필름카메라📷의 매력"
-      </a>
-    </div> */}
-            </li>
-            <li class="obj2 clfix">
-              {/* <div>
-      <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
-      <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
-      "필름카메라📷의 매력"
-      </a>
-    </div> */}
-            </li>
-            <li class="obj2 clfix">
-              {/* <div>
-      <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
-      <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
-      "필름카메라📷의 매력"
-      </a>
-    </div> */}
-              {/* 4개일때 */}
-            </li>
-          </ul>
-
-        </div>
-
-      </div>
-      <div id="arearight">
-        <div id="area-right" id="area4">
-          <ul>
-            <li class="obj1 clfix">
-              {/* <div>
-      <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
-      <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
-      "필름카메라📷의 매력"
-      </a>
-    </div> */}
-            </li>
-            <li class="obj2 clfix">
-              {/* <div>
-      <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
-      <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
-      "필름카메라📷의 매력"
-      </a>
-    </div> */}
-            </li>
-            <li class="obj3 clfix">
-              {/* <div>
-      <a href="javascript:goAreaFeed("필름카메라📷의 매력", "사진으로 추억을 담다. 아날로그 기록", "https://blog.naver.com/haechiseoul/222485782561", "1", "0", "list");" title="새창열림">
-      <strong class="bn_txtR">사진으로 추억을 담다. 아날로그 기록</strong>
-      "필름카메라📷의 매력"
-      </a>
-    </div> */}
-              {/* 5개일때 */}
-            </li>
-          </ul>
-
-        </div>
-
-      </div>
-      <div class="list_sub">
-        <div class="inr">
-          <ul class="clfix" id="sigungulist">
-            <li>
-              <a href="https://www.sejong.go.kr/tour.do" target="blank" rel="noopener noreferrer" title="세종시 문화관광 홈페이지_새창">세종시
               </a>
             </li>
           </ul>
@@ -2576,7 +2476,7 @@ default :
           className="page-header-image"
           style={{
             backgroundImage:
-              "url(" + require("assets/img/login.jpg").default + ")",
+              "url(" + require("assets/img/bg8.jpg").default + ")",
           }}
         >
 
@@ -2615,35 +2515,32 @@ default :
           <div id="zone7" class="swiper-slide" data-areacode="7">
               <button type="button" onClick={location7}>울산</button>
           </div>
-          <div id="zone8" class="swiper-slide" data-areacode="8">
-              <button type="button" onClick={location8}>세종</button>
-          </div>
           <div id="zone9" class="swiper-slide" data-areacode="31">
-              <button type="button" onClick={location9}>경기</button>
+              <button type="button" onClick={location8}>경기</button>
           </div>
           <div id="zone10" class="swiper-slide" data-areacode="32">
-              <button type="button" onClick={location10}>강원</button>
+              <button type="button" onClick={location9}>강원</button>
           </div>
           <div id="zone11" class="swiper-slide" data-areacode="33">
-              <button type="button" onClick={location11}>충북</button>
+              <button type="button" onClick={location10}>충북</button>
           </div>
           <div id="zone12" class="swiper-slide" data-areacode="34">
-              <button type="button" onClick={location12}>충남</button>
+              <button type="button" onClick={location11}>충남</button>
           </div>
           <div id="zone13" class="swiper-slide" data-areacode="37">
-              <button type="button" onClick={location13}>전북</button>
+              <button type="button" onClick={location12}>전북</button>
           </div>
           <div id="zone14" class="swiper-slide" data-areacode="38">
-              <button type="button" onClick={location14}>전남</button>
+              <button type="button" onClick={location13}>전남</button>
           </div>
           <div id="zone15" class="swiper-slide" data-areacode="35">
-              <button type="button" onClick={location15}>경북</button>
+              <button type="button" onClick={location14}>경북</button>
           </div>
           <div id="zone16" class="swiper-slide" data-areacode="36">
-              <button type="button" onClick={location16}>경남</button>
+              <button type="button" onClick={location15}>경남</button>
           </div>
           <div id="zone17" class="swiper-slide" data-areacode="39">
-              <button type="button" onClick={location17}>제주</button>
+              <button type="button" onClick={location16}>제주</button>
           </div>
         </div>
         </div>
