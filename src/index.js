@@ -20,7 +20,6 @@ import "assets/scss/now-ui-kit.scss?v=1.5.0";
 // import "assets/demo/nucleo-icons-page-styles.css?v=1.5.0";
 // pages for this kit
 import Index from "views/Index.js";
-import NucleoIcons from "views/NucleoIcons.js";
 import LoginPage from "views/examples/LoginPage.js";
 import JoinPage from "views/examples/JoinPage";
 import SearchPage from "views/examples/SearchPage.js";
@@ -34,17 +33,18 @@ import Custom from "views/examples/Custom.js";
 import BoardInput from "views/examples/BoardInput.js";
 import BoardRead from "views/examples/BoardRead.js";
 import TourPage from "views/examples/TourPage.js";
-import ThemaPage from "views/examples/ThemaPage.js";
+import CampingPage from "views/examples/CampingPage.js";
+import FestivalPage from "views/examples/FestivalPage.js";
+import MusicPage from "views/examples/MusicPage.js";
+import PicchungPage from "views/examples/PicchungPage.js";
+import PicturePage from "views/examples/PicturePage.js";
+import WalkingPage from "views/examples/WalkingPage.js";
 
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
       <Switch>
         <Route path="/index" render={(props) => <Index {...props} />} />
-        <Route
-          path="/nucleo-icons"
-          render={(props) => <NucleoIcons {...props} />}
-        />
         <Route
           path="/calendars"
           render={(props) => <Calendars {...props} />}
@@ -97,9 +97,29 @@ ReactDOM.render(
         path="/tour-page"
         render={(props) => <TourPage {...props} />}
         />
-         <Route
-        path="/thema-page"
-        render={(props) => <ThemaPage {...props} />}
+        <Route
+        path="/camping-page"
+        render={(props) => <CampingPage {...props} />}
+        />
+        <Route
+        path="/festival-page"
+        render={(props) => <FestivalPage {...props} />}
+        />
+        <Route
+        path="/music-page"
+        render={(props) => <MusicPage {...props} />}
+        />
+        <Route
+        path="/picchung-page"
+        render={(props) => <PicchungPage {...props} />}
+        />
+        <Route
+        path="/picture-page"
+        render={(props) => <PicturePage {...props} />}
+        />
+        <Route
+        path="/walking-page"
+        render={(props) => <WalkingPage {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />

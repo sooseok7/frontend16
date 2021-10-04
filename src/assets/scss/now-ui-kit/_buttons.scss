@@ -755,7 +755,8 @@
     width: 100%;
     padding: 37px 0 26px;
     float: left;
-    margin: 0;
+    display: flex;
+    justify-content: center;
     
 }
 
@@ -809,6 +810,9 @@
 .zone_cont .list_sub .inr {
     overflow: hidden;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    margin-left: 6%;
 }
 
 .zone_cont .list_sub ul {

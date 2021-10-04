@@ -97,21 +97,79 @@ function ResultNavbar() {
               </NavLink>
               </NavItem>
 
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  href="#pablo"
+                  nav
+                  onClick={(e) => e.preventDefault()}
+                >
+                  <p>테마여행</p>
+                </DropdownToggle>
+                <DropdownMenu>
+                  <DropdownItem href="../picture-page"
+                  >
+                  <p>사진</p>
+                  </DropdownItem>
+                  <DropdownItem
+                    href="../music-page"
+                    // target="_blank"
+                  >
+                    <p>음악</p>
+                  </DropdownItem>
+                  <DropdownItem
+                    href="../walking-page"
+                    // target="_blank"
+                  >
+                    <p>뚜벅</p>
+                  </DropdownItem>
+                  <DropdownItem
+                    href="../camping-page"
+                    // target="_blank"
+                  >
+                    <p>캠핑</p>
+                  </DropdownItem>
+                  <DropdownItem
+                    href="
+                    ../festival-page"
+                    // target="_blank"
+                  >
+                    <p>축제</p>
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+
+              <UncontrolledDropdown nav>
+                <DropdownToggle
+                  caret
+                  color="default"
+                  href="#pablo"
+                  nav
+                  onClick={(e) => e.preventDefault()}
+                >
+                  <p>게시판</p>
+                </DropdownToggle>
+                <DropdownMenu>
+                <DropdownItem href="../board-page"
+                  >
+                  <p>자유게시판</p>
+                  </DropdownItem>
+                  <DropdownItem
+                    href="../picchung-page"
+                    // target="_blank"
+                  >
+                    <p>사진게시판</p>
+                  </DropdownItem>
+                </DropdownMenu>
+              </UncontrolledDropdown>
+
               <NavItem>
               <NavLink
               href="../calendars"       
             >
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>달력</p>
-                </NavLink>
-              </NavItem>
-
-              <NavItem>
-              <NavLink
-              href="../board-page"     
-            >
-                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
-                  <p>게시판</p>
                 </NavLink>
               </NavItem>
 
