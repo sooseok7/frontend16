@@ -65,7 +65,7 @@ function CarouselSection() {
     <>
       <div className="section" id="carousel">
         <Container>
-        <NavItem style={{ backgroundColor: "black", textAlign:"center" }}>
+        <NavItem style={{ backgroundColor: "black", textAlign:"center", height: "70px"}}>
                 <NavLink
                   href="https://www.instagram.com/pic_chung"
                   target="_blank"

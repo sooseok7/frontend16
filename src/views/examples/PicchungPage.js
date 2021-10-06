@@ -22,13 +22,15 @@ function PicchungPage() {
     <><><ExamplesNavbar /><div className="page-header clear-filter">
       <div
         className="page-header-image"
+        
         style={{
           backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
         }}
       ></div>
     </div>
 
-    </><Carousel /><DarkFooter /></>
+    </><Carousel />
+    <DarkFooter /></>
   );
 }
 

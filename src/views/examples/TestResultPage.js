@@ -3,15 +3,12 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 import QuestionResult from '../../QuestionResult';
 import styled from 'styled-components/macro'
-import Suggest from "./Suggest";
 import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import TestResultHeader from "components/Headers/TestResultHeader";
 import DarkFooter from "components/Footers/DarkFooter";
 import { Button, Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
-import { useForkRef } from "@material-ui/core";
-import geolib from 'geolib';
-import { getDistance ,convertUnit} from "geolib"
+import { getDistance } from "geolib"
 const Intro = styled.div`
   margin-top: 5em;
   text-align: center;
@@ -315,12 +312,12 @@ return dist/1000;
       <Button className="btn-third"></Button>   - {calculateDistance(array3.latitude,array3.longitude,array4.latitude,array4.longitude)}KM- &nbsp;&nbsp;
       <Button className="btn-fourth"></Button> -{calculateDistance(array4.latitude,array4.longitude,array5.latitude,array5.longitude)}KM- &nbsp;&nbsp;
       <Button className="btn-fifth"></Button>  
-      <br></br>
-      {array1.trrsrtNm}&emsp; &emsp;&emsp; &emsp; &emsp;&emsp; &emsp; &emsp; &nbsp;
-      {array2.trrsrtNm}&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp; &nbsp;
-      {array3.trrsrtNm}&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp;&emsp; &nbsp;
-      {array4.trrsrtNm}&emsp;&emsp;&emsp;&emsp; &emsp;&emsp;&emsp; &emsp; &nbsp;
-      {array5.trrsrtNm}
+      <br/>
+      <div className="array1">{array1.trrsrtNm}</div>
+      <div className="array2">{array2.trrsrtNm}</div>
+      <div className="array3">{array3.trrsrtNm}</div>
+      <div className="array4">{array4.trrsrtNm}</div>
+      <div className="array5">{array5.trrsrtNm}</div>
     </div>
           {Namelists}
         <div style={{backgroundColor:"black"}}>
