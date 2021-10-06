@@ -49,9 +49,7 @@
     "minify-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.min.css --output-style compressed",
     "map-sass": "node-sass src/assets/scss/now-ui-kit.scss src/assets/css/now-ui-kit.css --source-map true"
   },
-
   "proxy": "http://localhost:8080",
-
   "eslintConfig": {
     "extends": "react-app"
   },
