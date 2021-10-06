@@ -161,6 +161,13 @@ function ExamplesNavbar() {
                   >
                     <p>사진게시판</p>
                   </DropdownItem>
+                  <DropdownItem
+                    href="
+                    qa-page"
+                    // target="_blank"
+                  >
+                    <p>Q&A</p>
+                  </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>
 

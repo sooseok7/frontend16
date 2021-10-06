@@ -306,7 +306,7 @@ return dist/1000;
 
  
 <div className="btn-moving">
-<br/>
+<br/><br/>
     <Button className="btn-first"></Button> -{calculateDistance(array1.latitude,array1.longitude,array2.latitude,array2.longitude)} KM- &nbsp;&nbsp; 
       <Button className="btn-second"></Button> - {calculateDistance(array2.latitude,array2.longitude,array3.latitude,array3.longitude)}KM- &nbsp;&nbsp;
       <Button className="btn-third"></Button>   - {calculateDistance(array3.latitude,array3.longitude,array4.latitude,array4.longitude)}KM- &nbsp;&nbsp;

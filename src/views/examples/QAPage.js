@@ -16,7 +16,7 @@ import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import BoardPageHeader from "components/Headers/BoardPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
-function BoardPage() {
+function QAPage() {
    //axios.get('http://localhost:8080/api/test')
    //then((Response)=>{console.log(Response.data)})
    //.catch((Error)=>{console.log(Error)})
@@ -52,13 +52,13 @@ var now = new Date();
           setList(Response.data.list);
        }
     });
-    document.body.classList.add("board-page");
+    document.body.classList.add("qa-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("board-page");
+      document.body.classList.remove("qa-page");
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
@@ -178,9 +178,9 @@ function isPagingNext() {
           </Container>
           
         </div>
-        { <div >                   
+       <div >                   
                             <nav aria-label="Page navigation example">
-                                <ul className="pagination justify-content-center">
+                                <ul className="pagination justify-content-center" style={{backgroundColor:"black", marginBottom: "auto"}}>
                                
                                     {
                                         isPagingPrev()
@@ -194,11 +194,10 @@ function isPagingNext() {
                                 </ul>
                             </nav>
                         </div>
-      }
         <DefaultFooter />
       </div>
     </>
   );
 }
 
-export default BoardPage;
+export default QAPage;

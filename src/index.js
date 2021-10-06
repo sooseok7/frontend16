@@ -24,7 +24,6 @@ import LoginPage from "views/examples/LoginPage.js";
 import JoinPage from "views/examples/JoinPage";
 import BoardPage from "views/examples/BoardPage.js";
 import TestPage from "views/examples/TestPage.js";
-import ResultPage from "views/examples/ResultPage";
 import Calendars from "views/examples/Calendars";
 import TestResultPage from "views/examples/TestResultPage.js";
 import SuggestDetail from "views/examples/SuggestDetail.js";
@@ -38,6 +37,7 @@ import MusicPage from "views/examples/MusicPage.js";
 import PicchungPage from "views/examples/PicchungPage.js";
 import PicturePage from "views/examples/PicturePage.js";
 import WalkingPage from "views/examples/WalkingPage.js";
+import QAPage from "views/examples/QAPage.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -58,10 +58,6 @@ ReactDOM.render(
         <Route
           path="/test-page"
           render={(props) => <TestPage {...props} />}
-        />
-        <Route
-          path="/result"
-          render={(props) => <ResultPage {...props} />}
         />
         <Route
           path="/join-page"
@@ -114,6 +110,10 @@ ReactDOM.render(
         <Route
         path="/walking-page"
         render={(props) => <WalkingPage {...props} />}
+        />
+        <Route
+        path="/qa-page"
+        render={(props) => <QAPage {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
