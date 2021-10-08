@@ -4,7 +4,7 @@ import axios from 'axios';
 import { Container, Row, Col } from "reactstrap";
 
 // core components
-import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
+import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import ResultPageHeader from "components/Headers/ResultPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 import { useParams } from "react-router-dom";
@@ -62,7 +62,7 @@ function Namelist (){
       <Container>
           <Row key={index}>
             <Col lg="6" md="12">
-              <h2 className="title">{name.galTitle}</h2>
+              <h2 className="title" style={{color:"white"}}>{name.galTitle}</h2>
              <h5 className="description">
                <img src= {name.galWebImageUrl}></img>
               </h5>
@@ -92,7 +92,7 @@ if( names != undefined){
      <Container>
          <Row >
            <Col lg="6" md="12">
-             <h2 className="title">{names.galTitle}</h2>
+             <h2 className="title"  style={{color:"white"}}>{names.galTitle}</h2>
             <h5 className="description">
               <img src= {names.galWebImageUrl}></img>
              </h5>
@@ -112,7 +112,7 @@ if( names != undefined){
     <Container>
     <Row >
       <Col lg="6" md="12">
-        <h2 className="title">사진이 없어용</h2>
+        <h2 className="title"  style={{color:"white"}}>사진이 없어용</h2>
        <h5 className="description">
      사진이 없어용
         </h5>
@@ -130,7 +130,7 @@ if( names != undefined){
     <Container>
     <Row >
       <Col lg="6" md="12">
-        <h2 className="title">사진이 없어용</h2>
+        <h2 className="title"  style={{color:"white"}}>사진이 없어용</h2>
        <h5 className="description">
      사진이 없어용
         </h5>
@@ -144,7 +144,7 @@ if( names != undefined){
     <Container>
     <Row >
       <Col lg="6" md="12">
-        <h2 className="title">사진이 없어용</h2>
+        <h2 className="title"  style={{color:"white"}}>사진이 없어용</h2>
        <h5 className="description">
      사진이 없어용
         </h5>
@@ -159,7 +159,7 @@ if( names != undefined){
 
   return (
     <>
-      <ExamplesNavbar />
+      <ResultNavbar />
       <div className="wrapper">
         <ResultPageHeader />
         <div className="main">

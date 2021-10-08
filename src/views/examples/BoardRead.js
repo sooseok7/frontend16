@@ -70,7 +70,7 @@ function BoardRead() {
         //삭제/board/{no}
         axios.delete('/api/board/'+num)
         .then(function (response) {
-          window.location.href ='./board-page'
+          window.location.href ='../board-page'
         })
         .catch(function (error) {
           console.log(error);
@@ -156,7 +156,7 @@ if(Commentlist.length != '0'){
                 </Button>
             <Button
             className="btn-update"
-            // href=""
+            href="../../board-page"
             onClick={f3}
             size="5px"
             >

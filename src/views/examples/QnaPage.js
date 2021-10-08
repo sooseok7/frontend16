@@ -16,7 +16,7 @@ import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import BoardPageHeader from "components/Headers/BoardPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
-function QAPage() {
+function QnaPage() {
    //axios.get('http://localhost:8080/api/test')
    //then((Response)=>{console.log(Response.data)})
    //.catch((Error)=>{console.log(Error)})
@@ -43,7 +43,7 @@ var now = new Date();
 
 
   React.useEffect(() => {
-    axios.get('/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword)
+    axios.get('/api/getPagingQna?p_num='+p_num+'&?keyword='+keyword)
     .then(Response => {
       console.log(Response)
 
@@ -63,10 +63,10 @@ var now = new Date();
     };
   }, []);
 
-function listBoard(num, keyword)
+function listQna(num, keyword)
 {
 
-    axios.get('/api/getPagingBoard?p_num='+num+'&keyword='+keyword)
+    axios.get('/api/getPagingQna?p_num='+num+'&keyword='+keyword)
     .then(Response => {
       console.log(Response.data.pagingData)
         if (Response.status === 200) {
@@ -85,7 +85,7 @@ function viewPaging() {
   let currentpage = pagingData.currentPageNum;
   return (pageNums.map((page) =>
       <li className="page-item" key={page.toString()}>
-          <a className="page-link" onClick={() => listBoard(page , keyword)}>
+          <a className="page-link" onClick={() => listQna(page , keyword)}>
               {
                   (function () {
                       if (page == currentpage)
@@ -102,7 +102,7 @@ function isPagingPrev() {
   if (pagingData.prev) {
       return (
           <li className="page-item">
-              <a className="page-link" onClick={() => listBoard(pagingData.currentPageNum - 1,keyword)} tabIndex="-1">Previous</a>
+              <a className="page-link" onClick={() => listQna(pagingData.currentPageNum - 1,keyword)} tabIndex="-1">Previous</a>
           </li>
       );
   }
@@ -112,7 +112,7 @@ function isPagingNext() {
   if (pagingData.next) {
       return (
          <li className="page-item">
-              <a className="page-link" onClick={() => listBoard(pagingData.currentPageNum + 1, keyword)} tabIndex="-1">Next</a>
+              <a className="page-link" onClick={() => listQna(pagingData.currentPageNum + 1, keyword)} tabIndex="-1">Next</a>
           </li>
       );
   }
@@ -144,9 +144,9 @@ function isPagingNext() {
           { list.map((row) => (
             <TableRow key={row.idx}>
               <TableCell align="center" component="th" scope="row">
-              <a onClick={() => window.location.href ='./boardread/'+row.idx}>{row.title}</a>
+              <a onClick={() => window.location.href ='./qna-read/'+row.idx}>{row.title}</a>
               </TableCell>
-              <TableCell align="center">{row.board_date}</TableCell>
+              <TableCell align="center">{row.qna_date}</TableCell>
               <TableCell align="center">{row.id}</TableCell>
               <TableCell align="center">{row.views}</TableCell>
             </TableRow>
@@ -164,23 +164,23 @@ function isPagingNext() {
           
           <Button className="btn-search"
                 color="info"
-                onClick={() => listBoard(1, keyword)}
+                onClick={() => listQna(1, keyword)}
                 //target="_blank"
                 >조회</Button>
 
               <Button
                 className="btn-searchboard"
                 color="info"
-                href="./boardinput/new"
+                href="./qna-input/new"
                 //target="_blank"
               >등록
               </Button>
           </Container>
           
         </div>
-       <div >                   
+      { <div >                   
                             <nav aria-label="Page navigation example">
-                                <ul className="pagination justify-content-center" style={{backgroundColor:"black", marginBottom: "auto"}}>
+                                <ul className="pagination justify-content-center"style={{backgroundColor:"black", marginBottom: "auto"}}>
                                
                                     {
                                         isPagingPrev()
@@ -194,10 +194,12 @@ function isPagingNext() {
                                 </ul>
                             </nav>
                         </div>
+}
         <DefaultFooter />
       </div>
+      
     </>
   );
 }
 
-export default QAPage;
+export default QnaPage;

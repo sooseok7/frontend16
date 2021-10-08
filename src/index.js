@@ -37,7 +37,9 @@ import MusicPage from "views/examples/MusicPage.js";
 import PicchungPage from "views/examples/PicchungPage.js";
 import PicturePage from "views/examples/PicturePage.js";
 import WalkingPage from "views/examples/WalkingPage.js";
-import QAPage from "views/examples/QAPage.js";
+import QnaPage from "views/examples/QnaPage.js";
+import QnaInput from "views/examples/QnaInput.js";
+import QnaRead from "views/examples/QnaRead.js";
 
 ReactDOM.render(
   <BrowserRouter>
@@ -112,8 +114,16 @@ ReactDOM.render(
         render={(props) => <WalkingPage {...props} />}
         />
         <Route
-        path="/qa-page"
-        render={(props) => <QAPage {...props} />}
+        path="/qna-page"
+        render={(props) => <QnaPage {...props} />}
+        />
+                <Route
+        path="/qna-input/:mode"
+        render={(props) => <QnaInput {...props} />}
+        />
+        <Route
+        path="/qna-read/:num"
+        render={(props) => <QnaRead {...props} />}
         />
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />

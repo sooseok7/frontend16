@@ -162,7 +162,7 @@ function IndexNavbar() {
                   </DropdownItem>
                   <DropdownItem
                     href="
-                    qa-page"
+                    qna-page"
                     // target="_blank"
                   >
                     <p>Q&A</p>
