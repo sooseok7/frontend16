@@ -1,12 +1,35 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from 'axios';
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
+import { useParams } from "react-router-dom";
+
 function FestivalPage() {
+  const [names,setNames]=useState([]);
+  const [lengthss,setLengths]=useState();
+  //const [loading,setLoading]=useState();
+  const {word}=useParams();  
 
   React.useEffect(() => {
+
+    axios
+    .get(
+      '/api/getfestival'
+    )
+    .then(Response => {
+         
+        if (Response.status === 200) {
+          
+         setNames(Response.data.response.body.items);
+         setLengths(Response.data.response.body.items);
+        console.log(Response.data.response.body.items);
+        console.log(Response.data.response.body.items);
+         //check if this component still mounted
+       }
+    }).catch((Error)=>{console.log(Error)});
+
     document.body.classList.add("festival-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");

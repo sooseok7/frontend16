@@ -89,13 +89,13 @@ function ExamplesNavbar() {
             </NavLink>
               </NavItem>
 
-              <NavItem>
+              {/* <NavItem>
               <NavLink
               href="tour-page"
             >
              <p>전국여행</p>
               </NavLink>
-              </NavItem>
+              </NavItem> */}
 
               <UncontrolledDropdown nav>
                 <DropdownToggle

@@ -23,8 +23,10 @@ function TestPage() {
 
 
   let mbti_A="/img/noresult.jpg"
-  let mbti_B ="/img/noresult.png"
-    let mbti_C ="/img/noresult.png"
+  let mbti_B ="/img/noresult.jpg"
+    let mbti_C ="/img/noresult.jpg"
+    let locations =""
+    let themas =""
   React.useEffect(() => {
     let isSubscribed = true;
 
@@ -33,18 +35,16 @@ function TestPage() {
     .then((Response)=>{
     if (Response.status === 200) {
       if (isSubscribed) {
-      setNames(Response.data.response.body.items)
-
-      const result = QuestionResult.filter(kk => kk.mbti === testresult)
-      setNums(result[0].num)
+        setNames(Response.data.response.body.items)
+        const result = QuestionResult.filter(kk => kk.mbti === testresult)
+        setNums(result[0].num)
  
      // check if this component still mounted
-
-     }
+    }
     }
   })
    // console.log(Response.data.response.body.items)
-.catch((Error)=>{console.log(Error)});
+   .catch((Error)=>{console.log(Error)});
 
     document.body.classList.add("result-page");
     document.body.classList.add("sidebar-collapse");
@@ -69,6 +69,8 @@ function TestPage() {
      mbti_A="/img/"+testresult+".jpg"
      mbti_B="/img/"+data2.like+".jpg"
      mbti_C="/img/"+data2.hate+".jpg"
+     locations = data2.location
+     themas = "../"+data2.thema
       return(
         <div>
         <div style={{backgroundColor:"black"}} className="section2 section-team text-center">
@@ -321,8 +323,8 @@ return dist/1000;
     </div>
           {Namelists}
         <div style={{backgroundColor:"black"}}>
-        <Button className="btn-calendars" href="../tour-page">당신에게 맞는 지역별 여행 추천</Button>
-        <Button className="btn-schedule" href="../thema-pape">당신에게 맞는 여행 테마 추천</Button><br/>
+        <Button className="btn-calendars" href="../tour-page">당신에게 맞는 추천 지역은 {locations}</Button>
+        <Button className="btn-schedule" href={themas}>당신에게 맞는 여행 테마 추천</Button><br/>
         <Button className="btn-retest" href="../test-page"style={{display:"block"}}>테스트 다시하기</Button></div>
         <div style={{backgroundColor:"black"}}><br/></div>
         <DarkFooter />

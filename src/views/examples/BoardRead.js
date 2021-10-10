@@ -2,9 +2,11 @@ import React ,{useState}from "react"
 import axios from "axios";
 import {Container, Button, Input } from "reactstrap";
 import moment from 'moment';
+import DarkFooter from "components/Footers/DarkFooter.js";
 // 안써도 자동으로 한국 시간을 불러온다. 명확하게 하기 위해 import
 import 'moment/locale/ko';
 import { useParams } from "react-router-dom";
+import { transform } from "typescript";
 function BoardRead() {
     const {num} = useParams(); 
     const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
@@ -113,78 +115,75 @@ if(Commentlist.length != '0'){
 
 
       //alert(Board.title);
-    return(
-        <div>
-<div className="page-header">
+    return(<><div>
+
+      <div className="page-header" style={{ overflow: "initial" }}>
         <div
           className="page-header-image"
           style={{
-            backgroundImage:
-              "url(" + require("assets/img/bg4.jpg").default + ")",
+            backgroundImage: "url(" + require("assets/img/bg4.jpg").default + ")",
           }}
-          //ref={pageHeader}
         ></div>
-        <div className="content-center">
+        <div className="content-center" style={{ position: "", transform: "" }}>
           <Container>
-            <h1 className="title">게시판</h1><br/>
+            <h1 className="board-title">게시판</h1><br />
             <h2><Input
-            placeholder={Board.title}
-            name="title"  disabled
+              placeholder={Board.title}
+              name="title" disabled
             ></Input></h2>
-            
+
             <h2><Input
-       
-            placeholder={Board.content}
-            type="textarea"
-            name="content" disabled
-            /></h2>
+
+              placeholder={Board.content}
+              type="textarea"
+              name="content" disabled /></h2>
             <Button
-            block
-            className="btn-view"
-            href="../../board-page"
-            size="5px"
+              block
+              className="btn-view"
+              href="../../board-page"
+              size="5px"
             >
-                목록
-                </Button>
-                <Button
-            className="btn-delete"
-            // href=""
-            onClick={f4}
-            size="5px"
-            >
-                삭제
-                </Button>
+              목록
+            </Button>
             <Button
-            className="btn-update"
-            href="../../board-page"
-            onClick={f3}
-            size="5px"
+              className="btn-delete"
+              // href=""
+              onClick={f4}
+              size="5px"
             >
-                수정
-                </Button>
-                <br/><br/><br/>
-          <textarea className="board-reply"
-                                type="textarea"
-                                placeholder="댓글 입력해봐요.." name="answer"
-                              
-                                onChange={({ target: { value } }) => setComment({
-                                    content: value,
-                                    comment_date: Comment.comment_date,
-                                    board_id: Board.id,
-                                    comment_id: "test",
-                                    board_no: Board.idx,
-                                    views: "0"
-                           })}
-                            /><br/>
-                            <button className="btn-reply" size="5px" onClick={f5} >댓글</button>
+              삭제
+            </Button>
+            <Button
+              className="btn-update"
+              href="../../board-page"
+              onClick={f3}
+              size="5px"
+            >
+              수정
+            </Button>
+            <br /><br /><br />
+            <textarea className="board-reply"
+              type="textarea"
+              placeholder="댓글 입력해봐요.." name="answer"
+
+              onChange={({ target: { value } }) => setComment({
+                content: value,
+                comment_date: Comment.comment_date,
+                board_id: Board.id,
+                comment_id: "test",
+                board_no: Board.idx,
+                views: "0"
+              })} /><br />
+            <button className="btn-reply" size="5px" onClick={f5}>댓글</button>
           </Container>
-          <br/>
-          <br/>
+          <br />
+          <br />
           {commentarray}
         </div>
 
       </div>
-      </div>
+
+    </div><DarkFooter /></>
     )
 }
 

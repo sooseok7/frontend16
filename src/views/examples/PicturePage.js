@@ -1,12 +1,35 @@
-import React from "react";
-
+import React, { useState } from "react";
+import axios from 'axios';
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 function PicturePage() {
+  const [names,setNames]=useState([]);
+  const [lengthss,setLengths]=useState();
+  //const [loading,setLoading]=useState();
 
   React.useEffect(() => {
+    let isSubscribed = true;
+    axios
+    .get(
+      '/api/getpicture'
+    )
+    .then(Response => {
+      
+      if (Response.status === 200) {
+            
+        //setNames(Response.data.response.body.items.item);
+        //setLengths(Response.data.response.body.items.length);
+        //console.log(Response.data.response.body.items.length);
+        console.log(Response.data.response);
+       // check if this component still mounted
+       if (isSubscribed) {
+         //setLoading(false);
+       }
+     }
+    }).catch((Error)=>{console.log(Error)});
+
     document.body.classList.add("picture-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");

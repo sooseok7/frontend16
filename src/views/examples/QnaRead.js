@@ -5,6 +5,7 @@ import moment from 'moment';
 // 안써도 자동으로 한국 시간을 불러온다. 명확하게 하기 위해 import
 import 'moment/locale/ko';
 import { useParams } from "react-router-dom";
+import DarkFooter from "components/Footers/DarkFooter.js";
 function QnaRead() {
     const {num} = useParams(); 
     const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
@@ -115,7 +116,7 @@ if(Commentslist.length != '0'){
       //alert(Board.title);
     return(
         <div>
-<div className="page-header">
+<div className="page-header"style={{ overflow: "initial" }}>
         <div
           className="page-header-image"
           style={{
@@ -124,9 +125,9 @@ if(Commentslist.length != '0'){
           }}
           //ref={pageHeader}
         ></div>
-        <div className="content-center">
+        <div className="content-center"style={{position:"initial", transform:"none"}}>
           <Container>
-            <h1 className="title">게시판</h1><br/>
+            <h1 className="board-title">게시판</h1><br/>
             <h2><Input
             placeholder={Qna.title}
             name="title"  disabled
@@ -184,6 +185,7 @@ if(Commentslist.length != '0'){
         </div>
 
       </div>
+      <DarkFooter />
       </div>
     )
 }

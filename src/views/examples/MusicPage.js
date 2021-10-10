@@ -1,10 +1,28 @@
 import React from "react";
-
+import axios from 'axios';
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 function MusicPage() {
+
+  axios
+  .get(
+    '/api/getmusic'
+  )
+  .then(Response => {
+    
+    console.log(Response.data.response.body.item)
+ 
+      //if (Response.status === 200) {
+        
+        // setNames(Response.data.response.body.items);
+        // setLengths(Response.data.response.body.items);
+        //        console.log(Response.data.response.body.items);
+        //console.log(Response.data.response.body.items);
+       // check if this component still mounted
+     //}
+  }).catch((Error)=>{console.log(Error)});
 
   React.useEffect(() => {
     document.body.classList.add("music-page");
