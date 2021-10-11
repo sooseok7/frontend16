@@ -113,12 +113,6 @@ function ResultNavbar() {
                   <p>사진여행</p>
                   </DropdownItem>
                   <DropdownItem
-                    href="../music-page"
-                    // target="_blank"
-                  >
-                    <p>음악여행</p>
-                  </DropdownItem>
-                  <DropdownItem
                     href="../walking-page"
                     // target="_blank"
                   >
@@ -132,10 +126,16 @@ function ResultNavbar() {
                   </DropdownItem>
                   <DropdownItem
                     href="
-                    ../festival-page"
+                    ../food-page"
                     // target="_blank"
                   >
-                    <p>축제여행</p>
+                    <p>맛집여행</p>
+                  </DropdownItem>
+                  <DropdownItem
+                    href="../music-page"
+                    // target="_blank"
+                  >
+                    <p>음악여행</p>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>

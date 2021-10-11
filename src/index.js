@@ -32,7 +32,7 @@ import BoardInput from "views/examples/BoardInput.js";
 import BoardRead from "views/examples/BoardRead.js";
 import TourPage from "views/examples/TourPage.js";
 import CampingPage from "views/examples/CampingPage.js";
-import FestivalPage from "views/examples/FestivalPage.js";
+import FoodPage from "views/examples/FoodPage.js";
 import MusicPage from "views/examples/MusicPage.js";
 import PicchungPage from "views/examples/PicchungPage.js";
 import PicturePage from "views/examples/PicturePage.js";
@@ -94,8 +94,8 @@ ReactDOM.render(
         render={(props) => <CampingPage {...props} />}
         />
         <Route
-        path="/festival-page"
-        render={(props) => <FestivalPage {...props} />}
+        path="/food-page"
+        render={(props) => <FoodPage {...props} />}
         />
         <Route
         path="/music-page"

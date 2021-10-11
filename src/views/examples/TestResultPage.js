@@ -114,7 +114,7 @@ function TestPage() {
             return (
               <span>
                 {line}
-                <br />
+                <br/>
               </span>
             );
           })}</span>
@@ -190,7 +190,7 @@ let array5={};
               <Row key={index}>
                  {/* <h5> {name.rdnmadr.split(" ")[0]}</h5>  */}
                 <Col lg="6" md="12">
-                  <h2 className="title">{name.trrsrtNm}  <div className="suggestdetail"><Link to={link} > +날씨 &nbsp;</Link><Link to={link} > +사진</Link></div></h2>
+                  <h2 className="title">{name.trrsrtNm}  <div className="suggestdetail"><Link to={link} > +사진</Link></div></h2>
                  <h5 className="description">
                     {name.trrsrtIntrcn}
                   </h5>

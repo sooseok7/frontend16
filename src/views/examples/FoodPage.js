@@ -1,14 +1,13 @@
 import React, { useState } from "react";
 import axios from 'axios';
-
-// reactstrap components
-import { Container, Row, Col } from "reactstrap";
-
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
-function CampingPage() {
+// reactstrap components
+import { Container, Row, Col } from "reactstrap";
+
+function FoodPage() {
   const [names,setNames]=useState([]);
   const [lengthss,setLengths]=useState();
 
@@ -16,16 +15,16 @@ function CampingPage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture'
+      '/api/getfood'
     )
     .then(Response => {
       
       if (Response.status === 200) {
             
-        setNames(Response.data.response.body.items.item);
-        setLengths(Response.data.response.body.items.length);
-        console.log(Response.data.response.body.items.length);
-        console.log(Response.data.response.body.items.item);
+        //setNames(Response.data.response.body.items.item);
+        //setLengths(Response.data.response.body.items.length);
+        //console.log(Response.data.response.body.items.length);
+        console.log(Response.data);
        // check if this component still mounted
        if (isSubscribed) {
          //setLoading(false);
@@ -33,14 +32,14 @@ function CampingPage() {
      }
     });
     //.catch((Error)=>{console.log(Error)});
-      
-    document.body.classList.add("camping-page");
+
+    document.body.classList.add("food-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("camping-page");
+      document.body.classList.remove("food-page");
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
@@ -160,7 +159,7 @@ function CampingPage() {
       </><div class="zone_wrap">
         <div class="list_zone">
           <div class="tit">
-            <h2 id="zoneTitle">캠핑여행</h2>
+            <h2 id="zoneTitle">맛집여행</h2>
           </div>
           <div className="section section-nucleo-icons">
           <Namelist/>
@@ -175,4 +174,4 @@ function CampingPage() {
   );
 }
 
-export default CampingPage;
+export default FoodPage;

@@ -67,7 +67,7 @@ function CarouselSection() {
         <Container>
         <NavItem style={{ backgroundColor: "black", textAlign:"center", height: "70px"}}>
                 <NavLink
-                  href="https://www.instagram.com/pic_chung"
+                  href="https://www.instagram.com/travel16_2monthsago"
                   target="_blank"
                   id="instagram-tooltip"
                 >

@@ -21,7 +21,7 @@ const QuestionResult = [
     "hatefeatures":"서로 반대되는 성격의 성향을 지녔으며\n긍정적이지는 못한 시너지를 가져온다.\n반대관계로서 인내심이 안그래도\n부족한데 터질지도 모른다.",
     "num":[55,60,61,0,8,20,40,45,48,,73,82,88,89,97,99],
     "location":"전라북도",
-    "thema":"festival-page"
+    "thema":"food-page"
     
   },
   {
@@ -82,7 +82,7 @@ const QuestionResult = [
     "hatefeatures":"둘은 거짓된 관계이며 비슷해보이지만\n반대로 이루어져 상호간의 오해가 발생하기 쉽다.\n초반에는 사이가 좋지만 갈등이 일어날 확률이 높다.",
     "num":[63,64,67,81,82,87,2,7,11,22,23,94,95,96,99],
     "location":"광주광역시",
-    "thema":"festival-page"
+    "thema":"food-page"
   },
   {
     "mbti": "INFP",
@@ -119,7 +119,7 @@ const QuestionResult = [
     "hatefeatures": "J에게는 선을 넘는 혼돈의 악이라고 여겨지며\n서로에 대해서 이미지가 좋지않다.\n공감능력이 떨어지기에 성격차이가 많이 발생한다.",
     "num":[35,36,37,52,53,8,14,15,16,59,60,61,62,63],
     "location":"경기도",
-    "thema":"festival-page"
+    "thema":"food-page"
   },
   {
     "mbti": "ESFJ",
