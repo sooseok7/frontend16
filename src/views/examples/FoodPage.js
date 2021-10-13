@@ -20,7 +20,7 @@ function FoodPage() {
     .then(Response => {
       
       if (Response.status === 200) {
-            
+             
         //setNames(Response.data.response.body.items.item);
         //setLengths(Response.data.response.body.items.length);
         //console.log(Response.data.response.body.items.length);
