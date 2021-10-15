@@ -59,6 +59,7 @@ function LoginPage() {
                     </div>
                   </CardHeader>
                   <CardBody>
+
                     <InputGroup
                       className={
                         "no-border input-lg" +
@@ -77,6 +78,7 @@ function LoginPage() {
                         onBlur={() => setFirstFocus(false)}
                       ></Input>
                     </InputGroup>
+
                     <InputGroup
                       className={
                         "no-border input-lg" +
@@ -95,6 +97,7 @@ function LoginPage() {
                         onBlur={() => setLastFocus(false)}
                       ></Input>
                     </InputGroup>
+
                     <InputGroup
                       className={
                         "no-border input-lg" +
@@ -113,6 +116,7 @@ function LoginPage() {
                         onBlur={() => setLastFocus(false)}
                       ></Input>
                     </InputGroup>
+
                     <InputGroup
                       className={
                         "no-border input-lg" +
@@ -131,6 +135,7 @@ function LoginPage() {
                         onBlur={() => setLastFocus(false)}
                       ></Input>
                     </InputGroup>
+                    
                     <InputGroup
                       className={
                         "no-border input-lg" +
