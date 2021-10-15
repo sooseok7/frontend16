@@ -25,14 +25,13 @@ function TestPage() {
   let mbti_A="/img/noresult.jpg"
   let mbti_B ="/img/noresult.jpg"
     let mbti_C ="/img/noresult.jpg"
-    let locations =""
     let themas =""
   React.useEffect(() => {
     let isSubscribed = true;
 
     axios.get('/api/getinformation'
     )
-    .then((Response)=>{
+    .then((Response)=>{ 
     if (Response.status === 200) {
       if (isSubscribed) {
         setNames(Response.data.response.body.items)
@@ -69,7 +68,6 @@ function TestPage() {
      mbti_A="/img/"+testresult+".jpg"
      mbti_B="/img/"+data2.like+".jpg"
      mbti_C="/img/"+data2.hate+".jpg"
-     locations = data2.location
      themas = "../"+data2.thema
       return(
         <div>
@@ -148,8 +146,6 @@ function TestPage() {
  </div>
       )
     }
-    
-    
   });
 let array1={} ;
 let array2={} ;
@@ -169,14 +165,14 @@ let array5={};
        // setLocation([locationss,name]);
      if(index2 === 0){
        array1 = name
-     }else if(index2 ===1){
+     }else if(index2 ===2){
       array2 = name
      }
-     else if(index2 ===2){
+     else if(index2 ===4){
       array3 = name
-    }else if(index2 ===3){
+    }else if(index2 ===8){
       array4 = name
-    }else if(index2 ===4){
+    }else if(index2 ===3){
       array5 = name
     }
            const searchurl="https://search.daum.net/search??w=tot&&q="+ name.trrsrtNm
@@ -203,10 +199,9 @@ let array5={};
                   > 자세히
                   </Button>
                   <Button
-                    className="btn-direction"
+                    className="btn-detail"
                     color="info"
                     href={mapurl}
-                    outline
                     size="lg"
                     target="_blank"
                   >
@@ -309,24 +304,17 @@ return dist/1000;
  
 <div className="btn-moving">
 <br/><br/>
-    <Button className="btn-first"></Button> -{calculateDistance(array1.latitude,array1.longitude,array2.latitude,array2.longitude)} KM- &nbsp;&nbsp; 
-      <Button className="btn-second"></Button> - {calculateDistance(array2.latitude,array2.longitude,array3.latitude,array3.longitude)}KM- &nbsp;&nbsp;
-      <Button className="btn-third"></Button>   - {calculateDistance(array3.latitude,array3.longitude,array4.latitude,array4.longitude)}KM- &nbsp;&nbsp;
-      <Button className="btn-fourth"></Button> -{calculateDistance(array4.latitude,array4.longitude,array5.latitude,array5.longitude)}KM- &nbsp;&nbsp;
-      <Button className="btn-fifth"></Button>  
-      <br/>
-      <div className="array1">{array1.trrsrtNm}</div>
-      <div className="array2">{array2.trrsrtNm}</div>
-      <div className="array3">{array3.trrsrtNm}</div>
-      <div className="array4">{array4.trrsrtNm}</div>
-      <div className="array5">{array5.trrsrtNm}</div>
+    <Button className="btn-first">{array1.trrsrtNm}</Button> -{calculateDistance(array1.latitude,array1.longitude,array2.latitude,array2.longitude)} KM- &nbsp;&nbsp; 
+      <Button className="btn-second">{array2.trrsrtNm}</Button> - {calculateDistance(array2.latitude,array2.longitude,array3.latitude,array3.longitude)}KM- &nbsp;&nbsp;
+      <Button className="btn-third">{array3.trrsrtNm}</Button>   - {calculateDistance(array3.latitude,array3.longitude,array4.latitude,array4.longitude)}KM- &nbsp;&nbsp;
+      <Button className="btn-fourth">{array4.trrsrtNm}</Button> -{calculateDistance(array4.latitude,array4.longitude,array5.latitude,array5.longitude)}KM- &nbsp;&nbsp;
+      <Button className="btn-fifth">{array5.trrsrtNm}</Button>  
     </div>
           {Namelists}
-        <div style={{backgroundColor:"black"}}>
-        <Button className="btn-calendars" href="../tour-page">당신에게 맞는 추천 지역은 {locations}</Button>
-        <Button className="btn-schedule" href={themas}>당신에게 맞는 여행 테마 추천</Button><br/>
-        <Button className="btn-retest" href="../test-page"style={{display:"block"}}>테스트 다시하기</Button></div>
-        <div style={{backgroundColor:"black"}}><br/></div>
+        <div style={{backgroundColor:"black"}}><br/><br/>
+        <Button className="btn-calendars" href={themas}>당신에게 맞는 여행 테마 추천</Button>
+        <Button className="btn-schedule" href="../test-page">테스트 다시하기</Button></div>
+        <div style={{backgroundColor:"black"}}><br/><br/></div>
         <DarkFooter />
   
     </>

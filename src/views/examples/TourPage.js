@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";

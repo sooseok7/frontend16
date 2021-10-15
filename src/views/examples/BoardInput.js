@@ -44,7 +44,7 @@ const {mode} = useParams();
         console.log(response);
         window.location.href ='../../boardread/'+response.data.idx
       })
-      .catch(function (error) {
+      .catch(function (error) { 
         console.log(error);
       });
     }else { //update
