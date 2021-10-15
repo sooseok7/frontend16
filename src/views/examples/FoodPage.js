@@ -5,11 +5,10 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 // reactstrap components
-import { Container, Row, Col } from "reactstrap";
+import { Button, Container, Row, Col } from "reactstrap";
 
 function FoodPage() {
   const [names,setNames]=useState([]);
-  const [lengthss,setLengths]=useState();
 
   React.useEffect(() => {
     let isSubscribed = true;
@@ -20,15 +19,16 @@ function FoodPage() {
     .then(Response => {
       
       if (Response.status === 200) {
-             
-        //setNames(Response.data.response.body.items.item);
+        if (isSubscribed) {    
+        setNames(Response.data.data);
         //setLengths(Response.data.response.body.items.length);
         //console.log(Response.data.response.body.items.length);
-        console.log(Response.data);
+        console.log(Response.data.data);
        // check if this component still mounted
        if (isSubscribed) {
          //setLoading(false);
        }
+      }
      }
     });
     //.catch((Error)=>{console.log(Error)});
@@ -43,104 +43,44 @@ function FoodPage() {
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
-  function Namelist (){
-    if(lengthss != '1' && lengthss != '0' && lengthss != undefined){
-    names.map((name,index)=> {
-      return (
-  
-      
-        <div className="section section-nucleo-icons">
-        <Container>
-            <Row key={index}>
-              <Col lg="6" md="12">
-                <h2 className="title" style={{color:"white"}}>{name.galTitle}</h2>
-               <h5 className="description">
-                 <img src= {name.galWebImageUrl}></img>
-                </h5>
-         
-              </Col>
-            </Row>
-          </Container>
-        </div>
-              )
-            }
-          
-            )
-          
-          }else if(lengthss == '1'|| lengthss == undefined ){
-          
-          if( names != undefined){
-          
-             return (
-          
-             
-               <div className="section section-nucleo-icons">
-               <Container>
-                   <Row >
-                     <Col lg="6" md="12">
-                       <h2 className="title"  style={{color:"white"}}>{names.galTitle}</h2>
-                      <h5 className="description">
-                        <img src= {names.galWebImageUrl}></img>
-                       </h5>
-                
-                     </Col>
-                   </Row>
-                 </Container>
-               </div>
-           
-           
-            
-          
-          
-             )
-          }else {
-            return(
-              <Container>
-              <Row >
+  const Namelists= names.map((name)=> {
+           const searchurl="https://search.daum.net/search??w=tot&&q="+ name.음식테마거리명
+           const mapurl="https://map.kakao.com/link/search/"+name.음식테마거리명
+        return(
+          <div className="section3 section-nucleo-icons">
+    
+          <Container>
+              <Row>
                 <Col lg="6" md="12">
-                  <h2 className="title"  style={{color:"white"}}>사진이 없어용</h2>
+                  <h2 className="title">{name.음식테마거리명} </h2>
                  <h5 className="description">
-               사진이 없어용
+                    {name.지역}
                   </h5>
-           
+                  <Button
+                    className="btn-detail"
+                    color="info"
+                    size="lg"
+                    href = {searchurl}
+                    target="_blank"
+                  > 자세히
+                  </Button>
+                  <Button
+                    className="btn-detail"
+                    color="info"
+                    href={mapurl}
+                    size="lg"
+                    target="_blank"
+                  >
+                    길찾기
+                  </Button>
                 </Col>
               </Row>
             </Container>
-            )
-          }
-          
-          
-          
-          }else if( lengthss == '0' ){
-            return(
-              <Container>
-              <Row >
-                <Col lg="6" md="12">
-                  <h2 className="title"  style={{color:"white"}}>사진이 없어용</h2>
-                 <h5 className="description">
-               사진이 없어용
-                  </h5>
-           
-                </Col>
-              </Row>
-            </Container>
-            )
-          }else{
-            return(
-              <Container>
-              <Row >
-                <Col lg="6" md="12">
-                  <h2 className="title"  style={{color:"white"}}>사진이 없어용</h2>
-                 <h5 className="description">
-               사진이 없어용
-                  </h5>
-           
-                </Col>
-              </Row>
-            </Container>
-            )
-          }
-          }
+          </div>
+       );
+  }
+);
+
 
   return (
     <><>
@@ -153,23 +93,14 @@ function FoodPage() {
           }}
         ></div>
       </div>
-
-
-
       </><div class="zone_wrap">
         <div class="list_zone">
           <div class="tit">
             <h2 id="zoneTitle">맛집여행</h2>
           </div>
-          <div className="section section-nucleo-icons">
-          <Namelist/>
-          </div>
+          {Namelists}
         </div>
       </div>
-      
-      
-      
-      
       <DarkFooter /></>
   );
 }

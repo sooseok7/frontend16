@@ -59,6 +59,7 @@ function LoginPage() {
                     </div>
                   </CardHeader>
                   <CardBody>
+
                     <InputGroup
                       className={
                         "no-border input-lg" +
@@ -71,12 +72,13 @@ function LoginPage() {
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="First Name..."
+                        placeholder="Your Id..."
                         type="text"
                         onFocus={() => setFirstFocus(true)}
                         onBlur={() => setFirstFocus(false)}
                       ></Input>
                     </InputGroup>
+
                     <InputGroup
                       className={
                         "no-border input-lg" +
@@ -89,12 +91,13 @@ function LoginPage() {
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="Last Name..."
+                        placeholder="Your Password..."
                         type="text"
                         onFocus={() => setLastFocus(true)}
                         onBlur={() => setLastFocus(false)}
                       ></Input>
                     </InputGroup>
+
                     <InputGroup
                       className={
                         "no-border input-lg" +
@@ -103,16 +106,17 @@ function LoginPage() {
                     >
                       <InputGroupAddon addonType="prepend">
                         <InputGroupText>
-                          <i className="now-ui-icons text_caps-small"></i>
+                          <i className="now-ui-icons users_circle-08"></i>
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="Last Name..."
+                        placeholder="Your Name..."
                         type="text"
                         onFocus={() => setLastFocus(true)}
                         onBlur={() => setLastFocus(false)}
                       ></Input>
                     </InputGroup>
+
                     <InputGroup
                       className={
                         "no-border input-lg" +
@@ -125,7 +129,26 @@ function LoginPage() {
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="Last Name..."
+                        placeholder="Your email..."
+                        type="text"
+                        onFocus={() => setLastFocus(true)}
+                        onBlur={() => setLastFocus(false)}
+                      ></Input>
+                    </InputGroup>
+                    
+                    <InputGroup
+                      className={
+                        "no-border input-lg" +
+                        (lastFocus ? " input-group-focus" : "")
+                      }
+                    >
+                      <InputGroupAddon addonType="prepend">
+                        <InputGroupText>
+                          <i className="now-ui-icons users_circle-08"></i>
+                        </InputGroupText>
+                      </InputGroupAddon>
+                      <Input
+                        placeholder="Your Phone..."
                         type="text"
                         onFocus={() => setLastFocus(true)}
                         onBlur={() => setLastFocus(false)}
@@ -137,7 +160,7 @@ function LoginPage() {
                       block
                       className="btn-round"
                       color="info"
-                      href="#pablo"
+                      href="login-page"
                       onClick={(e) => e.preventDefault()}
                       size="lg"
                     >

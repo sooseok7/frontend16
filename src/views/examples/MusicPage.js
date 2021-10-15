@@ -4,6 +4,7 @@ import YouTube from "react-youtube";
 //import resizeLayout from "Components/Layout/ResizeLayout";
 //import "./VideoModal.scss";
 
+import { Link } from "react-router-dom";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
@@ -79,13 +80,8 @@ function MusicPage(props){
           )}
         </div>
       </div>
-
-
         </div>
       </div>     
-      
-      
-      
       <DarkFooter /></>
   );
 }

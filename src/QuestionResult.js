@@ -8,7 +8,6 @@ const QuestionResult = [
     "hate": "ENFJ",
     "hatefeatures":"계획적인 것을 제외하면 모두 다른 성격이다.\n혼자서 놀고 싶어하는 사람과\n상대에게 권하는 사람의 조합이다.\n.서로 부딪칠 일이 많으며 한쪽이 힘들어 할 것이다.",
     "num":[8,9,36,37,99,40,41,63,64,91,92,97,1,2,5],
-    "location":"강원도",
     "thema":"walking-page"
   },
   {
@@ -20,7 +19,6 @@ const QuestionResult = [
     "hate": "ENFP",
     "hatefeatures":"서로 반대되는 성격의 성향을 지녔으며\n긍정적이지는 못한 시너지를 가져온다.\n반대관계로서 인내심이 안그래도\n부족한데 터질지도 모른다.",
     "num":[55,60,61,0,8,20,40,45,48,,73,82,88,89,97,99],
-    "location":"전라북도",
     "thema":"food-page"
     
   },
@@ -33,7 +31,6 @@ const QuestionResult = [
     "hate": "ENTJ",
     "hatefeatures":"상호보안적으로 더 좋을 수 있으나\n오히려 자주 부딪치는 최악의 궁합이다.\n여행을 떠날 때 가장 심할 것이다.\n각자의 계획이 있으나 성격이 다르기에 정리되지 않는다.",
     "num":[61,62,63,96,97,53,55,56,2,3,15,16,20,37,52],
-    "location":"경상북도",
     "thema":"camping-page"
   },
   {
@@ -45,7 +42,6 @@ const QuestionResult = [
     "hate": "ENTP",
     "hatefeatures":"민감한 것을 생각해주지 못하고 상처받게하며\n서로에 대한 감정표현에 대해서 인내심이 없으며\n서로가 서로에게 고통스러운 조합이다.\n서로 저항하며 화낼 경우 더 악화될지도",
     "num":[2,3,4,5,8,13,20,37,40,49,50,54,80,81,82,91],
-    "location":"대전광역시",
     "thema":"picture-page"
   },
   {
@@ -57,7 +53,6 @@ const QuestionResult = [
     "hate": "ISFJ",
     "hatefeatures":"근본적으로 추구하는 바가 다르다.\n가치도 다르고 동기도 다르기에 이들의 강점은\n나에게 단점이면 나에게 강점은 이들에게 단점이다.\n성격충돌과 갈등의 잠재가 많다.",
     "num":[50,51,53,95,96,97,3,4,13,17,18,19,20,40,49],
-    "location":"부산광역시",
     "thema":"walking-page"
   },
   {
@@ -69,7 +64,6 @@ const QuestionResult = [
     "hate": "ESFP",
     "hatefeatures":"서로에 대한 성향차이가 크며 결론이 일치하지 않으면\n누구보다 적대적인 관계가 될 수 있다.\n토론에서 맞붙으면 전투적인 전개로 이어질 수 있다.",
     "num":[40,49,50,51,53,3,4,13,17,18,19,20,40,49,50,51,53,95,96,98],
-    "location":"인천광역시",
     "thema":"music-page"
   },
   {
@@ -81,7 +75,6 @@ const QuestionResult = [
     "hate": "INFP",
     "hatefeatures":"둘은 거짓된 관계이며 비슷해보이지만\n반대로 이루어져 상호간의 오해가 발생하기 쉽다.\n초반에는 사이가 좋지만 갈등이 일어날 확률이 높다.",
     "num":[63,64,67,81,82,87,2,7,11,22,23,94,95,96,99],
-    "location":"광주광역시",
     "thema":"food-page"
   },
   {
@@ -93,7 +86,6 @@ const QuestionResult = [
     "hate": "ISTP",
     "hatefeatures":"둘은 완전히 다르다.\n서로의 관점을 이해하기 힘들고 어려우며\n성격이 완전히 다르기 때문에\n갈등이 벌어지는 경우를 볼 수 있다.",
     "num":[34,35,54,55,56,0,2,5,21,22,78,81,82,86,92],
-    "location":"제주도",
     "thema":"walking-page"
   },
 
@@ -106,7 +98,6 @@ const QuestionResult = [
     "hate": "ENTP",
     "hatefeatures": "최악의 조합이며 꼰대라고 생각하며 만날 수도 있다.\n서로가 먼저이기때문에\n자신을 먼저 생각하는 사람의 만남이다.",
     "num":[19,20,25,29,31,1,6,7,9,10,48,95,84,64,12],
-    "location":"서울특별시",
     "thema":"picture-page"
   },
   {
@@ -118,7 +109,6 @@ const QuestionResult = [
     "hate": "ENFJ",
     "hatefeatures": "J에게는 선을 넘는 혼돈의 악이라고 여겨지며\n서로에 대해서 이미지가 좋지않다.\n공감능력이 떨어지기에 성격차이가 많이 발생한다.",
     "num":[35,36,37,52,53,8,14,15,16,59,60,61,62,63],
-    "location":"경기도",
     "thema":"food-page"
   },
   {
@@ -130,7 +120,6 @@ const QuestionResult = [
     "hate": "INTJ",
     "hatefeatures": "갈등이자 모순의 관계이다.\n서로 공감해주지않으면서도 공감을 원해고\n따뜻한 것을 원하면서도 서로 차갑게 구는 관계이다.\n서로를 이해하지 못한다.",
     "num":[56,59,60,77,2,35,36,37,49,82,85,88,93,94],
-    "location":"경상남도",
     "thema":"camping-page"
   },
   {
@@ -142,7 +131,6 @@ const QuestionResult = [
     "hate": "ESFJ",
     "hatefeatures": "한글자 차이로 성격이 갈리는 MBTI의 매직이다.\n무계획을 목표로 하는 사람과\n계획을 목표로 하는 사람의 갈등은 엄청나다.",
     "num":[85,86,88,90,91,15,16,35,37,39,52,56,92,97],
-    "location":"충청남도",
     "thema":"music-page"
   },
   {
@@ -154,7 +142,6 @@ const QuestionResult = [
     "hate": "ESFJ",
     "hatefeatures": "각자의 목표하는 바가 다르기에\n자신들이 나타내고자 하는 것에 대해서\n갈등이 나타난다.\n서로 이해를 못하는 것이 가장 크다",
     "num":[22,37,56,66,82,85,5,8,9,14,15,16,86,87,90],
-    "location":"전라남도",
     "thema":"camping-page"
   },
   {
@@ -166,7 +153,6 @@ const QuestionResult = [
     "hate": "ESFP",
     "hatefeatures": "한쪽은 고집이 쌔고\n한쪽은 충동적이기에 잠깐 사이에\n싸움이 시작 될 수가 있다.\n서로를 조심하자.",
     "num":[52,53,61,62,63,6,8,17,35,45,46,86,91,93,94],
-    "location":"충청북도",
     "thema":"walking-page"
   },
   {
@@ -178,7 +164,6 @@ const QuestionResult = [
     "hate": "ESTJ",
     "hatefeatures": "팩트 폭격기로 인해서 일방적으로\n한쪽이 삐지며 토라져서 말도 안하고\n그대로 여행이 끝난 후에 헤어질 것이다.\n다른의미로 엄청난 조합이다.",
     "num":[5,6,14,15,16,21,39,47,49,57,61,62,63,73,92],
-    "location":"대구광역시",
     "thema":"picture-page"
   },
   {
@@ -193,7 +178,6 @@ const QuestionResult = [
     "hate": "ESTP",
     "hatefeatures": "서로 활발하여 시너지를 낼 수 있을 것 같지만\n한쪽이 불건강하면 관계가 쉽게 불편해줄 수 있다.",
     "num":[15,16,21,22,27,8,9,14,35,37,52,59,81,82,88],
-    "location":"울산광역시",
     "thema":"music-page"
   }
 
