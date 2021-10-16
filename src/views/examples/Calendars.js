@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Container} from "reactstrap";
 import  { Calendar, momentLocalizer  } from 'react-big-calendar'; //여기에서 이미 calendar를 ㅓimport 할 수 있게 해놓음 
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import moment from "moment"; // 밑에 언어랑 시간대 가져옴
@@ -13,7 +13,6 @@ import CalendarButton from './CalendarButton';
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import DatePageHeader from "components/Headers/DatePageHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 // sections for this page
 // import BasicElements from "./index-sections/BasicElements.js";
@@ -55,7 +54,6 @@ function Calendars() {
      
           if (Response.status === 200) {
             setEventss(Response.data);
-console.log(eventss )
          }
       });
            // console.log(Response.data.response.body.items.item);
@@ -80,7 +78,7 @@ console.log(eventss )
 const events= names.map((data)=>{
  
   const datess= String(data.locdate).substring(0,4)+","+String(data.locdate).substring(4,6)+","+String(data.locdate).substring(6,8)
-  console.log(datess)
+
   return {
    // id: training.id,
      
@@ -153,7 +151,19 @@ const finalevent = Object.assign(events, events2);
     
     <div>
     <ExamplesNavbar />
-        <DatePageHeader />
+    <div className="page-header clear-filter">
+        <div
+          className="page-header-image"
+          style={{
+            backgroundImage: "url(" + require("assets/img/hi.jpg").default + ")",
+          }}
+        ></div>
+           <div className="content-center">
+          <Container>
+            <h1 className="title">Calendar</h1>
+          </Container>
+        </div>
+      </div>
         <Calendarfinal /> {/* 여기에 걍 넣어준거 */}
         <CalendarButton/>
         <DarkFooter />
@@ -162,4 +172,5 @@ const finalevent = Object.assign(events, events2);
   );
 }
 
-export default Calendars;
+export default Calendars ;
+//({ forceRefresh: true });

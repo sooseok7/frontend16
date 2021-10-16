@@ -72,7 +72,7 @@ function CarouselSection() {
                   id="instagram-tooltip"
                 >
                   <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
+                  <p className="d-lg-none d-xl-none"></p>
                 </NavLink>
                 <UncontrolledTooltip target="#instagram-tooltip">
                   Follow us on Instagram
@@ -128,10 +128,12 @@ function CarouselSection() {
                 >
                   <i className="now-ui-icons arrows-1_minimal-right"></i>
                 </a>
+                
               </Carousel>
             </Col>
           </Row>
         </Container>
+        <h5 style={{color:"white", display: "flex", justifyContent: "center"}}>instagram에서 더 많은 사진을 감상 하실 수 있습니다.</h5>
       </div></>
   );
 }

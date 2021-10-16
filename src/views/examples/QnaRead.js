@@ -9,7 +9,7 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 function QnaRead() {
     const {num} = useParams(); 
     const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
-    const [Qna, setBoard] = useState({
+    const [Qna, setQna] = useState({
     idx: "",
     title: "",
     content: "",
@@ -35,7 +35,7 @@ function QnaRead() {
      React.useEffect(() => {
         axios.get('/api/qna/'+num)
         .then(function (response) {
-            setBoard(response.data);
+            Qna(response.data);
       
         })
         .catch(function (error) {
@@ -92,7 +92,7 @@ function QnaRead() {
       function deletecomments(number){
         axios.delete('/api/qna/comments/'+number)
         .then(function (response) {
-          window.location.href ='../qna-read/'+Qna.idx
+          window.location.href ='../../qna-read/'+Qna.idx
         })
         .catch(function (error) {
           console.log(error);
@@ -125,7 +125,7 @@ if(Commentslist.length != '0'){
           }}
           //ref={pageHeader}
         ></div>
-        <div className="content-center"style={{position:"initial", transform:"none"}}>
+        <div className="content-center"style={{position:"", transform:""}}>
           <Container>
             <h1 className="board-title">게시판</h1><br/>
             <h2><Input
@@ -149,7 +149,6 @@ if(Commentslist.length != '0'){
                 </Button>
                 <Button
             className="btn-delete"
-            href="../../qna-page"
             onClick={f4}
             size="5px"
             >
@@ -157,7 +156,6 @@ if(Commentslist.length != '0'){
                 </Button>
             <Button
             className="btn-update"
-            // href=""
             onClick={f3}
             size="5px"
             >

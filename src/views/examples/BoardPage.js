@@ -13,7 +13,6 @@ import { Button, Container, Row} from "reactstrap";
 //import { useParams } from "react-router-dom";
 // core components
 import ResultNavbar from "components/Navbars/ResultNavbar.js";
-import BoardPageHeader from "components/Headers/BoardPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function BoardPage() {
@@ -45,7 +44,7 @@ var now = new Date();
   React.useEffect(() => {
     axios.get('/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword)
     .then(Response => {
-      console.log(Response)
+      //console.log(Response)
 
         if (Response.status === 200) {
           setData(Response.data.pagingData);
@@ -65,7 +64,6 @@ var now = new Date();
 
 function listBoard(num, keyword)
 {
-
     axios.get('/api/getPagingBoard?p_num='+num+'&keyword='+keyword)
     .then(Response => {
       console.log(Response.data.pagingData)
@@ -123,9 +121,20 @@ function isPagingNext() {
     <>
        <ResultNavbar />
       <div className="wrapper">
-        <BoardPageHeader />         
+      <div className="page-header clear-filter">
+        <div
+          className="page-header-image"
+          style={{
+            backgroundImage: "url(" + require("assets/img/bg5.jpg").default + ")",
+          }}
+        ></div>
+           <div className="content-center">
+          <Container>
+            <h1 className="title">자유게시판</h1>
+          </Container>
+        </div>
+      </div>         
         <div className="section">
-          {/* <div class="board-title">자유게시판</div> */}
           <Container>
              <Row className="board-page">
              <TableContainer component={Paper}>

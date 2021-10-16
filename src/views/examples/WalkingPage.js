@@ -20,7 +20,7 @@ function WalkingPage() {
       if (Response.status === 200) {
         if (isSubscribed) {
         setNames(Response.data.response.body.items.item);
-        console.log(Response.data.response.body.items.item);
+        //console.log(Response.data.response.body.items.item);
        // check if this component still mounted
 
          //setLoading(false);
@@ -93,6 +93,11 @@ function WalkingPage() {
             backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
           }}
         ></div>
+           <div className="content-center">
+          <Container>
+            <h1 className="title">Walking Trip</h1>
+          </Container>
+        </div>
       </div>
 
 
@@ -100,7 +105,6 @@ function WalkingPage() {
     </><div class="zone_wrap">
         <div class="list_zone">
           <div class="tit">
-            <h2 id="zoneTitle">뚜벅여행</h2>
           </div>
           {Namelists}
         </div>

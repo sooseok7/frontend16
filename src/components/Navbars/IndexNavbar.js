@@ -107,15 +107,21 @@ function IndexNavbar() {
                   <p>테마여행</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                  <DropdownItem href="picture-page"
+                <DropdownItem
+                    href="music-page"
+                    // target="_blank"
                   >
-                  <p>사진여행</p>
+                    <p>음악여행</p>
                   </DropdownItem>
                   <DropdownItem
                     href="walking-page"
                     // target="_blank"
                   >
                     <p>뚜벅여행</p>
+                  </DropdownItem>
+                  <DropdownItem href="picture-page"
+                  >
+                  <p>사진여행</p>
                   </DropdownItem>
                   <DropdownItem
                     href="camping-page"
@@ -129,12 +135,6 @@ function IndexNavbar() {
                     // target="_blank"
                   >
                     <p>맛집여행</p>
-                  </DropdownItem>
-                  <DropdownItem
-                    href="music-page"
-                    // target="_blank"
-                  >
-                    <p>음악여행</p>
                   </DropdownItem>
                 </DropdownMenu>
               </UncontrolledDropdown>

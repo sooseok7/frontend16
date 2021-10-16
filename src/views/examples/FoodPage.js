@@ -92,11 +92,15 @@ function FoodPage() {
             backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
           }}
         ></div>
+           <div className="content-center">
+          <Container>
+            <h1 className="title">Food Trip</h1>
+          </Container>
+        </div>
       </div>
       </><div class="zone_wrap">
         <div class="list_zone">
           <div class="tit">
-            <h2 id="zoneTitle">맛집여행</h2>
           </div>
           {Namelists}
         </div>

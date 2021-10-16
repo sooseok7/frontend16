@@ -19,7 +19,6 @@ function TestPage() {
   const {testresult}=useParams();  
   const [nums,setNums]=useState([]); 
   const [names,setNames]=useState([]);
-  const [locationss,setLocation] = useState();
 
 
   let mbti_A="/img/noresult.jpg"
@@ -153,8 +152,6 @@ let array3={} ;
 let array4={};
 let array5={};
   const Namelists= names.map((name,index)=> {
- 
-
    
     return(<div>
       {  

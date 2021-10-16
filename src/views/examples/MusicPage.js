@@ -1,38 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
+import MusicResult from '../../MusicResult.js';
+// reactstrap components
+import { Button, Container, Row, Col } from "reactstrap";
 
-import YouTube from "react-youtube";
-//import resizeLayout from "Components/Layout/ResizeLayout";
-//import "./VideoModal.scss";
-
-import { Link } from "react-router-dom";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
-function MusicPage(props){
-    const { onClose, isMobile } = props;
-    const [open, setOpen] = useState(false);
-    const handleModal = (flag) => {
-      setOpen(flag);
-      onClose();
-    };
-  
-    const opts = {
-      width: "640",
-      height: "390",
-      playerVars: {
-        autoplay: 1,
-      },
-    };
-  
-    const mobileOpts = {
-      width: "320px",
-      height: "200px",
-      playerVars: {
-        autoplay: 1,
-      },
-    };
-    
+function MusicPage() {
+
   React.useEffect(() => {
     document.body.classList.add("music-page");
     document.body.classList.add("sidebar-collapse");
@@ -44,6 +20,45 @@ function MusicPage(props){
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
+    //https://www.youtube.com/results?search_query=
+  const Musiclists= MusicResult.map(music=> {
+           const channelurl="https://www.youtube.com/channel/"+ music.channel
+           const viewurl="https://www.youtube.com/watch?v="+music.id
+        return(
+          <div className="section3 section-nucleo-icons">
+
+          <Container>
+              <Row>
+                <Col lg="6" md="12">
+                  <h2 className="title">{music.name}</h2>
+                 <h5 className="description">
+                 &nbsp;{music.example}
+                  </h5>
+                  <Button
+                    className="btn-detail"
+                    color="info"
+                    size="lg"
+                    href = {viewurl}
+                    target="_blank"
+                  > 들어보기
+                  </Button>
+                  <Button
+                    className="btn-detail"
+                    color="info"
+                    href={channelurl}
+                    size="lg"
+                    target="_blank"
+                  >
+                    채널이동
+                  </Button>
+                </Col>
+              </Row>
+            </Container>
+          </div>
+       );
+      }
+);
+
 
   return (
     <><>
@@ -55,33 +70,24 @@ function MusicPage(props){
             backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
           }}
         ></div>
+                <div className="content-center">
+          <Container>
+            <h1 className="title">Music Trip</h1>
+          </Container>
+        </div>
       </div>
+
+
 
       </><div class="zone_wrap">
         <div class="list_zone">
           <div class="tit">
-            <h2 id="zoneTitle">음악여행</h2>
           </div>
+          {Musiclists}
 
-          <div
-      className="video-modal-container"
-      onClick={() => handleModal(false)}
-      style={{ position: "fixed" }}
-    >
-      <div className="video-modal-wrapper">
-        <span className="video-white-x" onClick={() => handleModal(false)}>
-          x
-        </span>
-
-        {isMobile ? (
-          <YouTube videoId={props.jh_71Ig00js} opts={mobileOpts} />
-        ) : (
-          <YouTube videoId={props.videoID} opts={opts} />
-          )}
-        </div>
+      
       </div>
-        </div>
-      </div>     
+      </div>
       <DarkFooter /></>
   );
 }

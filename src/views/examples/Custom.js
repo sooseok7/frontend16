@@ -31,7 +31,7 @@ function Custom() {
     axios.post('/api/saveschedule', Schedules)
   .then(function (response) {
     console.log(response);
-    window.confirm("새로고침 어케고치지");
+    window.confirm("저장하시겠습니까?");
     window.open("about:blank", "_self");
     window.close();
   })
@@ -42,7 +42,7 @@ function Custom() {
   axios.put('/api/updateschedule/'+ Schedules.id, Schedules)
   .then(function (response) {
     console.log(response);
-    window.confirm("새로고침 어케고치지");
+    window.confirm("수정하시겠습니까?");
     window.open("about:blank", "_self");
     window.close();
   })
@@ -59,7 +59,7 @@ function Custom() {
     axios.delete('/api/deleteschedule/'+mode)
   .then(function (response) {
     console.log(response);
-    window.confirm("새로고침 어케고치지");
+    window.confirm("삭제하시겠습니까?");
     window.open("about:blank", "_self");
     window.close();
   })
@@ -106,9 +106,8 @@ function Buttons(){
             size="lg"
             >
                 삭제
-                </Button>
+            </Button>
       </div>
-    
     )
   }
 }
