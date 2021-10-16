@@ -1,4 +1,6 @@
 import React from "react";
+
+import { Container } from "reactstrap";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
@@ -27,6 +29,11 @@ function PicchungPage() {
           backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
         }}
       ></div>
+                 <div className="content-center">
+          <Container>
+            <h1 className="title">Photo zone</h1>
+          </Container>
+        </div>
     </div>
 
     </><Carousel />

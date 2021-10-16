@@ -123,7 +123,19 @@ function isPagingNext() {
     <>
        <ResultNavbar />
       <div className="wrapper">
-        <BoardPageHeader />         
+      <div className="page-header clear-filter">
+        <div
+          className="page-header-image"
+          style={{
+            backgroundImage: "url(" + require("assets/img/bg5.jpg").default + ")",
+          }}
+        ></div>
+           <div className="content-center">
+          <Container>
+            <h1 className="title">Qna 게시판</h1>
+          </Container>
+        </div>
+      </div>        
         <div className="section">
           {/* <div class="board-title">자유게시판</div> */}
           <Container>

@@ -6,7 +6,6 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 // 안써도 자동으로 한국 시간을 불러온다. 명확하게 하기 위해 import
 import 'moment/locale/ko';
 import { useParams } from "react-router-dom";
-import { transform } from "typescript";
 function BoardRead() {
     const {num} = useParams(); 
     const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
@@ -83,7 +82,7 @@ function BoardRead() {
         console.log(Board); //createcomment
         axios.post('/api/board/comment',Comment)
         .then(function (response) {
-          window.location.href ='../boardread/'+Board.idx
+          window.location.href ='../../boardread/'+Board.idx
         })
         .catch(function (error) {
           console.log(error);
@@ -93,7 +92,7 @@ function BoardRead() {
       function deletecomment(number){
         axios.delete('/api/board/comment/'+number)
         .then(function (response) {
-          window.location.href ='../boardread/'+Board.idx
+          window.location.href ='../../boardread/'+Board.idx
         })
         .catch(function (error) {
           console.log(error);
@@ -147,7 +146,6 @@ if(Commentlist.length != '0'){
             </Button>
             <Button
               className="btn-delete"
-              // href=""
               onClick={f4}
               size="5px"
             >
@@ -155,7 +153,6 @@ if(Commentlist.length != '0'){
             </Button>
             <Button
               className="btn-update"
-              href="../../board-page"
               onClick={f3}
               size="5px"
             >

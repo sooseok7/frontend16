@@ -56,7 +56,7 @@ function PicturePage() {
           <Container>
               <Row>
                 <Col lg="6" md="12">
-                  <h2 style={{float:"center"}}className="title">{name.galTitle}</h2>
+                  <h2 className="title">{name.galTitle}</h2>
                  <h5 className="description">
                      <img src= {name.galWebImageUrl}/>
                   </h5>
@@ -97,12 +97,16 @@ function PicturePage() {
             backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
           }}
         ></div>
+          <div className="content-center">
+          <Container>
+            <h1 className="title">Picture Trip</h1>
+          </Container>
+        </div>
       </div>
 
       </><div class="zone_wrap">
         <div class="list_zone">
           <div class="tit">
-            {/* <h1 id="zoneTitle">{"<"}사진여행{">"}</h1> */}
           </div>
           {Namelists}
        <div style={{backgroundColor:"black"}}><br/></div>
