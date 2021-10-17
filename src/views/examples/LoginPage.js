@@ -50,7 +50,7 @@ function LoginPage() {
             <Col className="ml-auto mr-auto" md="5">
               <Card className="card-login card-plain">
                 <Form action="" className="form" method="">
-                  <CardHeader className="text-center">
+                  <CardHeader className="text-center" style={{marginTop:"20px"}}>
                     <div className="logo-container">
                       <img
                         alt="..."

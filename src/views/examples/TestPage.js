@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import Question from '../../Question';
-import { Button } from "reactstrap";
+import { Button, Container } from "reactstrap";
 import styled from 'styled-components/macro'
 // import {
 //   NavItem,
@@ -12,7 +12,6 @@ import styled from 'styled-components/macro'
 
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
-import TestPageHeader from "components/Headers/TestPageHeader.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 //import { options } from "preact";
 //import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
@@ -228,7 +227,20 @@ const num3=  (count.t >= count.f) ? 'T' : 'F'
       <ExamplesNavbar />
 
       <div className="wrapper">
-        <TestPageHeader />
+      <div className="page-header clear-filter">
+        <div
+          className="page-header-image"
+          style={{
+            backgroundImage: "url(" + require("assets/img/bg1.jpg").default + ")",
+          }}
+          
+        ></div>
+        <div className="content-center">
+          <Container>
+            <h1 className="title">여행성향 MBTI 테스트</h1>
+          </Container>
+        </div>
+      </div> 
        
          <div style={{backgroundColor:"black"}} className="section section-team text-center">
         

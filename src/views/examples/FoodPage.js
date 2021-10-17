@@ -10,7 +10,7 @@ import { Button, Container, Row, Col } from "reactstrap";
 function FoodPage() {
   const [names,setNames]=useState([]);
 
-  React.useEffect(() => {
+  const f1 = () => {
     let isSubscribed = true;
     axios
     .get(
@@ -23,16 +23,41 @@ function FoodPage() {
         setNames(Response.data.data);
         //setLengths(Response.data.response.body.items.length);
         //console.log(Response.data.response.body.items.length);
-        console.log(Response.data.data);
+        //console.log(Response.data.data);
        // check if this component still mounted
        if (isSubscribed) {
          //setLoading(false);
        }
       }
      }
-    });
-    //.catch((Error)=>{console.log(Error)});
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+  const f2 = () => {
+    let isSubscribed = true;
+    axios
+    .get(
+      '/api/getfood1'
+    )
+    .then(Response => {
+      
+      if (Response.status === 200) {
+        if (isSubscribed) {    
+        setNames(Response.data.data);
+        //setLengths(Response.data.response.body.items.length);
+        //console.log(Response.data.response.body.items.length);
+        //console.log(Response.data.data);
+       // check if this component still mounted
+       if (isSubscribed) {
+         //setLoading(false);
+       }
+      }
+     }
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
 
+    React.useEffect(() => {
     document.body.classList.add("food-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -103,9 +128,23 @@ function FoodPage() {
           <div class="tit">
           </div>
           {Namelists}
-        </div>
-      </div>
-      <DarkFooter /></>
+        <div className="thema-line">
+          <Button
+          className="thema-button"
+            onClick={f1}
+          >
+            열기
+          </Button>
+          <Button
+          className="thema-button"
+            onClick={f2}
+          >
+            접기
+          </Button>
+          </div>
+          </div>
+        <DarkFooter />
+      </div></>
   );
 }
 

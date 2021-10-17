@@ -5,7 +5,6 @@ import { Container, Row, Col } from "reactstrap";
 
 // core components
 import ResultNavbar from "components/Navbars/ResultNavbar.js";
-import ResultPageHeader from "components/Headers/ResultPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 import { useParams } from "react-router-dom";
 
@@ -161,7 +160,20 @@ if( names != undefined){
     <>
       <ResultNavbar />
       <div className="wrapper">
-        <ResultPageHeader />
+      <div className="page-header clear-filter">
+        <div
+          className="page-header-image"
+          style={{
+            backgroundImage: "url(" + require("assets/img/bg1.jpg").default + ")",
+          }}
+          
+        ></div>
+        <div className="content-center">
+          <Container>
+            <h1 className="title">MBTI 여행사진</h1>
+          </Container>
+        </div>
+      </div> 
         <div className="main">
         <div className="section section-nucleo-icons">
       <Namelist/>

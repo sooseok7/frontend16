@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import MusicResult from '../../MusicResult.js';
 // reactstrap components
 import { Button, Container, Row, Col } from "reactstrap";
@@ -8,6 +8,22 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 function MusicPage() {
+  let [musicnumber, setMusicnumber] = useState(5);
+  const f1 = () => {
+    setMusicnumber(musicnumber=0);
+  }
+  const f2 = () => {
+    setMusicnumber(musicnumber=1);
+  }
+  const f3 = () => {
+    setMusicnumber(musicnumber=2);
+  }
+  const f4 = () => {
+    setMusicnumber(musicnumber=3);
+  }
+  const f5 = () => {
+    setMusicnumber(musicnumber=4);
+  }
 
   React.useEffect(() => {
     document.body.classList.add("music-page");
@@ -21,7 +37,9 @@ function MusicPage() {
     };
   }, []);
     //https://www.youtube.com/results?search_query=
+
   const Musiclists= MusicResult.map(music=> {
+    if(musicnumber==music.num){
            const channelurl="https://www.youtube.com/channel/"+ music.channel
            const viewurl="https://www.youtube.com/watch?v="+music.id
         return(
@@ -56,8 +74,9 @@ function MusicPage() {
             </Container>
           </div>
        );
+        }
       }
-);
+      );
 
 
   return (
@@ -76,19 +95,48 @@ function MusicPage() {
           </Container>
         </div>
       </div>
-
-
-
-      </><div class="zone_wrap">
+      </>
+      <div class="zone_wrap">
         <div class="list_zone">
           <div class="tit">
           </div>
           {Musiclists}
+          <div className="thema-line">
 
-      
-      </div>
-      </div>
-      <DarkFooter /></>
+          <Button
+          className="thema-button"
+            onClick={f1}
+          >
+            1
+          </Button>
+          <Button
+          className="thema-button"
+            onClick={f2}
+          >
+            2
+          </Button>
+          <Button
+          className="thema-button"
+            onClick={f3}
+          >
+            3
+          </Button>
+          <Button
+          className="thema-button"
+            onClick={f4}
+          >
+            4
+          </Button>
+          <Button
+          className="thema-button"
+            onClick={f5}
+          >
+            5
+          </Button>
+          </div>
+          </div>
+        <DarkFooter />
+      </div></>
   );
 }
 

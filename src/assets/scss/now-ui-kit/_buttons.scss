@@ -239,13 +239,13 @@
 .btn-moving{
     background-color: #000000;
     color: #FFFFFF;
-    height: 150px;
+    height: 260px;
     display: block;
     text-align: center;
 }
 
 .btn-first{
-    border-radius: 100px;
+    border-radius: 10px;
     width: 140px;
     margin: auto;
     text-align: center;
@@ -256,7 +256,7 @@
     margin-left: 10px;
 }
 .btn-second{
-    border-radius: 100px;
+    border-radius: 10px;
     width: 140px;
     margin: auto;
     text-align: center;
@@ -267,7 +267,7 @@
 }
 
 .btn-third{
-    border-radius: 100px;
+    border-radius: 10px;
     width: 140px;
     margin: auto;
     text-align: center;
@@ -277,7 +277,7 @@
     margin-right: 10px;
 }
 .btn-fourth{
-    border-radius: 100px;
+    border-radius: 10px;
     width: 140px;
     margin: auto;
     text-align: center;
@@ -287,7 +287,7 @@
     margin-right: 10px;
 }
 .btn-fifth{
-    border-radius: 100px;
+    border-radius: 10px;
     width: 140px;
     margin: auto;
     text-align: center;
@@ -867,6 +867,18 @@
     display: inline-block;
 }
 
-.paging{
-    margin-top: 5px;
+.thema-button{
+    border-radius: 100px;
+    margin-right: 1px;
+    text-align: center;
+    border: 1px solid #ffffff;
+    color: #FFFFFF;
+    background-color: #000000;
+    font-size: small;
+}
+.thema-line{
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
