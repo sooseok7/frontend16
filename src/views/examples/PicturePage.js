@@ -12,11 +12,11 @@ function PicturePage() {
   const [names,setNames]=useState([]);
   //const [lengthss,setLengths]=useState();
 
-  React.useEffect(() => {
+  const f1 = () => {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture'
+      '/api/getpicture1'
     )
     .then(Response => {
       
@@ -34,7 +34,100 @@ function PicturePage() {
      }
     })
     .catch((Error)=>{console.log(Error)});
+  }
+  const f2 = () => {
+    let isSubscribed = true;
+    axios
+    .get(
+      '/api/getpicture2'
+    )
+    .then(Response => {
+      
+      if (Response.status === 200) {
+        if (isSubscribed) {
+        setNames(Response.data.response.body.items.item);
+        //console.log(Response.data.response.body.items.item);
+        //setLengths(Response.data.response.body.items.length);
+        //console.log(Response.data.response.body.items.length);
 
+       // check if this component still mounted
+       
+         //setLoading(false);
+       }
+     }
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+  const f3 = () => {
+    let isSubscribed = true;
+    axios
+    .get(
+      '/api/getpicture3'
+    )
+    .then(Response => {
+      
+      if (Response.status === 200) {
+        if (isSubscribed) {
+        setNames(Response.data.response.body.items.item);
+        //console.log(Response.data.response.body.items.item);
+        //setLengths(Response.data.response.body.items.length);
+        //console.log(Response.data.response.body.items.length);
+
+       // check if this component still mounted
+       
+         //setLoading(false);
+       }
+     }
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+  const f4 = () => {
+    let isSubscribed = true;
+    axios
+    .get(
+      '/api/getpicture4'
+    )
+    .then(Response => {
+      
+      if (Response.status === 200) {
+        if (isSubscribed) {
+        setNames(Response.data.response.body.items.item);
+        //console.log(Response.data.response.body.items.item);
+        //setLengths(Response.data.response.body.items.length);
+        //console.log(Response.data.response.body.items.length);
+
+       // check if this component still mounted
+       
+         //setLoading(false);
+       }
+     }
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+  const f5 = () => {
+    let isSubscribed = true;
+    axios
+    .get(
+      '/api/getpicture5'
+    )
+    .then(Response => {
+      
+      if (Response.status === 200) {
+        if (isSubscribed) {
+        setNames(Response.data.response.body.items.item);
+        //console.log(Response.data.response.body.items.item);
+        //setLengths(Response.data.response.body.items.length);
+        //console.log(Response.data.response.body.items.length);
+
+       // check if this component still mounted
+       
+         //setLoading(false);
+       }
+     }
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+    React.useEffect(() => {
     document.body.classList.add("picture-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -97,22 +190,53 @@ function PicturePage() {
             backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
           }}
         ></div>
-          <div className="content-center">
+        <div className="content-center">
           <Container>
             <h1 className="title">Picture Trip</h1>
           </Container>
         </div>
       </div>
 
-      </><div class="zone_wrap">
+    </><div class="zone_wrap">
         <div class="list_zone">
           <div class="tit">
           </div>
           {Namelists}
-       <div style={{backgroundColor:"black"}}><br/></div>
+          <div className="thema-line">
+            <Button
+              className="thema-button"
+              onClick={f1}
+            >
+              1
+            </Button>
+            <Button
+              className="thema-button"
+              onClick={f2}
+            >
+              2
+            </Button>
+            <Button
+              className="thema-button"
+              onClick={f3}
+            >
+              3
+            </Button>
+            <Button
+              className="thema-button"
+              onClick={f4}
+            >
+              4
+            </Button>
+            <Button
+              className="thema-button"
+              onClick={f5}
+            >
+              5
+            </Button>
+          </div>
         </div>
-      </div>
-      <DarkFooter /></>
+        <DarkFooter />
+      </div></>
   );
 }
 

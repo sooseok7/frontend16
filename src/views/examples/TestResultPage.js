@@ -4,7 +4,6 @@ import axios from 'axios';
 import QuestionResult from '../../QuestionResult';
 import styled from 'styled-components/macro'
 import ResultNavbar from "components/Navbars/ResultNavbar.js";
-import TestResultHeader from "components/Headers/TestResultHeader";
 import DarkFooter from "components/Footers/DarkFooter";
 import { Button, Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
@@ -133,6 +132,7 @@ function TestPage() {
                     <a href={data2.hate} class="btn-gray-round">보러가기</a>
                 </li>
             </ui>
+            <br/><br/>
         </div>
     </div>
 </div>
@@ -236,16 +236,26 @@ return dist/1000;
   return (
     <>
       <ResultNavbar />
-
-
-        <TestResultHeader />        
+      <div className="page-header clear-filter">
+        <div
+          className="page-header-image"
+          style={{
+            backgroundImage: "url(" + require("assets/img/bg1.jpg").default + ")",
+          }}
+          
+        ></div>
+        <div className="content-center">
+          <Container>
+            <h1 className="title">여행성향 MBTI 테스트 결과</h1>
+          </Container>
+        </div>
+      </div>     
          {items2}
          {/* <Intro>
             <h1>Take the quiz.</h1>
             <h4>Whenever, you want.</h4>
             <button  css={btnCSS}>Begin</button>
         </Intro> */}
-
 
 {/* 버튼 css라서 필요하면 쓸거임 */}
 

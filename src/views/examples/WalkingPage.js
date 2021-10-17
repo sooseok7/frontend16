@@ -11,10 +11,10 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 function WalkingPage() {
   const [names,setNames]=useState([]);
 
-  React.useEffect(() => {
+  const f1 = () => {
     let isSubscribed = true;
     axios
-    .get('/api/getwalking')
+    .get('/api/getwalking1')
     .then(Response => {
       
       if (Response.status === 200) {
@@ -26,9 +26,83 @@ function WalkingPage() {
          //setLoading(false);
         }
      }
-    });
-    //.catch((Error)=>{console.log(Error)});
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+  const f2 = () => {
+    let isSubscribed = true;
+    axios
+    .get('/api/getwalking2')
+    .then(Response => {
+      
+      if (Response.status === 200) {
+        if (isSubscribed) {
+        setNames(Response.data.response.body.items.item);
+        //console.log(Response.data.response.body.items.item);
+       // check if this component still mounted
 
+         //setLoading(false);
+        }
+     }
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+  const f3 = () => {
+    let isSubscribed = true;
+    axios
+    .get('/api/getwalking3')
+    .then(Response => {
+      
+      if (Response.status === 200) {
+        if (isSubscribed) {
+        setNames(Response.data.response.body.items.item);
+        //console.log(Response.data.response.body.items.item);
+       // check if this component still mounted
+
+         //setLoading(false);
+        }
+     }
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+  const f4 = () => {
+    let isSubscribed = true;
+    axios
+    .get('/api/getwalking4')
+    .then(Response => {
+      
+      if (Response.status === 200) {
+        if (isSubscribed) {
+        setNames(Response.data.response.body.items.item);
+        //console.log(Response.data.response.body.items.item);
+       // check if this component still mounted
+
+         //setLoading(false);
+        }
+     }
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+  const f5 = () => {
+    let isSubscribed = true;
+    axios
+    .get('/api/getwalking5')
+    .then(Response => {
+      
+      if (Response.status === 200) {
+        if (isSubscribed) {
+        setNames(Response.data.response.body.items.item);
+        //console.log(Response.data.response.body.items.item);
+       // check if this component still mounted
+
+         //setLoading(false);
+        }
+     }
+    })
+    .catch((Error)=>{console.log(Error)});
+  }
+
+    React.useEffect(() => {
     document.body.classList.add("walking-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -107,13 +181,41 @@ function WalkingPage() {
           <div class="tit">
           </div>
           {Namelists}
-        </div>
-      </div>
-      
-      
-      
-      
-      <DarkFooter /></>
+          <div className="thema-line">
+          <Button
+          className="thema-button"
+            onClick={f1}
+          >
+            1
+          </Button>
+          <Button
+          className="thema-button"
+            onClick={f2}
+          >
+            2
+          </Button>
+          <Button
+          className="thema-button"
+            onClick={f3}
+          >
+            3
+          </Button>
+          <Button
+          className="thema-button"
+            onClick={f4}
+          >
+            4
+          </Button>
+          <Button
+          className="thema-button"
+            onClick={f5}
+          >
+            5
+          </Button>
+          </div>
+          </div>
+        <DarkFooter />
+      </div></>
   );
 }
 

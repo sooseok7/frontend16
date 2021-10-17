@@ -121,7 +121,7 @@ const finalevent = Object.assign(events, events2);
   return(
   <div>
       <Calendar
-      onSelectEvent={event => {if(event.id != null) window.open("./custom/"+event.id)}} //공휴일이랑 정한 일정 분리(?)
+      onSelectEvent={event => {if(event.id != null) window.location.href="./custom/"+event.id}} //공휴일이랑 정한 일정 분리(?)
       localizer={localizer} //언어와 시간대
       events={finalevent}   //출퇴근 위에꺼 입력됨
       startAccessor="start" 

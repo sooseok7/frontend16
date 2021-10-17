@@ -28,44 +28,42 @@ function Custom() {
       window.confirm("시작날짜를 종료날짜 이후로 설정해주세요");
     }else{
     if(mode == "new"){
+      if(window.confirm("저장하시겠습니까?")){
     axios.post('/api/saveschedule', Schedules)
   .then(function (response) {
     console.log(response);
-    window.confirm("저장하시겠습니까?");
     window.open("about:blank", "_self");
-    window.close();
+    window.location.href ='../calendars'
   })
   .catch(function (error) {
     console.log(error);
-  });
+  });}
 }else{
+  if(window.confirm("수정하시겠습니까?")){
   axios.put('/api/updateschedule/'+ Schedules.id, Schedules)
   .then(function (response) {
     console.log(response);
-    window.confirm("수정하시겠습니까?");
     window.open("about:blank", "_self");
-    window.close();
+    window.location.href ='../calendars'
   })
   .catch(function (error) {
     console.log(error);
-  });
-}}
-  }
-
+  });}
+}}}
 
   const f4 = async () => {
     console.log(Schedules);
     if(mode != "new"){
+      if(window.confirm("삭제하시겠습니까?")){
     axios.delete('/api/deleteschedule/'+mode)
   .then(function (response) {
     console.log(response);
-    window.confirm("삭제하시겠습니까?");
     window.open("about:blank", "_self");
-    window.close();
-  })
+    window.location.href ='../calendars'}
+  )
   .catch(function (error) {
     console.log(error);
-  });
+  });}
 }
   }
 
@@ -76,7 +74,6 @@ function Buttons(){
       block
       className="btn-round"
       color="white"
-      // href=""
       onClick={f3}
       size="lg"
       >
@@ -91,7 +88,6 @@ function Buttons(){
       block
       className="btn-round"
       color="white"
-      // href=""
       onClick={f3}
       size="lg"
       >

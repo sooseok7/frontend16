@@ -13,7 +13,6 @@ import { Button, Container, Row} from "reactstrap";
 //import { useParams } from "react-router-dom";
 // core components
 import ResultNavbar from "components/Navbars/ResultNavbar.js";
-import BoardPageHeader from "components/Headers/BoardPageHeader.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function QnaPage() {
