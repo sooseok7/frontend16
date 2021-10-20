@@ -23,7 +23,6 @@ function Custom() {
 
  
   const f3 = async () => {
-    console.log(Schedules);
     if(Schedules.startdate >= Schedules.enddate){
       window.confirm("시작날짜를 종료날짜 이후로 설정해주세요");
     }else{

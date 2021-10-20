@@ -177,41 +177,23 @@ function IndexNavbar() {
                   {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>달력</p>
                 </NavLink>
-              </NavItem>
+                </NavItem>
 
-              <UncontrolledDropdown nav>
-                <DropdownToggle
-                  caret
-                  color="white"
-                  backgroundcolor="black"
-                  href="#pablo"
-                  nav
-                  onClick={(e) => e.preventDefault()}
-                >
-               
-                  <p>마이페이지</p>
-                </DropdownToggle>
-                <DropdownMenu>
-                  <DropdownItem href="join-page"
-                  >
-                  <p>정보수정</p>
-                  </DropdownItem>
-                  <DropdownItem
-                    href="examples-page"
-                    // target="_blank"
-                  >
-                    <p>로그아웃</p>
-                  </DropdownItem>
-                </DropdownMenu>
-              </UncontrolledDropdown>
-                
-              <NavItem>
-              <NavLink
-              href="login-page"
-            >
-                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
-                  <p>로그인</p>
-                </NavLink>
+<DropdownMenu>
+  <DropdownItem
+    href="login-page"
+    // target="_blank"
+  >
+    <p>로그아웃</p>
+  </DropdownItem>
+</DropdownMenu>
+
+<NavItem>
+<NavLink
+href="login-page"
+>
+  <p>로그인</p>
+</NavLink>
 
               {/* <NavItem>
                 <Button

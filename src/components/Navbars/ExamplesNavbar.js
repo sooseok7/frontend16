@@ -180,22 +180,7 @@ function ExamplesNavbar() {
                 </NavLink>
               </NavItem>
 
-              <UncontrolledDropdown nav>
-                <DropdownToggle
-                  caret
-                  color="default"
-                  href="#pablo"
-                  nav
-                  onClick={(e) => e.preventDefault()}
-                >
-               
-                  <p>마이페이지</p>
-                </DropdownToggle>
                 <DropdownMenu>
-                <DropdownItem href="join-page"
-                  >
-                  <p>정보수정</p>
-                  </DropdownItem>
                   <DropdownItem
                     href="login-page"
                     // target="_blank"
@@ -203,13 +188,11 @@ function ExamplesNavbar() {
                     <p>로그아웃</p>
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
                 
               <NavItem>
               <NavLink
               href="login-page"
             >
-                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>로그인</p>
                 </NavLink>
               </NavItem>

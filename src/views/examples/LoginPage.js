@@ -21,8 +21,6 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import TransparentFooter from "components/Footers/TransparentFooter.js";
 
 function LoginPage() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
   React.useEffect(() => {
     document.body.classList.add("login-page");
     document.body.classList.add("sidebar-collapse");
@@ -61,8 +59,7 @@ function LoginPage() {
                   <CardBody>
                     <InputGroup
                       className={
-                        "no-border input-lg" +
-                        (firstFocus ? " input-group-focus" : "")
+                        "no-border input-lg"
                       }
                     >
                       <InputGroupAddon addonType="prepend">
@@ -73,14 +70,11 @@ function LoginPage() {
                       <Input
                         placeholder="Your ID..."
                         type="text"
-                        onFocus={() => setFirstFocus(true)}
-                        onBlur={() => setFirstFocus(false)}
                       ></Input>
                     </InputGroup>
                     <InputGroup
                       className={
-                        "no-border input-lg" +
-                        (lastFocus ? " input-group-focus" : "")
+                        "no-border input-lg"
                       }
                     >
                       <InputGroupAddon addonType="prepend">
@@ -91,8 +85,6 @@ function LoginPage() {
                       <Input
                         placeholder="Your Password..."
                         type="text"
-                        onFocus={() => setLastFocus(true)}
-                        onBlur={() => setLastFocus(false)}
                       ></Input>
                     </InputGroup>
                   
