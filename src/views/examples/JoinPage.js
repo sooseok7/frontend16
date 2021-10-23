@@ -23,12 +23,9 @@ import TransparentFooter from "components/Footers/TransparentFooter.js";
 function LoginPage() {
     const [User, setUser] = useState({
       id:"",
-      password: "",
-      nickname: "",
-      role: "1",        
-      mbti: "ESTJ",
-      anytalk: ""
-} );
+      pw:"",
+      role: "User"
+});
     React.useEffect(() => {
       document.body.classList.add("login-page");
       document.body.classList.add("sidebar-collapse");
@@ -42,14 +39,11 @@ function LoginPage() {
     }, []);
 
     const inputmember = async () => {
-      if(User.id == User.nickname){
-        window.confirm("id와 nickname이 같습니다.");
+      if(User.id == User.pw){
+        window.confirm("아이디와 비번이 같습니다.");
       }
-      else if(!User.id || !User.nickname || !User.password || !User.anytalk){
+      else if(!User.id || !User.pw){
         window.confirm("빈칸을 채워주세요.");
-      }
-      else if(User.id == User.nickname){
-        window.confirm("중복된 아이디입니다.");
       }
       else{
       if(window.confirm("회원가입하시겠습니까?")){
@@ -98,19 +92,16 @@ function LoginPage() {
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="Your Id..."
+                        placeholder="Want Id..."
                         name="id"
                         type="text"
                         value={User.id}
-                        maxlength="11"
+                        maxlength="14"
                         onChange={({ target: { value } }) => 
                         setUser({
                           id:value,
-                          password: User.password,
-                          nickname: User.nickname,
-                          role: User.role,        
-                          mbti: User.mbti,
-                          anytalk: User.anytalk
+                          pw: User.pw,
+                          role: User.role
                    })}
                       ></Input>
                     </InputGroup>
@@ -126,74 +117,16 @@ function LoginPage() {
                         </InputGroupText>
                       </InputGroupAddon>
                       <Input
-                        placeholder="Your Password..."
+                        placeholder="Want Password..."
                         name="user-password"
                         type="password"
                         maxlength="14"
-                        value={User.password}
+                        value={User.pw}
                         onChange={({ target: { value } }) => 
                         setUser({
                           id:User.id,
-                          password: value,
-                          nickname: User.nickname,
-                          role: User.role,        
-                          mbti: User.mbti,
-                          anytalk: User.anytalk
-                   })}
-                      ></Input>
-                    </InputGroup>
-
-                    <InputGroup
-                      className={
-                        "no-border input-lg"
-                      }
-                    >
-                      <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
-                        <i className="now-ui-icons users_circle-08"></i>
-                        </InputGroupText>
-                      </InputGroupAddon>
-                      <Input
-                        placeholder="Your Nickname..."
-                        name="nickname"
-                        maxlength="11"
-                        value={User.nickname}
-                        onChange={({ target: { value } }) => 
-                        setUser({
-                          id:User.id,
-                          password: User.password,
-                          nickname: value,
-                          role: User.role,        
-                          mbti: User.mbti,
-                          anytalk: User.anytalk
-                   })}
-                      ></Input>
-                    </InputGroup>
-
-                    <InputGroup
-                      className={
-                        "no-border input-lg"
-                      }
-                    >
-                      <InputGroupAddon addonType="prepend">
-                        <InputGroupText>
-                        <i className="now-ui-icons text_caps-small"></i>
-                        </InputGroupText>
-                      </InputGroupAddon>
-                      <Input
-                        placeholder="Your Anytalk..."
-                        name="anytalk"
-                        type="text"
-                        maxlength="12"
-                        value={User.anytalk}
-                        onChange={({ target: { value } }) => 
-                        setUser({
-                          id:User.id,
-                          password: User.password,
-                          nickname: User.nickname,
-                          role: User.role,        
-                          mbti: User.mbti,
-                          anytalk: value
+                          pw: value,
+                          role: User.role
                    })}
                       ></Input>
                     </InputGroup>

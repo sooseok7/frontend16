@@ -1,5 +1,5 @@
-import React from "react";
-
+import React,{useState } from "react";
+import axios from 'axios'
 // reactstrap components
 import {
   Button,
@@ -21,7 +21,12 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import TransparentFooter from "components/Footers/TransparentFooter.js";
 
 function LoginPage() {
+  const [input, setInput] = useState({
+    id:"",
+    pw:""
+  })
   React.useEffect(() => {
+    // 페이지 호출 후 처음 한번만 호출될 수 있도록 [] 추가
     document.body.classList.add("login-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -32,6 +37,28 @@ function LoginPage() {
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
+  	// login 버튼 클릭 이벤트
+    const onClickLogin = (event) => {
+      event.preventDefault(); //리프레시 방지-> 방지해야 이 아래 라인의 코드들 실행 가능 
+      if(input.id == input.pw){
+        window.confirm("아이디와 비번이 같습니다.");
+      }
+      else if(!input.id || !input.pw){
+        window.confirm("빈칸을 채워주세요.");
+      }else{
+      if(window.confirm("로그인하시겠습니까?")){
+          axios.post('/api/login', input)
+        .then(function (response) {
+          console.log(response);
+          //window.location.href ='../../boardread/'+response.data.idx
+        })
+        .catch(function (error) { 
+          console.log(error);
+    })
+  }
+}
+    
+ }
   return (
     <>
       <ExamplesNavbar />
@@ -47,7 +74,7 @@ function LoginPage() {
           <Container>
             <Col className="ml-auto mr-auto" md="5">
               <Card className="card-login card-plain">
-                <Form action="" className="form" method="">
+                <Form className="form" method="">
                   <CardHeader className="text-center" style={{marginTop:"20px"}}>
                     <div className="logo-container">
                       <img
@@ -70,6 +97,14 @@ function LoginPage() {
                       <Input
                         placeholder="Your ID..."
                         type="text"
+                        name='id'
+                        value={input.id}
+                        maxlength="14"
+                        onChange={({ target: { value } }) => 
+                        setInput({
+                          id:value,
+                          pw: input.pw
+                      })}
                       ></Input>
                     </InputGroup>
                     <InputGroup
@@ -84,7 +119,15 @@ function LoginPage() {
                       </InputGroupAddon>
                       <Input
                         placeholder="Your Password..."
-                        type="text"
+                        type="password"
+                        name='pw'
+                        maxlength="14"
+                        value={input.pw}
+                        onChange={({ target: { value } }) => 
+                        setInput({
+                          id:input.id,
+                          pw: value
+                   })}
                       ></Input>
                     </InputGroup>
                   
@@ -93,8 +136,7 @@ function LoginPage() {
                       block
                       className="btn-round"
                       color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={onClickLogin}
                       size="lg"
                     >
                       Get Started
@@ -113,9 +155,9 @@ function LoginPage() {
                       <h6>
                         <a
                           className="link"
-                          href="findname"
+                          href="index"
                         >
-                          Need Help?
+                          go to home?
                         </a>
                       </h6>
                     </div>
