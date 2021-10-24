@@ -6,7 +6,7 @@ import moment from "moment"; // 밑에 언어랑 시간대 가져옴
 //import Anyday from '../../Anyday';
 import axios from 'axios';
 import CalendarButton from './CalendarButton';
-
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // reactstrap components
 // import {
 // } from "reactstrap";
@@ -33,16 +33,17 @@ function Calendars() {
   const [loading,setLoading]=useState();
 
   */
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const navigateContants = {
     PREVIOUS: 'PREV',
     NEXT: 'NEXT',
     DATE: 'DATE'
 };
-
+  
   React.useEffect(() => {
     let isSubscribed = true;
     axios.get('/api/getHoliDeInfo?yearss='+moment().year())
-      .then(Response => {
+    .then(Response => {
 
      
           if (Response.status === 200) {

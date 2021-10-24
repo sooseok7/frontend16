@@ -6,7 +6,9 @@ import moment from 'moment';
 import 'moment/locale/ko';
 import { useParams } from "react-router-dom";
 import DarkFooter from "components/Footers/DarkFooter.js";
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function QnaRead() {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
     const {num} = useParams(); 
     const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
     const [Qna, setQna] = useState({
@@ -39,16 +41,16 @@ function QnaRead() {
       
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
         axios.get('/api/getCommentsById/'+num)
         .then(function (response) {
           //console.log(response.data)
           setCommentsList(response.data)
-          console.log(Commentslist)
+         // console.log(Commentslist)
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
    
         // document.body.classList.add("boardread/:num");
@@ -67,25 +69,25 @@ function QnaRead() {
         window.location.href ='../qna-input/'+Qna.idx
       }
       const f4 = async () => {
-        console.log(Qna);
+        //console.log(Qna);
         //삭제/board/{no}
         axios.delete('/api/qna/'+num)
         .then(function (response) {
           window.location.href ='../qna-page'
         })
         .catch(function (error) {
-          console.log(error);
+         // console.log(error);
         });
    
       }
       const f5 = async () => {
-        console.log(Qna); //createcomment
+       // console.log(Qna); //createcomment
         axios.post('/api/qna/comments',Comments)
         .then(function (response) {
           window.location.href ='../qna-read/'+Qna.idx
         })
         .catch(function (error) {
-          console.log(error);
+         // console.log(error);
         });
    
       }
@@ -95,7 +97,7 @@ function QnaRead() {
           window.location.href ='../../qna-read/'+Qna.idx
         })
         .catch(function (error) {
-          console.log(error);
+         // console.log(error);
         });
       }
 

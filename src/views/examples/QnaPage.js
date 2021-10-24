@@ -15,7 +15,9 @@ import { Button, Container, Row} from "reactstrap";
 import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function QnaPage() {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
    //axios.get('http://localhost:8080/api/test')
    //then((Response)=>{console.log(Response.data)})
    //.catch((Error)=>{console.log(Error)})
@@ -44,7 +46,7 @@ var now = new Date();
   React.useEffect(() => {
     axios.get('/api/getPagingQna?p_num='+p_num+'&?keyword='+keyword)
     .then(Response => {
-      console.log(Response)
+      //console.log(Response)
 
         if (Response.status === 200) {
           setData(Response.data.pagingData);
@@ -67,7 +69,7 @@ function listQna(num, keyword)
 
     axios.get('/api/getPagingQna?p_num='+num+'&keyword='+keyword)
     .then(Response => {
-      console.log(Response.data.pagingData)
+      //console.log(Response.data.pagingData)
         if (Response.status === 200) {
           setData(Response.data.pagingData);
           setList(Response.data.list);

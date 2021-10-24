@@ -7,7 +7,9 @@ import { Button, Container, Row, Col} from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function CampingPage() {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const [names,setNames]=useState([]);
 
     const f1 = () => {
@@ -23,7 +25,9 @@ function CampingPage() {
           // check if this component still mounted
         }
       })
-        .catch((Error)=>{console.log(Error)})
+        .catch((Error)=>{
+          //console.log(Error)
+        })
     }
 
     const f2 = () => {
@@ -40,7 +44,9 @@ function CampingPage() {
           }
         })
       
-         .catch((Error)=>{console.log(Error)});}
+         .catch((Error)=>{
+           //console.log(Error)
+          });}
           const f3 = () => {
           axios
           .get(
@@ -55,7 +61,9 @@ function CampingPage() {
             }
           })
        
-            .catch((Error)=>{console.log(Error)});
+            .catch((Error)=>{
+              //console.log(Error)
+            });
           }
             const f4 = () => {
             axios
@@ -71,7 +79,9 @@ function CampingPage() {
               }
             })
         
-              .catch((Error)=>{console.log(Error)});
+              .catch((Error)=>{
+                //console.log(Error)
+              });
             }
               const f5 = () => {
               axios
@@ -86,7 +96,9 @@ function CampingPage() {
                   // check if this component still mounted
                 }
               })
-                .catch((Error)=>{console.log(Error)});
+                .catch((Error)=>{
+                  //console.log(Error)
+                });
             }
 React.useEffect(() => {
          document.body.classList.add("boardread/:num");
@@ -144,7 +156,7 @@ React.useEffect(() => {
       <div
         className="page-header-image"
         style={{
-          backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
+          backgroundImage: "url(" + require("assets/img/bg7.jpg").default + ")",
         }}
       >
       </div>

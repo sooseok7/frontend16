@@ -1,5 +1,5 @@
-import React from "react";
-
+import React,{useState } from "react";
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // reactstrap components
 import {
   Button,
@@ -21,9 +21,13 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import TransparentFooter from "components/Footers/TransparentFooter.js";
 
 function LoginPage() {
-  const [firstFocus, setFirstFocus] = React.useState(false);
-  const [lastFocus, setLastFocus] = React.useState(false);
+  const [input, setInput] = useState({
+    username: localStorage.getItem("authenticatedUser") || '',
+    password: '',
+    token: localStorage.getItem("token") || ''
+  })
   React.useEffect(() => {
+    // 페이지 호출 후 처음 한번만 호출될 수 있도록 [] 추가
     document.body.classList.add("login-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
@@ -34,6 +38,25 @@ function LoginPage() {
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);
+  	// login 버튼 클릭 이벤트
+    const onClickLogin = (event) => {
+      event.preventDefault(); //리프레시 방지-> 방지해야 이 아래 라인의 코드들 실행 가능 
+      if(input.username == input.password){
+        window.confirm("아이디와 비번이 같습니다.");
+      }
+      else if(!input.username || !input.password){
+        window.confirm("빈칸을 채워주세요.");
+      }else{
+      if(window.confirm("로그인하시겠습니까?")){
+        AuthenticationService
+        .executeJwtAuthenticationService(input.username, input.password)
+        .then((response) => {
+        AuthenticationService.registerSuccessfulLoginForJwt(input.username,response.data.token)
+        //this.props.history.push(`/index/${input.username}`)
+        window.location.href ='/index'
+    }).catch( () =>{
+    })}}}
+
   return (
     <>
       <ExamplesNavbar />
@@ -49,7 +72,7 @@ function LoginPage() {
           <Container>
             <Col className="ml-auto mr-auto" md="5">
               <Card className="card-login card-plain">
-                <Form action="" className="form" method="">
+                <Form className="form" method="">
                   <CardHeader className="text-center" style={{marginTop:"20px"}}>
                     <div className="logo-container">
                       <img
@@ -61,8 +84,7 @@ function LoginPage() {
                   <CardBody>
                     <InputGroup
                       className={
-                        "no-border input-lg" +
-                        (firstFocus ? " input-group-focus" : "")
+                        "no-border input-lg"
                       }
                     >
                       <InputGroupAddon addonType="prepend">
@@ -73,14 +95,19 @@ function LoginPage() {
                       <Input
                         placeholder="Your ID..."
                         type="text"
-                        onFocus={() => setFirstFocus(true)}
-                        onBlur={() => setFirstFocus(false)}
+                        name='username'
+                        value={input.username}
+                        maxlength="14"
+                        onChange={({ target: { value } }) => 
+                        setInput({
+                          username:value,
+                          password: input.password
+                      })}
                       ></Input>
                     </InputGroup>
                     <InputGroup
                       className={
-                        "no-border input-lg" +
-                        (lastFocus ? " input-group-focus" : "")
+                        "no-border input-lg"
                       }
                     >
                       <InputGroupAddon addonType="prepend">
@@ -90,9 +117,15 @@ function LoginPage() {
                       </InputGroupAddon>
                       <Input
                         placeholder="Your Password..."
-                        type="text"
-                        onFocus={() => setLastFocus(true)}
-                        onBlur={() => setLastFocus(false)}
+                        type="password"
+                        name='password'
+                        maxlength="14"
+                        value={input.password}
+                        onChange={({ target: { value } }) => 
+                        setInput({
+                          username:input.username,
+                          password: value
+                   })}
                       ></Input>
                     </InputGroup>
                   
@@ -101,8 +134,7 @@ function LoginPage() {
                       block
                       className="btn-round"
                       color="info"
-                      href="#pablo"
-                      onClick={(e) => e.preventDefault()}
+                      onClick={onClickLogin}
                       size="lg"
                     >
                       Get Started
@@ -121,9 +153,9 @@ function LoginPage() {
                       <h6>
                         <a
                           className="link"
-                          href="findname"
+                          href="index"
                         >
-                          Need Help?
+                          go to home?
                         </a>
                       </h6>
                     </div>

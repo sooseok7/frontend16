@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Button, Container, Row} from "reactstrap";
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // reactstrap components
 //import { useParams } from "react-router-dom";
 // core components
@@ -16,6 +17,7 @@ import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function BoardPage() {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
    //axios.get('http://localhost:8080/api/test')
    //then((Response)=>{console.log(Response.data)})
    //.catch((Error)=>{console.log(Error)})
@@ -66,7 +68,7 @@ function listBoard(num, keyword)
 {
     axios.get('/api/getPagingBoard?p_num='+num+'&keyword='+keyword)
     .then(Response => {
-      console.log(Response.data.pagingData)
+      //console.log(Response.data.pagingData)
         if (Response.status === 200) {
           setData(Response.data.pagingData);
           setList(Response.data.list);

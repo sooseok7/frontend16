@@ -5,8 +5,10 @@ import moment from 'moment';
 // 안써도 자동으로 한국 시간을 불러온다. 명확하게 하기 위해 import
 import 'moment/locale/ko';
 import { useParams } from "react-router-dom";
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function QnaInput() {
    
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
 const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
 
 const {mode} = useParams(); 
@@ -27,12 +29,12 @@ const {mode} = useParams();
        if(mode != 'new'){
       axios.get('/api/qna/'+mode)
       .then(function (response) {
-        console.log(response)
+        //console.log(response)
           setQna(response.data);
     
       })
       .catch(function (error) {
-        console.log(error);
+        //console.log(error);
       });}
 
     }, []);
@@ -41,20 +43,20 @@ const {mode} = useParams();
        if(mode==='new'){ //new
         axios.post('/api/qna', Qna)
       .then(function (response) {
-        console.log(response);
+        //console.log(response);
         window.location.href ='../../qna-read/'+response.data.idx
       })
       .catch(function (error) {
-        console.log(error);
+        //console.log(error);
       });
     }else { //update
       axios.put('/api/qna/'+Qna.idx, Qna)
       .then(function (response) {
-        console.log(response);
+        //console.log(response);
         window.location.href ='../../qna-read/'+Qna.idx
       })
       .catch(function (error) {
-        console.log(error);
+        //console.log(error);
       });
     }
 

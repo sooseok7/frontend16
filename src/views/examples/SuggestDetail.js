@@ -8,7 +8,9 @@ import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 import { useParams } from "react-router-dom";
 
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function SuggestDetail(props) {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const [names,setNames]=useState([]);
   const [lengthss,setLengths]=useState();
   //const [loading,setLoading]=useState();
@@ -27,8 +29,8 @@ function SuggestDetail(props) {
             
             setNames(Response.data.response.body.items.item);
             setLengths(Response.data.response.body.items.length);
-            console.log(Response.data.response.body.items.length);
-            console.log(Response.data.response.body.items.item);
+           // console.log(Response.data.response.body.items.length);
+            //console.log(Response.data.response.body.items.item);
            // check if this component still mounted
            if (isSubscribed) {
              //setLoading(false);

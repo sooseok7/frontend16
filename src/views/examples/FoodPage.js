@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
@@ -8,6 +9,7 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 import { Button, Container, Row, Col } from "reactstrap";
 
 function FoodPage() {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const [names,setNames]=useState([]);
 
   const f1 = () => {
@@ -31,7 +33,9 @@ function FoodPage() {
       }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f2 = () => {
     let isSubscribed = true;
@@ -114,7 +118,7 @@ function FoodPage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
+            backgroundImage: "url(" + require("assets/img/test.jpg").default + ")",
           }}
         ></div>
            <div className="content-center">

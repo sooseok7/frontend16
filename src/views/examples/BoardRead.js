@@ -5,8 +5,10 @@ import moment from 'moment';
 import DarkFooter from "components/Footers/DarkFooter.js";
 // 안써도 자동으로 한국 시간을 불러온다. 명확하게 하기 위해 import
 import 'moment/locale/ko';
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 import { useParams } from "react-router-dom";
 function BoardRead() {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
     const {num} = useParams(); 
     const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
     const [Board, setBoard] = useState({
@@ -39,16 +41,16 @@ function BoardRead() {
       
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
         axios.get('/api/getCommentById/'+num)
         .then(function (response) {
           //console.log(response.data)
           setCommentList(response.data)
-          console.log(Commentlist)
+          //console.log(Commentlist)
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
    
         // document.body.classList.add("boardread/:num");
@@ -67,25 +69,25 @@ function BoardRead() {
         window.location.href ='../boardinput/'+Board.idx
       }
       const f4 = async () => {
-        console.log(Board);
+        //console.log(Board);
         //삭제/board/{no}
         axios.delete('/api/board/'+num)
         .then(function (response) {
           window.location.href ='../board-page'
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
    
       }
       const f5 = async () => {
-        console.log(Board); //createcomment
+        //console.log(Board); //createcomment
         axios.post('/api/board/comment',Comment)
         .then(function (response) {
           window.location.href ='../../boardread/'+Board.idx
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
    
       }
@@ -95,7 +97,7 @@ function BoardRead() {
           window.location.href ='../../boardread/'+Board.idx
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
       }
 
@@ -161,8 +163,9 @@ if(Commentlist.length != '0'){
             <br /><br /><br />
             <textarea className="board-reply"
               type="textarea"
-              placeholder="댓글 입력해봐요.." name="answer"
-
+              placeholder="댓글 입력해봐요.."
+              name="answer"
+              maxlength="30"
               onChange={({ target: { value } }) => setComment({
                 content: value,
                 comment_date: Comment.comment_date,

@@ -27,15 +27,31 @@ const items = [
     caption: "Sunset",
   },
   {
-    src: require("assets/img/bg4.jpg").default,
-    altText: "Korea River",
-    caption: "Korea River",
+    src: require("assets/img/test.jpg").default,
+    altText: "Cafe View",
+    caption: "Cafe View",
+    
   },
   {
     src: require("assets/img/bg5.jpg").default,
     altText: "Night View",
     caption: "Night View",
   },
+  {
+    src: require("assets/img/login.jpg").default,
+    altText: "Sunset",
+    caption: "Sunset",
+  },
+  {
+    src: require("assets/img/bg4.jpg").default,
+    altText: "Korea River",
+    caption: "Korea River",
+  },
+  {
+    src: require("assets/img/header.jpg").default,
+    altText: "Korea View",
+    caption: "Korea View",
+  }
 ];
 
 function CarouselSection() {

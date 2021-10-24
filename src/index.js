@@ -37,83 +37,84 @@ import MusicPage from "views/examples/MusicPage.js";
 import PicchungPage from "views/examples/PicchungPage.js";
 import PicturePage from "views/examples/PicturePage.js";
 import WalkingPage from "views/examples/WalkingPage.js";
-import QnaPage from "views/examples/QnaPage.js";
-import QnaInput from "views/examples/QnaInput.js";
-import QnaRead from "views/examples/QnaRead.js";
-
+import AuthenticationService from 'jwtlogin/AuthenticationService.js'
+//import QnaPage from "views/examples/QnaPage.js";
+//import QnaInput from "views/examples/QnaInput.js";
+//import QnaRead from "views/examples/QnaRead.js";
+const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
 ReactDOM.render(
   <BrowserRouter>
     <Switch>
         <Route path="/index" render={(props) => <Index {...props} />} />
-        <Route
+        {isUserLoggedIn && <Route
           path="/calendars"
           render={(props) => <Calendars {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
           path="/board-page"
           render={(props) => <BoardPage {...props} />}
-        />
+        />}
         <Route
           path="/login-page"
           render={(props) => <LoginPage {...props} />}
         />
-        <Route
+        {isUserLoggedIn && <Route
           path="/test-page"
           render={(props) => <TestPage {...props} />}
-        />
+        />}
         <Route
           path="/join-page"
           render={(props) => <JoinPage {...props} />}
-        />     
-        <Route
+        />
+        {isUserLoggedIn && <Route
         path="/result-page/:testresult"
         render={(props) => <TestResultPage {...props} />}
-        />
-         <Route
+        />}
+         {isUserLoggedIn && <Route
         path="/suggestdetail/:word"
         render={(props) => <SuggestDetail {...props} />}
-        />
-         <Route
+        />}
+         {isUserLoggedIn && <Route
         path="/custom/:mode"
         render={(props) => <Custom {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
         path="/boardinput/:mode"
         render={(props) => <BoardInput {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
         path="/boardread/:num"
         render={(props) => <BoardRead {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
         path="/tour-page"
         render={(props) => <TourPage {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
         path="/camping-page"
         render={(props) => <CampingPage {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
         path="/food-page"
         render={(props) => <FoodPage {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
         path="/music-page"
         render={(props) => <MusicPage {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
         path="/picchung-page"
         render={(props) => <PicchungPage {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
         path="/picture-page"
         render={(props) => <PicturePage {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn && <Route
         path="/walking-page"
         render={(props) => <WalkingPage {...props} />}
-        />
-        <Route
+        />}
+        {/* <Route
         path="/qna-page"
         render={(props) => <QnaPage {...props} />}
         />
@@ -124,7 +125,7 @@ ReactDOM.render(
         <Route
         path="/qna-read/:num"
         render={(props) => <QnaRead {...props} />}
-        />
+        /> */}
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
     </Switch>

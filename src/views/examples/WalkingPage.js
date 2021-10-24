@@ -8,7 +8,9 @@ import { Button, Container, Row, Col } from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function WalkingPage() {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const [names,setNames]=useState([]);
 
   const f1 = () => {
@@ -27,7 +29,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f2 = () => {
     let isSubscribed = true;
@@ -45,7 +49,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f3 = () => {
     let isSubscribed = true;
@@ -63,7 +69,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f4 = () => {
     let isSubscribed = true;
@@ -81,7 +89,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f5 = () => {
     let isSubscribed = true;
@@ -99,7 +109,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
 
     React.useEffect(() => {
@@ -164,7 +176,7 @@ function WalkingPage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
+            backgroundImage: "url(" + require("assets/img/bg11.jpg").default + ")",
           }}
         ></div>
            <div className="content-center">

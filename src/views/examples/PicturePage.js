@@ -8,7 +8,9 @@ import { Button, Container, Row, Col } from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function PicturePage() {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const [names,setNames]=useState([]);
   //const [lengthss,setLengths]=useState();
 
@@ -33,7 +35,9 @@ function PicturePage() {
        }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f2 = () => {
     let isSubscribed = true;
@@ -56,7 +60,9 @@ function PicturePage() {
        }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f3 = () => {
     let isSubscribed = true;
@@ -79,7 +85,9 @@ function PicturePage() {
        }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f4 = () => {
     let isSubscribed = true;
@@ -102,7 +110,9 @@ function PicturePage() {
        }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f5 = () => {
     let isSubscribed = true;
@@ -187,7 +197,7 @@ function PicturePage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
+            backgroundImage: "url(" + require("assets/img/bg6.jpg").default + ")",
           }}
         ></div>
         <div className="content-center">

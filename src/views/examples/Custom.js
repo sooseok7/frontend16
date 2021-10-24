@@ -3,9 +3,11 @@ import axios from "axios";
 // reactstrap components
 import {Container, Button, Input } from "reactstrap";
 import { useParams } from "react-router-dom";
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // core components
 
 function Custom() {
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const {mode}=useParams();  
    const [Schedules, setSchedule] = useState({
      id:"",
@@ -23,46 +25,51 @@ function Custom() {
 
  
   const f3 = async () => {
-    console.log(Schedules);
-    if(Schedules.startdate >= Schedules.enddate){
+    if(!Schedules.title){
+      window.confirm("제목을 작성해주세요");
+    }else if(Schedules.startdate >= Schedules.enddate){
       window.confirm("시작날짜를 종료날짜 이후로 설정해주세요");
-    }else{
+    }
+    else{
     if(mode == "new"){
       if(window.confirm("저장하시겠습니까?")){
     axios.post('/api/saveschedule', Schedules)
   .then(function (response) {
-    console.log(response);
+    //console.log(response);
     window.open("about:blank", "_self");
     window.location.href ='../calendars'
   })
   .catch(function (error) {
-    console.log(error);
+    //console.log(error);
   });}
+}else{
+  if(!Schedules.title){
+  window.confirm("제목을 작성해주세요");
 }else{
   if(window.confirm("수정하시겠습니까?")){
   axios.put('/api/updateschedule/'+ Schedules.id, Schedules)
   .then(function (response) {
-    console.log(response);
+    //console.log(response);
     window.open("about:blank", "_self");
     window.location.href ='../calendars'
   })
   .catch(function (error) {
-    console.log(error);
+    //console.log(error);
   });}
-}}}
+}}}}
 
   const f4 = async () => {
-    console.log(Schedules);
+    //console.log(Schedules);
     if(mode != "new"){
       if(window.confirm("삭제하시겠습니까?")){
     axios.delete('/api/deleteschedule/'+mode)
   .then(function (response) {
-    console.log(response);
+    //console.log(response);
     window.open("about:blank", "_self");
     window.location.href ='../calendars'}
   )
   .catch(function (error) {
-    console.log(error);
+    //console.log(error);
   });}
 }
   }
@@ -150,6 +157,7 @@ axios
             <h1 className="title">당신의 일정을 입력해주세요</h1><br/>
             <h2>제목<Input
             placeholder="제목..."
+            maxlength="14"
             type="text"
             value={Schedules.title}
             onChange={({ target: { value } }) =>
