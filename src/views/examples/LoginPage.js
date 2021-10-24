@@ -47,18 +47,14 @@ function LoginPage() {
         window.confirm("빈칸을 채워주세요.");
       }else{
       if(window.confirm("로그인하시겠습니까?")){
-          axios.post('/api/login', input)
+        axios.post('/authenticate', input)
         .then(function (response) {
           console.log(response);
-          //window.location.href ='../../boardread/'+response.data.idx
+          window.location.href ='login-page'
         })
         .catch(function (error) { 
           console.log(error);
-    })
-  }
-}
-    
- }
+        });}}}
   return (
     <>
       <ExamplesNavbar />

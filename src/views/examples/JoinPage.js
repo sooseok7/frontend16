@@ -24,7 +24,7 @@ function LoginPage() {
     const [User, setUser] = useState({
       id:"",
       pw:"",
-      role: "User"
+      role: "ROLE_USER"
 });
     React.useEffect(() => {
       document.body.classList.add("login-page");
