@@ -9,12 +9,13 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 function WalkingPage() {
+  const Authorization = 'Bearer' + localStorage.getItem('token');
   const [names,setNames]=useState([]);
 
   const f1 = () => {
     let isSubscribed = true;
     axios
-    .get('/api/getwalking1')
+    .get('/api/getwalking1',{Authorization})
     .then(Response => {
       
       if (Response.status === 200) {
@@ -34,7 +35,7 @@ function WalkingPage() {
   const f2 = () => {
     let isSubscribed = true;
     axios
-    .get('/api/getwalking2')
+    .get('/api/getwalking2',{Authorization})
     .then(Response => {
       
       if (Response.status === 200) {
@@ -54,7 +55,7 @@ function WalkingPage() {
   const f3 = () => {
     let isSubscribed = true;
     axios
-    .get('/api/getwalking3')
+    .get('/api/getwalking3',{Authorization})
     .then(Response => {
       
       if (Response.status === 200) {
@@ -74,7 +75,7 @@ function WalkingPage() {
   const f4 = () => {
     let isSubscribed = true;
     axios
-    .get('/api/getwalking4')
+    .get('/api/getwalking4',{Authorization})
     .then(Response => {
       
       if (Response.status === 200) {
@@ -94,7 +95,7 @@ function WalkingPage() {
   const f5 = () => {
     let isSubscribed = true;
     axios
-    .get('/api/getwalking5')
+    .get('/api/getwalking5',{Authorization})
     .then(Response => {
       
       if (Response.status === 200) {

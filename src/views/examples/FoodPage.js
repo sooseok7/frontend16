@@ -8,13 +8,14 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 import { Button, Container, Row, Col } from "reactstrap";
 
 function FoodPage() {
+  const Authorization = 'Bearer' + localStorage.getItem('token');
   const [names,setNames]=useState([]);
 
   const f1 = () => {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getfood'
+      '/api/getfood',{Authorization}
     )
     .then(Response => {
       
@@ -39,7 +40,7 @@ function FoodPage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getfood1'
+      '/api/getfood1',{Authorization}
     )
     .then(Response => {
       

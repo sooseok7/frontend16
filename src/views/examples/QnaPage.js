@@ -16,6 +16,7 @@ import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function QnaPage() {
+  const Authorization = 'Bearer' + localStorage.getItem('token');
    //axios.get('http://localhost:8080/api/test')
    //then((Response)=>{console.log(Response.data)})
    //.catch((Error)=>{console.log(Error)})
@@ -42,7 +43,7 @@ var now = new Date();
 
 
   React.useEffect(() => {
-    axios.get('/api/getPagingQna?p_num='+p_num+'&?keyword='+keyword)
+    axios.get('/api/getPagingQna?p_num='+p_num+'&?keyword='+keyword,{Authorization})
     .then(Response => {
       //console.log(Response)
 
@@ -65,7 +66,7 @@ var now = new Date();
 function listQna(num, keyword)
 {
 
-    axios.get('/api/getPagingQna?p_num='+num+'&keyword='+keyword)
+    axios.get('/api/getPagingQna?p_num='+num+'&keyword='+keyword,{Authorization})
     .then(Response => {
       //console.log(Response.data.pagingData)
         if (Response.status === 200) {

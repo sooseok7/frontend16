@@ -15,6 +15,7 @@ const Intro = styled.div`
 
 
 function TestPage() {
+  const Authorization = 'Bearer' + localStorage.getItem('token');
   const {testresult}=useParams();  
   const [nums,setNums]=useState([]); 
   const [names,setNames]=useState([]);
@@ -27,7 +28,7 @@ function TestPage() {
   React.useEffect(() => {
     let isSubscribed = true;
 
-    axios.get('/api/getinformation'
+    axios.get('/api/getinformation',{Authorization}
     )
     .then((Response)=>{ 
     if (Response.status === 200) {

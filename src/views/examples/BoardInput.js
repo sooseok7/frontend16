@@ -22,10 +22,10 @@ const {mode} = useParams();
       );
    
      let pageHeader = React.createRef();
-
+     const Authorization = 'Bearer' + localStorage.getItem('token');
      React.useEffect(() => {
        if(mode != 'new'){
-      axios.get('/api/board/'+mode)
+      axios.get('/api/board/'+mode,{Authorization})
       .then(function (response) {
         //console.log(response)
           setBoard(response.data);
@@ -39,7 +39,7 @@ const {mode} = useParams();
   
      const f3 = async () => {
        if(mode==='new'){ //new
-        axios.post('/api/board', Board)
+        axios.post('/api/board', Board,{Authorization})
       .then(function (response) {
         //console.log(response);
         window.location.href ='../../boardread/'+response.data.idx
@@ -48,7 +48,7 @@ const {mode} = useParams();
         //console.log(error);
       });
     }else { //update
-      axios.put('/api/board/'+Board.idx, Board)
+      axios.put('/api/board/'+Board.idx, Board,{Authorization})
       .then(function (response) {
         //console.log(response);
         window.location.href ='../../boardread/'+Board.idx

@@ -9,6 +9,7 @@ import DefaultFooter from "components/Footers/DefaultFooter.js";
 import { useParams } from "react-router-dom";
 
 function SuggestDetail(props) {
+  const Authorization = 'Bearer' + localStorage.getItem('token');
   const [names,setNames]=useState([]);
   const [lengthss,setLengths]=useState();
   //const [loading,setLoading]=useState();
@@ -18,7 +19,7 @@ function SuggestDetail(props) {
     let isSubscribed = true;
     axios
       .get(
-        '/api/getPhoto?word='+word
+        '/api/getPhoto?word='+word,{Authorization}
       )
       .then(Response => {
 

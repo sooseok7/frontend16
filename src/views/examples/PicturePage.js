@@ -9,6 +9,7 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 function PicturePage() {
+  const Authorization = 'Bearer' + localStorage.getItem('token');
   const [names,setNames]=useState([]);
   //const [lengthss,setLengths]=useState();
 
@@ -16,7 +17,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture1'
+      '/api/getpicture1',{Authorization}
     )
     .then(Response => {
       
@@ -41,7 +42,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture2'
+      '/api/getpicture2',{Authorization}
     )
     .then(Response => {
       
@@ -66,7 +67,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture3'
+      '/api/getpicture3',{Authorization}
     )
     .then(Response => {
       
@@ -91,7 +92,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture4'
+      '/api/getpicture4',{Authorization}
     )
     .then(Response => {
       
@@ -116,7 +117,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture5'
+      '/api/getpicture5',{Authorization}
     )
     .then(Response => {
       

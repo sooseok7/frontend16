@@ -7,6 +7,7 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 import 'moment/locale/ko';
 import { useParams } from "react-router-dom";
 function BoardRead() {
+    const Authorization = 'Bearer' + localStorage.getItem('token');
     const {num} = useParams(); 
     const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
     const [Board, setBoard] = useState({
@@ -33,7 +34,7 @@ function BoardRead() {
 
 
      React.useEffect(() => {
-        axios.get('/api/board/'+num)
+        axios.get('/api/board/'+num,{Authorization})
         .then(function (response) {
             setBoard(response.data);
       
@@ -41,7 +42,7 @@ function BoardRead() {
         .catch(function (error) {
           //console.log(error);
         });
-        axios.get('/api/getCommentById/'+num)
+        axios.get('/api/getCommentById/'+num,{Authorization})
         .then(function (response) {
           //console.log(response.data)
           setCommentList(response.data)
@@ -69,7 +70,7 @@ function BoardRead() {
       const f4 = async () => {
         //console.log(Board);
         //삭제/board/{no}
-        axios.delete('/api/board/'+num)
+        axios.delete('/api/board/'+num,{Authorization})
         .then(function (response) {
           window.location.href ='../board-page'
         })
@@ -80,7 +81,7 @@ function BoardRead() {
       }
       const f5 = async () => {
         //console.log(Board); //createcomment
-        axios.post('/api/board/comment',Comment)
+        axios.post('/api/board/comment',Comment,{Authorization})
         .then(function (response) {
           window.location.href ='../../boardread/'+Board.idx
         })
@@ -90,7 +91,7 @@ function BoardRead() {
    
       }
       function deletecomment(number){
-        axios.delete('/api/board/comment/'+number)
+        axios.delete('/api/board/comment/'+number,{Authorization})
         .then(function (response) {
           window.location.href ='../../boardread/'+Board.idx
         })

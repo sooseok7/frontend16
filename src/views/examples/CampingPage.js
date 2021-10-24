@@ -8,12 +8,13 @@ import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
 function CampingPage() {
+  const Authorization = 'Bearer' + localStorage.getItem('token');
   const [names,setNames]=useState([]);
 
     const f1 = () => {
     axios
       .get(
-        '/api/getcamping1'
+        '/api/getcamping1',{Authorization}
       )
       .then(Response => {
         if (Response.status === 200) {
@@ -31,7 +32,7 @@ function CampingPage() {
     const f2 = () => {
      axios
         .get(
-          '/api/getcamping2'
+          '/api/getcamping2',{Authorization}
         )
         .then(Response => {
           if (Response.status === 200) {
@@ -48,7 +49,7 @@ function CampingPage() {
           const f3 = () => {
           axios
           .get(
-            '/api/getcamping3'
+            '/api/getcamping3',{Authorization}
           )
           .then(Response => {
             if (Response.status === 200) {
@@ -66,7 +67,7 @@ function CampingPage() {
             const f4 = () => {
             axios
             .get(
-              '/api/getcamping4'
+              '/api/getcamping4',{Authorization}
             )
             .then(Response => {
               if (Response.status === 200) {
@@ -84,7 +85,7 @@ function CampingPage() {
               const f5 = () => {
               axios
               .get(
-                '/api/getcamping5'
+                '/api/getcamping5',{Authorization}
               )
               .then(Response => {
                 if (Response.status === 200) {

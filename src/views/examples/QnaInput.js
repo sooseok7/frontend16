@@ -6,7 +6,7 @@ import moment from 'moment';
 import 'moment/locale/ko';
 import { useParams } from "react-router-dom";
 function QnaInput() {
-   
+  const Authorization = 'Bearer' + localStorage.getItem('token');
 const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
 
 const {mode} = useParams(); 
@@ -25,7 +25,7 @@ const {mode} = useParams();
 
      React.useEffect(() => {
        if(mode != 'new'){
-      axios.get('/api/qna/'+mode)
+      axios.get('/api/qna/'+mode,{Authorization})
       .then(function (response) {
         //console.log(response)
           setQna(response.data);
@@ -39,7 +39,7 @@ const {mode} = useParams();
   
      const f3 = async () => {
        if(mode==='new'){ //new
-        axios.post('/api/qna', Qna)
+        axios.post('/api/qna', Qna,{Authorization})
       .then(function (response) {
         //console.log(response);
         window.location.href ='../../qna-read/'+response.data.idx
@@ -48,7 +48,7 @@ const {mode} = useParams();
         //console.log(error);
       });
     }else { //update
-      axios.put('/api/qna/'+Qna.idx, Qna)
+      axios.put('/api/qna/'+Qna.idx, Qna,{Authorization})
       .then(function (response) {
         //console.log(response);
         window.location.href ='../../qna-read/'+Qna.idx
