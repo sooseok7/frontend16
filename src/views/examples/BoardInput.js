@@ -27,12 +27,12 @@ const {mode} = useParams();
        if(mode != 'new'){
       axios.get('/api/board/'+mode)
       .then(function (response) {
-        console.log(response)
+        //console.log(response)
           setBoard(response.data);
     
       })
       .catch(function (error) {
-        console.log(error);
+        //console.log(error);
       });}
 
     }, []);
@@ -41,20 +41,20 @@ const {mode} = useParams();
        if(mode==='new'){ //new
         axios.post('/api/board', Board)
       .then(function (response) {
-        console.log(response);
+        //console.log(response);
         window.location.href ='../../boardread/'+response.data.idx
       })
       .catch(function (error) { 
-        console.log(error);
+        //console.log(error);
       });
     }else { //update
       axios.put('/api/board/'+Board.idx, Board)
       .then(function (response) {
-        console.log(response);
+        //console.log(response);
         window.location.href ='../../boardread/'+Board.idx
       })
       .catch(function (error) {
-        console.log(error);
+        //console.log(error);
       });
     }
 

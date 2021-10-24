@@ -49,11 +49,11 @@ function LoginPage() {
       if(window.confirm("회원가입하시겠습니까?")){
     axios.post('/api/user', User)
       .then(function (response) {
-        console.log(response);
+        //console.log(response);
         window.location.href ='login-page'
       })
       .catch(function (error) { 
-        console.log(error);
+        //console.log(error);
       });}}}
   return (
     <>

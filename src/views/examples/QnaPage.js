@@ -44,7 +44,7 @@ var now = new Date();
   React.useEffect(() => {
     axios.get('/api/getPagingQna?p_num='+p_num+'&?keyword='+keyword)
     .then(Response => {
-      console.log(Response)
+      //console.log(Response)
 
         if (Response.status === 200) {
           setData(Response.data.pagingData);
@@ -67,7 +67,7 @@ function listQna(num, keyword)
 
     axios.get('/api/getPagingQna?p_num='+num+'&keyword='+keyword)
     .then(Response => {
-      console.log(Response.data.pagingData)
+      //console.log(Response.data.pagingData)
         if (Response.status === 200) {
           setData(Response.data.pagingData);
           setList(Response.data.list);

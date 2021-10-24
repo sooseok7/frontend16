@@ -31,7 +31,9 @@ function FoodPage() {
       }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f2 = () => {
     let isSubscribed = true;

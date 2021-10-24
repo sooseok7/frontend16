@@ -66,7 +66,7 @@ function listBoard(num, keyword)
 {
     axios.get('/api/getPagingBoard?p_num='+num+'&keyword='+keyword)
     .then(Response => {
-      console.log(Response.data.pagingData)
+      //console.log(Response.data.pagingData)
         if (Response.status === 200) {
           setData(Response.data.pagingData);
           setList(Response.data.list);

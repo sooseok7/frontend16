@@ -27,8 +27,8 @@ function SuggestDetail(props) {
             
             setNames(Response.data.response.body.items.item);
             setLengths(Response.data.response.body.items.length);
-            console.log(Response.data.response.body.items.length);
-            console.log(Response.data.response.body.items.item);
+           // console.log(Response.data.response.body.items.length);
+            //console.log(Response.data.response.body.items.item);
            // check if this component still mounted
            if (isSubscribed) {
              //setLoading(false);

@@ -27,7 +27,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f2 = () => {
     let isSubscribed = true;
@@ -45,7 +47,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f3 = () => {
     let isSubscribed = true;
@@ -63,7 +67,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f4 = () => {
     let isSubscribed = true;
@@ -81,7 +87,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
   const f5 = () => {
     let isSubscribed = true;
@@ -99,7 +107,9 @@ function WalkingPage() {
         }
      }
     })
-    .catch((Error)=>{console.log(Error)});
+    .catch((Error)=>{
+      //console.log(Error)
+    });
   }
 
     React.useEffect(() => {

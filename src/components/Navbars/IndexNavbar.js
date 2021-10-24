@@ -1,4 +1,6 @@
 import React from "react";
+
+import AuthenticationService from '../../jwtlogin/AuthenticationService.js'
 // reactstrap components
 import {
   // Button,
@@ -38,6 +40,7 @@ function IndexNavbar() {
       window.removeEventListener("scroll", updateNavbarColor);
     };
   });
+  const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
   return (
     <>
       {collapseOpen ? (
@@ -80,23 +83,15 @@ function IndexNavbar() {
             navbar
           >
             <Nav navbar>
-              <NavItem>
+            {isUserLoggedIn && <NavItem>
               <NavLink
-              href="test-page"
+              href="../test-page"
             >
              <p>여행성향테스트</p>
             </NavLink>
-              </NavItem>
+              </NavItem>}
 
-              {/* <NavItem>
-              <NavLink
-              href="tour-page"
-              >
-               <p>전국여행</p>
-            </NavLink>
-              </NavItem> */}
-
-              <UncontrolledDropdown nav>
+              {isUserLoggedIn && <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
                   color="default"
@@ -108,38 +103,34 @@ function IndexNavbar() {
                 </DropdownToggle>
                 <DropdownMenu>
                 <DropdownItem
-                    href="music-page"
-                    // target="_blank"
+                    href="../music-page"
                   >
                     <p>음악여행</p>
                   </DropdownItem>
                   <DropdownItem
-                    href="walking-page"
-                    // target="_blank"
+                    href="../walking-page"
                   >
                     <p>뚜벅여행</p>
                   </DropdownItem>
-                  <DropdownItem href="picture-page"
+                  <DropdownItem href="../picture-page"
                   >
                   <p>사진여행</p>
                   </DropdownItem>
                   <DropdownItem
-                    href="camping-page"
-                    // target="_blank"
+                    href="../camping-page"
                   >
                     <p>캠핑여행</p>
                   </DropdownItem>
                   <DropdownItem
                     href="
-                    food-page"
-                    // target="_blank"
+                    ../food-page"
                   >
                     <p>맛집여행</p>
                   </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown>}
 
-              <UncontrolledDropdown nav>
+              {isUserLoggedIn && <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
                   color="default"
@@ -150,106 +141,44 @@ function IndexNavbar() {
                   <p>게시판</p>
                 </DropdownToggle>
                 <DropdownMenu>
-                <DropdownItem href="board-page"
+                <DropdownItem href="../board-page"
                   >
                   <p>자유게시판</p>
                   </DropdownItem>
                   <DropdownItem
-                    href="picchung-page"
+                    href="../picchung-page"
                     // target="_blank"
                   >
                     <p>사진게시판</p>
                   </DropdownItem>
-                  <DropdownItem
-                    href="
-                    qna-page"
-                    // target="_blank"
-                  >
-                    <p>Q&A</p>
-                  </DropdownItem>
                 </DropdownMenu>
-              </UncontrolledDropdown>
+              </UncontrolledDropdown>}
 
-              <NavItem>
+              {isUserLoggedIn && <NavItem>
               <NavLink
-              href="calendars"
+              href="../calendars"
             >
-                  {/* <i className="now-ui-icons arrows-1_cloud-download-93"></i>    아이콘 */}
                   <p>달력</p>
                 </NavLink>
-                </NavItem>
+                </NavItem>}
 
-<DropdownMenu>
-  <DropdownItem
-    href="login-page"
-    // target="_blank"
-  >
-    <p>로그아웃</p>
-  </DropdownItem>
-</DropdownMenu>
-
-<NavItem>
-<NavLink
-href="login-page"
->
-  <p>로그인</p>
-</NavLink>
-
-              {/* <NavItem>
-                <Button
-                  className="nav-link btn-neutral"
-                  color="info"
-                  href="http://localhost:3000/index"
-                  id="upgrade-to-pro"
-                >
-                 <i className="now-ui-icons arrows-1_share-66 mr-1"></i>
-                  <p>버튼이 꼭 필요해?</p>
-                </Button>
-                <UncontrolledTooltip target="#upgrade-to-pro">
-                  아 이거 왜 안지워져
-                </UncontrolledTooltip>
-              </NavItem> */}
-
-              {/* <NavItem>
-                <NavLink
-                  href="https://twitter.com/CreativeTim?ref=creativetim"
-                  target="_blank"
-                  id="twitter-tooltip"
-                >
-                  <i className="fab fa-twitter"></i>
-                  <p className="d-lg-none d-xl-none">Twitter</p>
-                </NavLink>
-                <UncontrolledTooltip target="#twitter-tooltip">
-                  Follow us on Twitter
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.facebook.com/CreativeTim?ref=creativetim"
-                  target="_blank"
-                  id="facebook-tooltip"
-                >
-                  <i className="fab fa-facebook-square"></i>
-                  <p className="d-lg-none d-xl-none">Facebook</p>
-                </NavLink>
-                <UncontrolledTooltip target="#facebook-tooltip">
-                  Like us on Facebook
-                </UncontrolledTooltip>
-              </NavItem>
-              <NavItem>
-                <NavLink
-                  href="https://www.instagram.com/CreativeTimOfficial?ref=creativetim"
-                  target="_blank"
-                  id="instagram-tooltip"
-                >
-                  <i className="fab fa-instagram"></i>
-                  <p className="d-lg-none d-xl-none">Instagram</p>
-                </NavLink>
-                <UncontrolledTooltip target="#instagram-tooltip">
-                  Follow us on Instagram
-                </UncontrolledTooltip>
-              </NavItem> */}
-              </NavItem>
+                {!isUserLoggedIn && <NavItem>
+                  <NavLink
+                  href="../login-page"
+                  // target="_blank"
+                  >
+                    <p>로그인</p>
+                    </NavLink>
+                    </NavItem>}
+                    
+                    {isUserLoggedIn && <NavItem>
+                      <NavLink
+                      href="../../login-page"
+                      onClick={AuthenticationService.logout}
+                      >
+                        <p>로그아웃</p>
+                        </NavLink>
+                      </NavItem>}
             </Nav>
           </Collapse>
         </Container>

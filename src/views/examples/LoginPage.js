@@ -1,5 +1,5 @@
 import React,{useState } from "react";
-import axios from 'axios'
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // reactstrap components
 import {
   Button,
@@ -22,8 +22,9 @@ import TransparentFooter from "components/Footers/TransparentFooter.js";
 
 function LoginPage() {
   const [input, setInput] = useState({
-    id:"",
-    pw:""
+    username: localStorage.getItem("authenticatedUser") || '',
+    password: '',
+    token: localStorage.getItem("token") || ''
   })
   React.useEffect(() => {
     // 페이지 호출 후 처음 한번만 호출될 수 있도록 [] 추가
@@ -40,21 +41,22 @@ function LoginPage() {
   	// login 버튼 클릭 이벤트
     const onClickLogin = (event) => {
       event.preventDefault(); //리프레시 방지-> 방지해야 이 아래 라인의 코드들 실행 가능 
-      if(input.id == input.pw){
+      if(input.username == input.password){
         window.confirm("아이디와 비번이 같습니다.");
       }
-      else if(!input.id || !input.pw){
+      else if(!input.username || !input.password){
         window.confirm("빈칸을 채워주세요.");
       }else{
       if(window.confirm("로그인하시겠습니까?")){
-        axios.post('/authenticate', input)
-        .then(function (response) {
-          console.log(response);
-          window.location.href ='login-page'
-        })
-        .catch(function (error) { 
-          console.log(error);
-        });}}}
+        AuthenticationService
+        .executeJwtAuthenticationService(input.username, input.password)
+        .then((response) => {
+        AuthenticationService.registerSuccessfulLoginForJwt(input.username,response.data.token)
+        //this.props.history.push(`/index/${input.username}`)
+        window.location.href ='/index'
+    }).catch( () =>{
+    })}}}
+
   return (
     <>
       <ExamplesNavbar />
@@ -93,13 +95,13 @@ function LoginPage() {
                       <Input
                         placeholder="Your ID..."
                         type="text"
-                        name='id'
-                        value={input.id}
+                        name='username'
+                        value={input.username}
                         maxlength="14"
                         onChange={({ target: { value } }) => 
                         setInput({
-                          id:value,
-                          pw: input.pw
+                          username:value,
+                          password: input.password
                       })}
                       ></Input>
                     </InputGroup>
@@ -116,13 +118,13 @@ function LoginPage() {
                       <Input
                         placeholder="Your Password..."
                         type="password"
-                        name='pw'
+                        name='password'
                         maxlength="14"
-                        value={input.pw}
+                        value={input.password}
                         onChange={({ target: { value } }) => 
                         setInput({
-                          id:input.id,
-                          pw: value
+                          username:input.username,
+                          password: value
                    })}
                       ></Input>
                     </InputGroup>

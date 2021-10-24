@@ -39,16 +39,16 @@ function BoardRead() {
       
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
         axios.get('/api/getCommentById/'+num)
         .then(function (response) {
           //console.log(response.data)
           setCommentList(response.data)
-          console.log(Commentlist)
+          //console.log(Commentlist)
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
    
         // document.body.classList.add("boardread/:num");
@@ -67,25 +67,25 @@ function BoardRead() {
         window.location.href ='../boardinput/'+Board.idx
       }
       const f4 = async () => {
-        console.log(Board);
+        //console.log(Board);
         //삭제/board/{no}
         axios.delete('/api/board/'+num)
         .then(function (response) {
           window.location.href ='../board-page'
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
    
       }
       const f5 = async () => {
-        console.log(Board); //createcomment
+        //console.log(Board); //createcomment
         axios.post('/api/board/comment',Comment)
         .then(function (response) {
           window.location.href ='../../boardread/'+Board.idx
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
    
       }
@@ -95,7 +95,7 @@ function BoardRead() {
           window.location.href ='../../boardread/'+Board.idx
         })
         .catch(function (error) {
-          console.log(error);
+          //console.log(error);
         });
       }
 

@@ -30,38 +30,38 @@ function Custom() {
       if(window.confirm("저장하시겠습니까?")){
     axios.post('/api/saveschedule', Schedules)
   .then(function (response) {
-    console.log(response);
+    //console.log(response);
     window.open("about:blank", "_self");
     window.location.href ='../calendars'
   })
   .catch(function (error) {
-    console.log(error);
+    //console.log(error);
   });}
 }else{
   if(window.confirm("수정하시겠습니까?")){
   axios.put('/api/updateschedule/'+ Schedules.id, Schedules)
   .then(function (response) {
-    console.log(response);
+    //console.log(response);
     window.open("about:blank", "_self");
     window.location.href ='../calendars'
   })
   .catch(function (error) {
-    console.log(error);
+    //console.log(error);
   });}
 }}}
 
   const f4 = async () => {
-    console.log(Schedules);
+    //console.log(Schedules);
     if(mode != "new"){
       if(window.confirm("삭제하시겠습니까?")){
     axios.delete('/api/deleteschedule/'+mode)
   .then(function (response) {
-    console.log(response);
+    //console.log(response);
     window.open("about:blank", "_self");
     window.location.href ='../calendars'}
   )
   .catch(function (error) {
-    console.log(error);
+    //console.log(error);
   });}
 }
   }

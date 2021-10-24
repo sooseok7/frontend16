@@ -41,7 +41,9 @@ function TestPage() {
     }
   })
    // console.log(Response.data.response.body.items)
-   .catch((Error)=>{console.log(Error)});
+   .catch((Error)=>{
+     //console.log(Error)
+    });
 
     document.body.classList.add("result-page");
     document.body.classList.add("sidebar-collapse");
@@ -51,7 +53,7 @@ function TestPage() {
     return function cleanup() {
       document.body.classList.remove("result-page");
       document.body.classList.remove("sidebar-collapse");
-      console.log('unmounting...');
+      //console.log('unmounting...');
       
       isSubscribed=false;
     };
@@ -228,7 +230,7 @@ function calculateDistance(a,b,c,d){
     { latitude: parseInt(c), longitude:parseInt(d) }
   );
 //const dist10 =dist/1000;
-console.log('distance:', dist) //getting right value 54209m
+//console.log('distance:', dist) //getting right value 54209m
 return dist/1000;
 }
 

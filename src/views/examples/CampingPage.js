@@ -23,7 +23,9 @@ function CampingPage() {
           // check if this component still mounted
         }
       })
-        .catch((Error)=>{console.log(Error)})
+        .catch((Error)=>{
+          //console.log(Error)
+        })
     }
 
     const f2 = () => {
@@ -40,7 +42,9 @@ function CampingPage() {
           }
         })
       
-         .catch((Error)=>{console.log(Error)});}
+         .catch((Error)=>{
+           //console.log(Error)
+          });}
           const f3 = () => {
           axios
           .get(
@@ -55,7 +59,9 @@ function CampingPage() {
             }
           })
        
-            .catch((Error)=>{console.log(Error)});
+            .catch((Error)=>{
+              //console.log(Error)
+            });
           }
             const f4 = () => {
             axios
@@ -71,7 +77,9 @@ function CampingPage() {
               }
             })
         
-              .catch((Error)=>{console.log(Error)});
+              .catch((Error)=>{
+                //console.log(Error)
+              });
             }
               const f5 = () => {
               axios
@@ -86,7 +94,9 @@ function CampingPage() {
                   // check if this component still mounted
                 }
               })
-                .catch((Error)=>{console.log(Error)});
+                .catch((Error)=>{
+                  //console.log(Error)
+                });
             }
 React.useEffect(() => {
          document.body.classList.add("boardread/:num");
