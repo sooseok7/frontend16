@@ -6,6 +6,7 @@ import moment from "moment"; // 밑에 언어랑 시간대 가져옴
 //import Anyday from '../../Anyday';
 import axios from 'axios';
 import CalendarButton from './CalendarButton';
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // reactstrap components
 // import {
 // } from "reactstrap";
@@ -19,7 +20,7 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 // import Carousel from "./index-sections/Carousel.js";
 
 function Calendars() {
-  const Authorization = 'Bearer' + localStorage.getItem('token');
+ 
   const [names,setNames]=useState([]);const [eventss,setEventss]=useState([]);
   const [id,setID]=useState("test");
   const [viewss,setViews]=useState();
@@ -32,23 +33,23 @@ function Calendars() {
   const [loading,setLoading]=useState();
 
   */
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const navigateContants = {
     PREVIOUS: 'PREV',
     NEXT: 'NEXT',
     DATE: 'DATE'
 };
   
-  
   React.useEffect(() => {
     let isSubscribed = true;
-    axios.get('/api/getHoliDeInfo?yearss='+moment().year(),{Authorization})
+    axios.get('/api/getHoliDeInfo?yearss='+moment().year())
     .then(Response => {
 
      
           if (Response.status === 200) {
             
             setNames(Response.data.response.body.items.item);
-            axios.get('/api/getschedule/'+id,{Authorization})
+            axios.get('/api/getschedule/'+id)
       .then(Response => {
 
      

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from 'axios';
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // core components
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
@@ -8,14 +9,14 @@ import DarkFooter from "components/Footers/DarkFooter.js";
 import { Button, Container, Row, Col } from "reactstrap";
 
 function FoodPage() {
-  const Authorization = 'Bearer' + localStorage.getItem('token');
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const [names,setNames]=useState([]);
 
   const f1 = () => {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getfood',{Authorization}
+      '/api/getfood'
     )
     .then(Response => {
       
@@ -40,7 +41,7 @@ function FoodPage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getfood1',{Authorization}
+      '/api/getfood1'
     )
     .then(Response => {
       

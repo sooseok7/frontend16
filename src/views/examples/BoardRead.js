@@ -5,9 +5,10 @@ import moment from 'moment';
 import DarkFooter from "components/Footers/DarkFooter.js";
 // 안써도 자동으로 한국 시간을 불러온다. 명확하게 하기 위해 import
 import 'moment/locale/ko';
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 import { useParams } from "react-router-dom";
 function BoardRead() {
-    const Authorization = 'Bearer' + localStorage.getItem('token');
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
     const {num} = useParams(); 
     const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
     const [Board, setBoard] = useState({
@@ -34,7 +35,7 @@ function BoardRead() {
 
 
      React.useEffect(() => {
-        axios.get('/api/board/'+num,{Authorization})
+        axios.get('/api/board/'+num)
         .then(function (response) {
             setBoard(response.data);
       
@@ -42,7 +43,7 @@ function BoardRead() {
         .catch(function (error) {
           //console.log(error);
         });
-        axios.get('/api/getCommentById/'+num,{Authorization})
+        axios.get('/api/getCommentById/'+num)
         .then(function (response) {
           //console.log(response.data)
           setCommentList(response.data)
@@ -70,7 +71,7 @@ function BoardRead() {
       const f4 = async () => {
         //console.log(Board);
         //삭제/board/{no}
-        axios.delete('/api/board/'+num,{Authorization})
+        axios.delete('/api/board/'+num)
         .then(function (response) {
           window.location.href ='../board-page'
         })
@@ -81,7 +82,7 @@ function BoardRead() {
       }
       const f5 = async () => {
         //console.log(Board); //createcomment
-        axios.post('/api/board/comment',Comment,{Authorization})
+        axios.post('/api/board/comment',Comment)
         .then(function (response) {
           window.location.href ='../../boardread/'+Board.idx
         })
@@ -91,7 +92,7 @@ function BoardRead() {
    
       }
       function deletecomment(number){
-        axios.delete('/api/board/comment/'+number,{Authorization})
+        axios.delete('/api/board/comment/'+number)
         .then(function (response) {
           window.location.href ='../../boardread/'+Board.idx
         })

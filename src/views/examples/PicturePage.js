@@ -8,8 +8,9 @@ import { Button, Container, Row, Col } from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function PicturePage() {
-  const Authorization = 'Bearer' + localStorage.getItem('token');
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const [names,setNames]=useState([]);
   //const [lengthss,setLengths]=useState();
 
@@ -17,7 +18,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture1',{Authorization}
+      '/api/getpicture1'
     )
     .then(Response => {
       
@@ -42,7 +43,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture2',{Authorization}
+      '/api/getpicture2'
     )
     .then(Response => {
       
@@ -67,7 +68,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture3',{Authorization}
+      '/api/getpicture3'
     )
     .then(Response => {
       
@@ -92,7 +93,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture4',{Authorization}
+      '/api/getpicture4'
     )
     .then(Response => {
       
@@ -117,7 +118,7 @@ function PicturePage() {
     let isSubscribed = true;
     axios
     .get(
-      '/api/getpicture5',{Authorization}
+      '/api/getpicture5'
     )
     .then(Response => {
       

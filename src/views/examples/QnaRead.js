@@ -6,8 +6,9 @@ import moment from 'moment';
 import 'moment/locale/ko';
 import { useParams } from "react-router-dom";
 import DarkFooter from "components/Footers/DarkFooter.js";
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function QnaRead() {
-  const Authorization = 'Bearer' + localStorage.getItem('token');
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
     const {num} = useParams(); 
     const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
     const [Qna, setQna] = useState({
@@ -34,7 +35,7 @@ function QnaRead() {
 
 
      React.useEffect(() => {
-        axios.get('/api/qna/'+num,{Authorization})
+        axios.get('/api/qna/'+num)
         .then(function (response) {
             Qna(response.data);
       
@@ -42,7 +43,7 @@ function QnaRead() {
         .catch(function (error) {
           //console.log(error);
         });
-        axios.get('/api/getCommentsById/'+num,{Authorization})
+        axios.get('/api/getCommentsById/'+num)
         .then(function (response) {
           //console.log(response.data)
           setCommentsList(response.data)
@@ -70,7 +71,7 @@ function QnaRead() {
       const f4 = async () => {
         //console.log(Qna);
         //삭제/board/{no}
-        axios.delete('/api/qna/'+num,{Authorization})
+        axios.delete('/api/qna/'+num)
         .then(function (response) {
           window.location.href ='../qna-page'
         })
@@ -81,7 +82,7 @@ function QnaRead() {
       }
       const f5 = async () => {
        // console.log(Qna); //createcomment
-        axios.post('/api/qna/comments',Comments,{Authorization})
+        axios.post('/api/qna/comments',Comments)
         .then(function (response) {
           window.location.href ='../qna-read/'+Qna.idx
         })
@@ -91,7 +92,7 @@ function QnaRead() {
    
       }
       function deletecomments(number){
-        axios.delete('/api/qna/comments/'+number,{Authorization})
+        axios.delete('/api/qna/comments/'+number)
         .then(function (response) {
           window.location.href ='../../qna-read/'+Qna.idx
         })

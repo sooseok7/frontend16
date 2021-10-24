@@ -8,6 +8,7 @@ import DarkFooter from "components/Footers/DarkFooter";
 import { Button, Container, Row, Col } from "reactstrap";
 import { Link } from "react-router-dom";
 import { getDistance } from "geolib"
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 const Intro = styled.div`
   margin-top: 5em;
   text-align: center;
@@ -15,7 +16,7 @@ const Intro = styled.div`
 
 
 function TestPage() {
-  const Authorization = 'Bearer' + localStorage.getItem('token');
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const {testresult}=useParams();  
   const [nums,setNums]=useState([]); 
   const [names,setNames]=useState([]);
@@ -28,7 +29,7 @@ function TestPage() {
   React.useEffect(() => {
     let isSubscribed = true;
 
-    axios.get('/api/getinformation',{Authorization}
+    axios.get('/api/getinformation'
     )
     .then((Response)=>{ 
     if (Response.status === 200) {

@@ -7,14 +7,15 @@ import { Button, Container, Row, Col} from "reactstrap";
 import ExamplesNavbar from "components/Navbars/ExamplesNavbar.js";
 import DarkFooter from "components/Footers/DarkFooter.js";
 
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function CampingPage() {
-  const Authorization = 'Bearer' + localStorage.getItem('token');
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const [names,setNames]=useState([]);
 
     const f1 = () => {
     axios
       .get(
-        '/api/getcamping1',{Authorization}
+        '/api/getcamping1'
       )
       .then(Response => {
         if (Response.status === 200) {
@@ -32,7 +33,7 @@ function CampingPage() {
     const f2 = () => {
      axios
         .get(
-          '/api/getcamping2',{Authorization}
+          '/api/getcamping2'
         )
         .then(Response => {
           if (Response.status === 200) {
@@ -49,7 +50,7 @@ function CampingPage() {
           const f3 = () => {
           axios
           .get(
-            '/api/getcamping3',{Authorization}
+            '/api/getcamping3'
           )
           .then(Response => {
             if (Response.status === 200) {
@@ -67,7 +68,7 @@ function CampingPage() {
             const f4 = () => {
             axios
             .get(
-              '/api/getcamping4',{Authorization}
+              '/api/getcamping4'
             )
             .then(Response => {
               if (Response.status === 200) {
@@ -85,7 +86,7 @@ function CampingPage() {
               const f5 = () => {
               axios
               .get(
-                '/api/getcamping5',{Authorization}
+                '/api/getcamping5'
               )
               .then(Response => {
                 if (Response.status === 200) {

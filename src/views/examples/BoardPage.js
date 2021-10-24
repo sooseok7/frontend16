@@ -9,6 +9,7 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { Button, Container, Row} from "reactstrap";
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // reactstrap components
 //import { useParams } from "react-router-dom";
 // core components
@@ -16,7 +17,7 @@ import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 
 function BoardPage() {
-  const Authorization = 'Bearer' + localStorage.getItem('token');
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
    //axios.get('http://localhost:8080/api/test')
    //then((Response)=>{console.log(Response.data)})
    //.catch((Error)=>{console.log(Error)})
@@ -43,7 +44,7 @@ var now = new Date();
 
 
   React.useEffect(() => {
-    axios.get('/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword,{Authorization})
+    axios.get('/api/getPagingBoard?p_num='+p_num+'&?keyword='+keyword)
     .then(Response => {
       //console.log(Response)
 
@@ -65,7 +66,7 @@ var now = new Date();
 
 function listBoard(num, keyword)
 {
-    axios.get('/api/getPagingBoard?p_num='+num+'&keyword='+keyword,{Authorization})
+    axios.get('/api/getPagingBoard?p_num='+num+'&keyword='+keyword)
     .then(Response => {
       //console.log(Response.data.pagingData)
         if (Response.status === 200) {

@@ -8,8 +8,9 @@ import ResultNavbar from "components/Navbars/ResultNavbar.js";
 import DefaultFooter from "components/Footers/DefaultFooter.js";
 import { useParams } from "react-router-dom";
 
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function SuggestDetail(props) {
-  const Authorization = 'Bearer' + localStorage.getItem('token');
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const [names,setNames]=useState([]);
   const [lengthss,setLengths]=useState();
   //const [loading,setLoading]=useState();
@@ -19,7 +20,7 @@ function SuggestDetail(props) {
     let isSubscribed = true;
     axios
       .get(
-        '/api/getPhoto?word='+word,{Authorization}
+        '/api/getPhoto?word='+word
       )
       .then(Response => {
 

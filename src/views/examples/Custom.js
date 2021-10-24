@@ -3,10 +3,11 @@ import axios from "axios";
 // reactstrap components
 import {Container, Button, Input } from "reactstrap";
 import { useParams } from "react-router-dom";
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 // core components
 
 function Custom() {
-  const Authorization = 'Bearer' + localStorage.getItem('token');
+  const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
   const {mode}=useParams();  
    const [Schedules, setSchedule] = useState({
      id:"",
@@ -29,7 +30,7 @@ function Custom() {
     }else{
     if(mode == "new"){
       if(window.confirm("저장하시겠습니까?")){
-    axios.post('/api/saveschedule', Schedules,{Authorization})
+    axios.post('/api/saveschedule', Schedules)
   .then(function (response) {
     //console.log(response);
     window.open("about:blank", "_self");
@@ -40,7 +41,7 @@ function Custom() {
   });}
 }else{
   if(window.confirm("수정하시겠습니까?")){
-  axios.put('/api/updateschedule/'+ Schedules.id, Schedules,{Authorization})
+  axios.put('/api/updateschedule/'+ Schedules.id, Schedules)
   .then(function (response) {
     //console.log(response);
     window.open("about:blank", "_self");
@@ -55,7 +56,7 @@ function Custom() {
     //console.log(Schedules);
     if(mode != "new"){
       if(window.confirm("삭제하시겠습니까?")){
-    axios.delete('/api/deleteschedule/'+mode,{Authorization})
+    axios.delete('/api/deleteschedule/'+mode)
   .then(function (response) {
     //console.log(response);
     window.open("about:blank", "_self");
@@ -114,7 +115,7 @@ function Buttons(){
      if(mode !="new"){
 
 axios
-.get('/api/getschedulebyNum/'+mode,{Authorization})
+.get('/api/getschedulebyNum/'+mode)
 .then(( Response ) => setSchedule(Response.data));
      }
     if (window.innerWidth > 991) {

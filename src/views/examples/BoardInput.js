@@ -5,8 +5,10 @@ import moment from 'moment';
 // 안써도 자동으로 한국 시간을 불러온다. 명확하게 하기 위해 import
 import 'moment/locale/ko';
 import { useParams } from "react-router-dom";
+import AuthenticationService from "../../jwtlogin/AuthenticationService.js";
 function BoardInput() {
    
+const setupAxiosInterceptors=AuthenticationService.setupAxiosInterceptors();
 const nowTime = moment().format('YYYY-MM-DD HH:mm:ss'); 
 
 const {mode} = useParams(); 
@@ -22,10 +24,10 @@ const {mode} = useParams();
       );
    
      let pageHeader = React.createRef();
-     const Authorization = 'Bearer' + localStorage.getItem('token');
+
      React.useEffect(() => {
        if(mode != 'new'){
-      axios.get('/api/board/'+mode,{Authorization})
+      axios.get('/api/board/'+mode)
       .then(function (response) {
         //console.log(response)
           setBoard(response.data);
@@ -39,7 +41,7 @@ const {mode} = useParams();
   
      const f3 = async () => {
        if(mode==='new'){ //new
-        axios.post('/api/board', Board,{Authorization})
+        axios.post('/api/board', Board)
       .then(function (response) {
         //console.log(response);
         window.location.href ='../../boardread/'+response.data.idx
@@ -48,7 +50,7 @@ const {mode} = useParams();
         //console.log(error);
       });
     }else { //update
-      axios.put('/api/board/'+Board.idx, Board,{Authorization})
+      axios.put('/api/board/'+Board.idx, Board)
       .then(function (response) {
         //console.log(response);
         window.location.href ='../../boardread/'+Board.idx
