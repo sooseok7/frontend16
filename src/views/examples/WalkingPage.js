@@ -176,7 +176,7 @@ function WalkingPage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
+            backgroundImage: "url(" + require("assets/img/bg11.jpg").default + ")",
           }}
         ></div>
            <div className="content-center">

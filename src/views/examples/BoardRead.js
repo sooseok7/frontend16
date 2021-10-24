@@ -163,8 +163,9 @@ if(Commentlist.length != '0'){
             <br /><br /><br />
             <textarea className="board-reply"
               type="textarea"
-              placeholder="댓글 입력해봐요.." name="answer"
-
+              placeholder="댓글 입력해봐요.."
+              name="answer"
+              maxlength="30"
               onChange={({ target: { value } }) => setComment({
                 content: value,
                 comment_date: Comment.comment_date,

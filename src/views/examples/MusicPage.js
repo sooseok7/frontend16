@@ -86,7 +86,7 @@ function MusicPage() {
         <div
           className="page-header-image"
           style={{
-            backgroundImage: "url(" + require("assets/img/login1.jpg").default + ")",
+            backgroundImage: "url(" + require("assets/img/bg8.jpg").default + ")",
           }}
         ></div>
                 <div className="content-center">

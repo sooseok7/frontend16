@@ -18,7 +18,7 @@ const {mode} = useParams();
          title: "",
          content: "",
          board_date: nowTime,
-         id: "test",        
+         id: "2monthsago",        
          view: "0"
 }
       );
@@ -41,6 +41,10 @@ const {mode} = useParams();
   
      const f3 = async () => {
        if(mode==='new'){ //new
+        if(!Board.title || !Board.content){
+        window.confirm("빈칸을 채워주세요.");
+        }
+        else
         axios.post('/api/board', Board)
       .then(function (response) {
         //console.log(response);
@@ -49,10 +53,14 @@ const {mode} = useParams();
       .catch(function (error) { 
         //console.log(error);
       });
-    }else { //update
+    }else { //update        
+      if(!Board.title){
+      window.confirm("제목을 채워주세요.");}
+      if(!Board.content){
+        window.confirm("내용을 채워주세요.");}
+      else
       axios.put('/api/board/'+Board.idx, Board)
       .then(function (response) {
-        //console.log(response);
         window.location.href ='../../boardread/'+Board.idx
       })
       .catch(function (error) {
@@ -78,6 +86,7 @@ const {mode} = useParams();
             <h1 className="title">자유게시판</h1><br/>
             <h2><Input
             placeholder="제목..."
+            maxlength="16"
             type="text"
             name="title"
             class="form-control2"
