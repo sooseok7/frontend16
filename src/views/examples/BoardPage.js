@@ -138,7 +138,7 @@ function isPagingNext() {
       </div>         
         <div className="section">
           <Container>
-             <Row className="board-page">
+             <Row className="board-page" style={{marginRight:"-10px",marginLeft:"-10px"}}>
              <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>

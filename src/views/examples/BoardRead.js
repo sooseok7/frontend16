@@ -53,15 +53,15 @@ function BoardRead() {
           //console.log(error);
         });
    
-        // document.body.classList.add("boardread/:num");
-        // document.body.classList.add("sidebar-collapse");
-        // document.documentElement.classList.remove("nav-open");
-        // window.scrollTo(0, 0);
-        // document.body.scrollTop = 0;
-        // return function cleanup() {
-        //   document.body.classList.remove("boardread/:num");
-        //   document.body.classList.remove("sidebar-collapse");
-        // };
+        document.body.classList.add("boardread/:num");
+        document.body.classList.add("sidebar-collapse");
+        document.documentElement.classList.remove("nav-open");
+        window.scrollTo(0, 0);
+        document.body.scrollTop = 0;
+        return function cleanup() {
+        document.body.classList.remove("boardread/:num");
+        document.body.classList.remove("sidebar-collapse");
+        };
       }, []);
 
      const f3 = async () => {
@@ -116,74 +116,75 @@ if(Commentlist.length != '0'){
 
 
       //alert(Board.title);
-    return(<><div>
+    return(
+    <><div>
+        <div className="page-header" style={{ overflow: "initial" }}>
+          <div
+            className="page-header-image"
+            style={{
+              backgroundImage: "url(" + require("assets/img/bg4.jpg").default + ")",
+            }}
+          ></div>
+          <div className="content-center" style={{ position: "", transform: "", padding: "" }}>
+            <Container>
+              <h1 className="board-title"style={{ marginTop: "-30px" }}>게시판</h1><br />
+              <h2 style={{ marginTop: "auto" }}><Input
+                placeholder={Board.title}
+                name="title" disabled
+              ></Input></h2>
 
-      <div className="page-header" style={{ overflow: "initial" }}>
-        <div
-          className="page-header-image"
-          style={{
-            backgroundImage: "url(" + require("assets/img/bg4.jpg").default + ")",
-          }}
-        ></div>
-        <div className="content-center" style={{ position: "", transform: "" }}>
-          <Container>
-            <h1 className="board-title">게시판</h1><br />
-            <h2><Input
-              placeholder={Board.title}
-              name="title" disabled
-            ></Input></h2>
+              <h2><Input
 
-            <h2><Input
+                placeholder={Board.content}
+                type="textarea"
+                name="content" disabled /></h2>
+              <Button
+                block
+                className="btn-view"
+                href="../../board-page"
+                size="5px"
+              >
+                목록
+              </Button>
+              <Button
+                className="btn-delete"
+                onClick={f4}
+                size="5px"
+              >
+                삭제
+              </Button>
+              <Button
+                className="btn-update"
+                onClick={f3}
+                size="5px"
+              >
+                수정
+              </Button>
+              <br /><br /><br />
+              <textarea className="board-reply"
+                type="textarea"
+                placeholder="댓글 입력해봐요.."
+                name="answer"
+                maxlength="30"
+                onChange={({ target: { value } }) => setComment({
+                  content: value,
+                  comment_date: Comment.comment_date,
+                  board_id: Board.id,
+                  comment_id: "test",
+                  board_no: Board.idx,
+                  views: "0"
+                })} /><br />
+              <button className="btn-reply" size="5px" onClick={f5}>댓글</button>
+            </Container>
+            <br />
+            <br />
+            {commentarray}
+            <br /><br />
+          </div>
 
-              placeholder={Board.content}
-              type="textarea"
-              name="content" disabled /></h2>
-            <Button
-              block
-              className="btn-view"
-              href="../../board-page"
-              size="5px"
-            >
-              목록
-            </Button>
-            <Button
-              className="btn-delete"
-              onClick={f4}
-              size="5px"
-            >
-              삭제
-            </Button>
-            <Button
-              className="btn-update"
-              onClick={f3}
-              size="5px"
-            >
-              수정
-            </Button>
-            <br /><br /><br />
-            <textarea className="board-reply"
-              type="textarea"
-              placeholder="댓글 입력해봐요.."
-              name="answer"
-              maxlength="30"
-              onChange={({ target: { value } }) => setComment({
-                content: value,
-                comment_date: Comment.comment_date,
-                board_id: Board.id,
-                comment_id: "test",
-                board_no: Board.idx,
-                views: "0"
-              })} /><br />
-            <button className="btn-reply" size="5px" onClick={f5}>댓글</button>
-          </Container>
-          <br />
-          <br />
-          {commentarray}
         </div>
 
-      </div>
-
-    </div><DarkFooter /></>
+      </div><DarkFooter /></>
     )
 }
 
