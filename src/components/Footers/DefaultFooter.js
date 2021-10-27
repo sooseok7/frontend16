@@ -15,24 +15,23 @@ function DefaultFooter() {
             <ul>
               <li>
               <a
-                href="index"
-                target="_blank"
+                href="#"
               >
                 개인정보처리방침
               </a>
               </li>
               <li>
               <a
-                href="index"
-                target="_blank"
+                href="#"
+                //target="_blank"
               >
                 이용약관
               </a>
               </li>
               <li>
               <a
-                href="index"
-                target="_blank"
+                href="#"
+                //target="_blank"
               >
                 저작권정책
               </a>

@@ -3,7 +3,7 @@ import axios from 'axios'
 class AuthenticationService {
     // send username, password to the SERVER
     executeJwtAuthenticationService(username, password) {
-        return axios.post('http://localhost:8090/authenticate', {
+        return axios.post('/authenticate', {
             username,
             password
         })
@@ -11,7 +11,7 @@ class AuthenticationService {
 
     executeHelloService() {
         //console.log("===executeHelloService===")
-        return axios.get('http://localhost:8090/hello');        
+        return axios.get('/hello');        
     }
 
     registerSuccessfulLoginForJwt(username, token) {

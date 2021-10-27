@@ -86,7 +86,7 @@ const {mode} = useParams();
             <h1 className="title">자유게시판</h1><br/>
             <h2><Input
             placeholder="제목..."
-            maxlength="16"
+            maxlength="14"
             type="text"
             name="title"
             class="form-control2"

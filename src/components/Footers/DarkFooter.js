@@ -12,24 +12,21 @@ function DarkFooter() {
           <ul>
             <li>
               <a
-                href="index"
-                target="_blank"
+                href="#"
               >
                 개인정보처리방침
               </a>
             </li>
             <li>
               <a
-                href="index"
-                target="_blank"
+                href="#"
               >
                 이용약관
               </a>
             </li>
             <li>
               <a
-                href="index"
-                target="_blank"
+                href="#"
               >
                 저작권정책
               </a>
