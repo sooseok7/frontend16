@@ -145,6 +145,10 @@ function IndexNavbar() {
                   >
                   <p>자유게시판</p>
                   </DropdownItem>
+                  <DropdownItem href="qna-page"
+                  >
+                  <p>질문게시판</p>
+                  </DropdownItem>
                   <DropdownItem
                     href="../picchung-page"
                     // target="_blank"
