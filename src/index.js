@@ -114,18 +114,18 @@ ReactDOM.render(
         path="/walking-page"
         render={(props) => <WalkingPage {...props} />}
         />}
-        {/* <Route
+        {isUserLoggedIn && <Route
         path="/qna-page"
         render={(props) => <QnaPage {...props} />}
-        />
-                <Route
+        />}
+        {isUserLoggedIn &&<Route
         path="/qna-input/:mode"
         render={(props) => <QnaInput {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn &&<Route
         path="/qna-read/:num"
         render={(props) => <QnaRead {...props} />}
-        /> */}
+        />}
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
     </Switch>
