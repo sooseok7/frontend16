@@ -38,9 +38,9 @@ import PicchungPage from "views/examples/PicchungPage.js";
 import PicturePage from "views/examples/PicturePage.js";
 import WalkingPage from "views/examples/WalkingPage.js";
 import AuthenticationService from 'jwtlogin/AuthenticationService.js'
-//import QnaPage from "views/examples/QnaPage.js";
-//import QnaInput from "views/examples/QnaInput.js";
-//import QnaRead from "views/examples/QnaRead.js";
+import QnaPage from "views/examples/QnaPage.js";
+import QnaInput from "views/examples/QnaInput.js";
+import QnaRead from "views/examples/QnaRead.js";
 const isUserLoggedIn = AuthenticationService.isUserLoggedIn();
 ReactDOM.render(
   <BrowserRouter>
@@ -114,18 +114,18 @@ ReactDOM.render(
         path="/walking-page"
         render={(props) => <WalkingPage {...props} />}
         />}
-        {/* <Route
+        {isUserLoggedIn && <Route
         path="/qna-page"
         render={(props) => <QnaPage {...props} />}
-        />
-                <Route
+        />}
+        {isUserLoggedIn &&<Route
         path="/qna-input/:mode"
         render={(props) => <QnaInput {...props} />}
-        />
-        <Route
+        />}
+        {isUserLoggedIn &&<Route
         path="/qna-read/:num"
         render={(props) => <QnaRead {...props} />}
-        /> */}
+        />}
         <Redirect to="/index" />
         <Redirect from="/" to="/index" />
     </Switch>
