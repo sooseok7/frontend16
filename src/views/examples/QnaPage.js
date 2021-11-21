@@ -53,13 +53,13 @@ var now = new Date();
           setList(Response.data.list);
        }
     });
-    document.body.classList.add("qa-page");
+    document.body.classList.add("qna-page");
     document.body.classList.add("sidebar-collapse");
     document.documentElement.classList.remove("nav-open");
     window.scrollTo(0, 0);
     document.body.scrollTop = 0;
     return function cleanup() {
-      document.body.classList.remove("qa-page");
+      document.body.classList.remove("qna-page");
       document.body.classList.remove("sidebar-collapse");
     };
   }, []);

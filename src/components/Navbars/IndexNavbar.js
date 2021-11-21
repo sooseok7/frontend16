@@ -91,6 +91,14 @@ function IndexNavbar() {
             </NavLink>
               </NavItem>}
 
+              {isUserLoggedIn && <NavItem>
+              <NavLink
+              href="tour-page"
+            >
+             <p>전국여행</p>
+              </NavLink>
+              </NavItem>}
+
               {isUserLoggedIn && <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
@@ -144,6 +152,10 @@ function IndexNavbar() {
                 <DropdownItem href="../board-page"
                   >
                   <p>자유게시판</p>
+                  </DropdownItem>
+                  <DropdownItem href="qna-page"
+                  >
+                  <p>질문게시판</p>
                   </DropdownItem>
                   <DropdownItem
                     href="../picchung-page"

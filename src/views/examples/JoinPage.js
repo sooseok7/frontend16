@@ -22,8 +22,8 @@ import TransparentFooter from "components/Footers/TransparentFooter.js";
 
 function LoginPage() {
     const [User, setUser] = useState({
-      id:"",
-      pw:"",
+      username:"",
+      password:"",
       role: "ROLE_USER"
 });
     React.useEffect(() => {
@@ -39,17 +39,18 @@ function LoginPage() {
     }, []);
 
     const inputmember = async () => {
-      if(User.id == User.pw){
+      if(User.username == User.password){
         window.confirm("아이디와 비번이 같습니다.");
       }
-      else if(!User.id || !User.pw){
+      else if(!User.username || !User.password){
         window.confirm("빈칸을 채워주세요.");
       }
       else{
       if(window.confirm("회원가입하시겠습니까?")){
-    axios.post('/api/user', User)
+    axios.post('/authenticate', User)
       .then(function (response) {
-        //console.log(response);
+        setUser(response.data);
+        console.log(response);
         window.location.href ='login-page'
       })
       .catch(function (error) { 
@@ -93,14 +94,14 @@ function LoginPage() {
                       </InputGroupAddon>
                       <Input
                         placeholder="Want Id..."
-                        name="id"
+                        name="username"
                         type="text"
-                        value={User.id}
+                        value={User.username}
                         maxlength="14"
                         onChange={({ target: { value } }) => 
                         setUser({
-                          id:value,
-                          pw: User.pw,
+                          username:value,
+                          password: User.password,
                           role: User.role
                    })}
                       ></Input>
@@ -121,11 +122,11 @@ function LoginPage() {
                         name="user-password"
                         type="password"
                         maxlength="14"
-                        value={User.pw}
+                        value={User.password}
                         onChange={({ target: { value } }) => 
                         setUser({
-                          id:User.id,
-                          pw: value,
+                          username:User.username,
+                          password: value,
                           role: User.role
                    })}
                       ></Input>

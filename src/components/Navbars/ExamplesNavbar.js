@@ -92,13 +92,13 @@ function ExamplesNavbar() {
             </NavLink>
               </NavItem>}
 
-              {/* <NavItem>
+              {isUserLoggedIn && <NavItem>
               <NavLink
               href="tour-page"
             >
              <p>전국여행</p>
               </NavLink>
-              </NavItem> */}
+              </NavItem>}
 
 {isUserLoggedIn && <UncontrolledDropdown nav>
                 <DropdownToggle
@@ -157,6 +157,10 @@ function ExamplesNavbar() {
                 <DropdownItem href="board-page"
                   >
                   <p>자유게시판</p>
+                  </DropdownItem>
+                  <DropdownItem href="qna-page"
+                  >
+                  <p>질문게시판</p>
                   </DropdownItem>
                   <DropdownItem
                     href="picchung-page"
