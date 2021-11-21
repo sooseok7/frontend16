@@ -91,6 +91,14 @@ function IndexNavbar() {
             </NavLink>
               </NavItem>}
 
+              {isUserLoggedIn && <NavItem>
+              <NavLink
+              href="tour-page"
+            >
+             <p>전국여행</p>
+              </NavLink>
+              </NavItem>}
+
               {isUserLoggedIn && <UncontrolledDropdown nav>
                 <DropdownToggle
                   caret
