@@ -92,13 +92,13 @@ function ExamplesNavbar() {
             </NavLink>
               </NavItem>}
 
-              {/* <NavItem>
+              {isUserLoggedIn && <NavItem>
               <NavLink
               href="tour-page"
             >
              <p>전국여행</p>
               </NavLink>
-              </NavItem> */}
+              </NavItem>}
 
 {isUserLoggedIn && <UncontrolledDropdown nav>
                 <DropdownToggle

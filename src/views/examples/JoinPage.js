@@ -47,9 +47,10 @@ function LoginPage() {
       }
       else{
       if(window.confirm("회원가입하시겠습니까?")){
-    axios.post('/api/user', User)
+    axios.post('/authenticate', User)
       .then(function (response) {
-        //console.log(response);
+        setUser(response.data);
+        console.log(response);
         window.location.href ='login-page'
       })
       .catch(function (error) { 
